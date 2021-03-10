@@ -7,9 +7,11 @@ const StartScreen = () => {
         <Screen>
         <div className="start-screen-containter">
 
-          <h1 className="huge">JOB</h1>
-          <img src={jobHunter} className="job-hunter-png" alt="job hunter base" />
-          <h1 className="huge">HUNTER</h1>
+          <div className="start-screen-header">
+            <h1 className="huge">JOB</h1>
+            <img src={jobHunter} className="job-hunter-png" alt="job hunter base" />
+            <h1 className="huge">HUNTER</h1>
+          </div>
 
           <div className="sections-container">
 
