@@ -4,8 +4,9 @@ import Screen from './Screen';
 const StartScreen = () => {
     return (
         <Screen>
-        <div>
+        <div className="start-screen-containter">
           <h1>JOB HUNTER</h1>
+          
           <div className="sections-container">
 
             <div className="job-hunter-section">
@@ -17,7 +18,7 @@ const StartScreen = () => {
             <div className="job-interview-section">
               
             </div>
-            
+
           </div>
         </div>
       </Screen>

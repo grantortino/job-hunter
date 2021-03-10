@@ -7,10 +7,33 @@ body {
   height: 100vh;
 }
 
+@font-face {
+  font-family: textFont;
+  src: url(./fonts/dogica/TTF/dogicapixel.ttf);
+}
+
+@font-face {
+  font-family: titleFont;
+  src: url(./fonts/press-start-2p/PressStart2P.ttf);
+}
+
+h1, h3 {
+  font-family: titleFont;
+  color: #E5E5E5;
+}
+
 .screen-main {
   border: 5px solid #E5E5E5;
   min-width: 150vh;
   min-height: 80vh;
+}
+
+.start-screen-containter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .sections-container {
@@ -24,3 +47,4 @@ body {
   height: 190px;
   border: 5px solid #E5E5E5;
 }
+
