@@ -9,9 +9,9 @@ const StartScreen = () => {
 
           <div className="sections-container">
 
-            <div className="job-hunter-section">
+            <div className="job-tracker-section">
               <div className="job-card-image"></div>
-              <p>Job Hunter</p>
+              <p>Job Tracker</p>
             </div>
 
             <div className="job-journal-section">
