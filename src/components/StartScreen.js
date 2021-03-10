@@ -1,11 +1,17 @@
 import React from 'react';
 import Screen from './Screen';
+import jobHunter from '../assets/job-hunter-characters/job-hunter.png';
 
 const StartScreen = () => {
     return (
         <Screen>
         <div className="start-screen-containter">
+
           <h1 className="huge">JOB HUNTER</h1>
+
+          <div className="job-hunter-png-container">
+          <img src={jobHunter} className="job-hunter-png" alt="job hunter base" />
+          </div>
 
           <div className="sections-container">
 

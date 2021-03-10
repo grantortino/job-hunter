@@ -26,7 +26,7 @@ body {
 }
 
 .huge {
-  font-size: 120px;
+  font-size: 107px;
   margin: 0 auto;
 }
 
@@ -71,3 +71,12 @@ p {
   border: 5px solid $fontColor;
 }
 
+.job-hunter-png-container {
+  width: 80%;
+  border: 3px solid fuchsia;
+  text-align: center;
+}
+
+.job-tracker-section:hover {
+  background-color: $fontColor;
+}
