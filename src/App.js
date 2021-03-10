@@ -1,5 +1,5 @@
 import './App.css';
-// import Screen from './components/Screen';
+import Screen from './components/Screen';
 import StartScreen from './components/StartScreen';
 import TrackerScreen from './components/TrackerScreen';
 import {
@@ -19,11 +19,11 @@ function App() {
           <Route path="/tracker">
             <TrackerScreen />
           </Route>
-          <Route path="/users">
-            users
+          <Route path="/screen">
+            <Screen />
           </Route>
           <Route path="/">
-            Brrr
+            <StartScreen />
           </Route>
         </Switch>
       </div>

@@ -5,7 +5,12 @@ const TrackerScreen = () => {
         <div>
             <h3>JOB TRACKER</h3>
             <div className="tracker-sections-container">
-                
+                <div>
+                    image 1
+                </div>
+                <div>
+                    image 2
+                </div>
             </div>
         </div>
     );
