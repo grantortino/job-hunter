@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Screen from './components/Screen';
 import StartScreen from './components/StartScreen';
 import TrackerScreen from './components/TrackerScreen';

@@ -1,5 +1,8 @@
+$fontColor: #E5E5E5;
+$bgColor: #0C734E;
+
 body {
-  background-color: #0C734E;
+  background-color: $bgColor;
   box-sizing: content-box;
   display: flex;
   justify-content: center;
@@ -17,23 +20,35 @@ body {
   src: url(./fonts/press-start-2p/PressStart2P.ttf);
 }
 
-h1, h3 {
+.huge, .medium, .small {
   font-family: titleFont;
-  color: #E5E5E5;
+  color: $fontColor;
+}
+
+.huge {
+  font-size: 120px;
+  margin: 0 auto;
+}
+
+p {
+  font-family: textFont;
+  color: $fontColor;
+  font-weight: bold;
 }
 
 .screen-main {
-  border: 5px solid #E5E5E5;
+  border: 5px solid $fontColor;
   min-width: 150vh;
   min-height: 80vh;
 }
 
 .start-screen-containter {
   width: 100%;
+  min-height: 79vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .sections-container {
@@ -43,8 +58,16 @@ h1, h3 {
 }
 
 .job-hunter-section, .job-journal-section, .job-interview-section {
-  width: 190px;
-  height: 190px;
-  border: 5px solid #E5E5E5;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.job-card-image {
+  min-width: 190px;
+  min-height: 190px;
+  border: 5px solid $fontColor;
 }
 
