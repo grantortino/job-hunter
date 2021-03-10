@@ -1,7 +1,9 @@
 import React from 'react';
+import Screen from './Screen';
 
 const TrackerScreen = () => {
     return (
+        <Screen>
         <div>
             <h3>JOB TRACKER</h3>
             <div className="tracker-sections-container">
@@ -13,6 +15,7 @@ const TrackerScreen = () => {
                 </div>
             </div>
         </div>
+        </Screen>
     );
 };
 
