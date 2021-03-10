@@ -26,7 +26,7 @@ body {
 }
 
 .huge {
-  font-size: 107px;
+  font-size: 77px;
   margin: 0 auto;
 }
 
@@ -65,6 +65,21 @@ p {
   align-items: center;
 }
 
+.job-tracker-section:hover {
+  background-color: $fontColor;
+  cursor: pointer;
+}
+
+.job-journal-section:hover {
+  background-color: $fontColor;
+  cursor: pointer;
+}
+
+.job-interview-section:hover {
+  background-color: $fontColor;
+  cursor: pointer;
+}
+
 .job-card-image {
   min-width: 190px;
   min-height: 190px;
@@ -73,10 +88,10 @@ p {
 
 .job-hunter-png-container {
   width: 80%;
-  border: 3px solid fuchsia;
   text-align: center;
 }
 
-.job-tracker-section:hover {
-  background-color: $fontColor;
+.job-hunter-png {
+  width:20%;
 }
+
