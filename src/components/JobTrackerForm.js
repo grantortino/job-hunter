@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Screen from './Screen';
 
-const JobTrackerForm = () => {
+const jobs = {
+    companyName: "Death Tech",
+    save: () => {
+        localStorage.setItem('savedCompanyName', jobs.companyName);        
+    },
+    load: () => {
+        // gets the element from storage saved under "savedCompanyName"
+        const savedCompanyName = localStorage.getItem('savedCompanyName');
+        // sets value in jobs.companyName key
+        jobs.companyName = savedCompanyName;
+    }
+}; 
+
+jobs.load();
+
+    const JobTrackerForm = () => {
+
+    // STATE
+    const [companyName, setCompanyName] = useState(jobs.companyName);
+
+    // FUNCTIONS
+
+    const companyNameHandler = (e) => {
+        setCompanyName(e.target.value);
+    };
+
     return (
         <Screen>
             <div className="job-tracker-form-container">
 
                 <h1 className="medium">TRACK A NEW JOB</h1>
 
-                <form action="">
+                <form onSubmit={(e) => { e.preventDefault(); jobs.companyName = companyName; jobs.save() }}>
 
                     <label for="cname">
                         <h3 className="small">
-                            COMPANY NAME:
+                            COMPANY NAME: {jobs.companyName}
                         </h3>
                     </label>
-                    <input type="text" id="cname" name="cname" />
+                    <input onChange={companyNameHandler} type="text" id="cname" name="cname" value={companyName} />
 
                     <label for="jtitle">
                         <h3 className="small">
@@ -90,13 +115,11 @@ const JobTrackerForm = () => {
 
                     <div className="job-tracker-buttons-container">
 
-                        <button className="small">
-                            <h3 className="small">SAVE</h3>
-                        </button>
-
-                        <button className="small">
-                            <h3 className="small">DISCARD</h3>
-                        </button>
+                        <input type="submit" value="SAVE" />
+                            {/* <h3 className="small">SAVE</h3> */}
+                        
+                        <input type="submit" value="DISCARD" />
+                            {/* <h3 className="small">DISCARD</h3> */}
 
                     </div>
 
