@@ -1,5 +1,8 @@
 import React from 'react';
 import Screen from './Screen';
+import {
+    Link
+  } from "react-router-dom";
 
 const JobTrackerMain = () => {
     return (
@@ -7,9 +10,11 @@ const JobTrackerMain = () => {
         <div>
             <h3>JOB TRACKER</h3>
             <div className="tracker-sections-container">
-                <div>
-                    image 1
-                </div>
+                <Link to="/trackerform">
+                    <div>
+                        image 1
+                    </div>
+                </Link>
                 <div>
                     image 2
                 </div>
