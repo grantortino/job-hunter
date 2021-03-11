@@ -30,6 +30,16 @@ body {
   margin: 0 auto;
 }
 
+.medium {
+  font-size: 27px;
+  margin: 0 auto;
+}
+
+.small {
+  font-size: 17px;
+  margin: 0 auto;
+}
+
 p {
   font-family: textFont;
   color: $fontColor;
@@ -43,6 +53,15 @@ p {
 }
 
 .start-screen-containter {
+  width: 100%;
+  min-height: 79vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-tracker-form-container {
   width: 100%;
   min-height: 79vh;
   display: flex;

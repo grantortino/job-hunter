@@ -2,11 +2,12 @@ import './App.scss';
 import Screen from './components/Screen';
 import StartScreen from './components/StartScreen';
 import TrackerScreen from './components/TrackerScreen';
+import JobTrackerForm from './components/JobTrackerForm';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/screen">
             <Screen />
+          </Route>
+          <Route path="/trackerform">
+            <JobTrackerForm />
           </Route>
           <Route path="/">
             <StartScreen />
