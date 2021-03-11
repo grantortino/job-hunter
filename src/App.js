@@ -1,7 +1,7 @@
 import './App.scss';
 import Screen from './components/Screen';
 import StartScreen from './components/StartScreen';
-import TrackerScreen from './components/TrackerScreen';
+import JobTrackerMain from './components/JobTrackerMain';
 import JobTrackerForm from './components/JobTrackerForm';
 import {
   BrowserRouter as Router,
@@ -18,7 +18,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/tracker">
-            <TrackerScreen />
+            <JobTrackerMain />
           </Route>
           <Route path="/screen">
             <Screen />
