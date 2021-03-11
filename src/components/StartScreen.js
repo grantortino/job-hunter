@@ -1,6 +1,7 @@
 import React from 'react';
 import Screen from './Screen';
 import jobHunter from '../assets/job-hunter-characters/job-hunter.png';
+import { Link } from 'react-router-dom';
 
 const StartScreen = () => {
     return (
@@ -15,10 +16,12 @@ const StartScreen = () => {
 
           <div className="sections-container">
 
-            <div className="job-tracker-section">
-              <div className="job-card-image"></div>
-              <p>Job Tracker</p>
-            </div>
+            <Link to="/tracker">
+              <div className="job-tracker-section">
+                <div className="job-card-image"></div>
+                <p>Job Tracker</p>
+              </div>
+            </Link>
 
             <div className="job-journal-section">
               <div className="job-card-image"></div>
