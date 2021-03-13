@@ -93,32 +93,25 @@ jobs.load();
 
                 <form className="job-tracker-form" onSubmit={formHandleSubmit} >
 
-                    <label>
                         <h3 className="small">
-                            COMPANY NAME: {jobs.companyName}
+                            COMPANY NAME:
                         </h3>
-                    </label>
                     <input className="input-bar font-small" autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} />
 
-                    <label>
                         <h3 className="small">
                             JOB TITLE:
                         </h3>
-                    </label>
                     <input className="input-bar font-small" autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} />
 
-                    <label>
                         <h3 className="small">
                             DATE OF INSERTION:
                         </h3>
-                    </label>
+
                     <input className="input-bar font-small" onChange={dateHandler} type="date" id="date" name="date" value={date} />
 
-                    <label>
                         <h3 className="small">
                             LINK TO JOB AD:
                         </h3>
-                    </label>
                     <input className="input-bar font-small" autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} />
 
                     <div className="job-tracker-select-container">
@@ -127,7 +120,7 @@ jobs.load();
                                 <h3 className="small">
                                     RELEVANCE DEGREE:
                                 </h3>
-                                <select onChange={relevanceSelectHandler} value={relevanceDegree}>
+                                <select className="select-dropdown font-small" onChange={relevanceSelectHandler} value={relevanceDegree}>
                                     <option value="small">
                                         SMALL
                                     </option>
@@ -143,7 +136,7 @@ jobs.load();
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select onChange={statusHandler} value={status}>
+                                <select className="select-dropdown font-small" onChange={statusHandler} value={status}>
                                     <option value="pending">
                                         PENDING
                                     </option>
@@ -160,10 +153,9 @@ jobs.load();
 
                     <div className="job-tracker-buttons-container">
 
-                        <input type="submit" value="SAVE" />
+                        <input className="buttons small" type="submit" value="SAVE" />
                             {/* <h3 className="small">SAVE</h3> */}
-                        
-                        <input type="submit" value="DISCARD" />
+                        <input className="buttons small" type="submit" value="DISCARD" />
                             {/* <h3 className="small">DISCARD</h3> */}
 
                     </div>

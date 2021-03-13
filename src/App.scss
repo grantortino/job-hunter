@@ -10,6 +10,19 @@ body {
   height: 100vh;
 }
 
+.buttons {
+  background-color: $bgColor;
+  border: 3px solid $fontColor;
+  width: 150px;
+  height: 40px;
+}
+
+.buttons:hover {
+  background-color: $fontColor;
+  color: $bgColor;
+  outline: none;
+}
+
 @font-face {
   font-family: textFont;
   src: url(./fonts/dogica/TTF/dogicapixel.ttf);
@@ -31,17 +44,17 @@ body {
 }
 
 .huge, .font-huge {
-  font-size: 37px;
+  font-size: 33px;
   margin: 0 auto;
 }
 
 .medium, .font-medium {
-  font-size: 27px;
+  font-size: 23px;
   margin: 0 auto;
 }
 
 .small, .font-small {
-  font-size: 17px;
+  font-size: 13px;
   margin: 0 auto;
 }
 
@@ -124,15 +137,47 @@ p {
 .job-tracker-form {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  height: 70vh;
 }
+
+.job-tracker-select-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  select {
+    margin: 10px 0px;
+    padding: 5px;
+    width: 150px;
+    background-color: $bgColor;
+    border: 1px solid $fontColor;
+  }
+}
+
+.job-tracker-relevance-select, .job-tracker-status-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0;
+  outline: none;
+}
+
 
 .input-bar {
   font-family: textFont;
   background-color: $bgColor;
-  border: 5px solid $fontColor;
+  border: 3px solid $fontColor;
+  height: 19px;
   width: 90vh;
   outline: none;
+  padding: 5px 15px;
+}
+
+.job-tracker-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 

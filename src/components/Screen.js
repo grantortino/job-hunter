@@ -8,7 +8,7 @@ const Screen = ({ children }) => {
             {children}
         </div>
         <div className="screen-buttons">
-            <button><h3 className="small">LOGIN</h3></button>
+            <button className="buttons small">LOGIN</button>
         </div>
         </>
     );
