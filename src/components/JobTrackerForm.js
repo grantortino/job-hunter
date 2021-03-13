@@ -5,19 +5,27 @@ const jobs = {
     companyName: "",
     jobTitle: "",
     date: "",
+    jobLink: "",
+    relevanceDegree: "",
 
     save: () => {
         localStorage.setItem('savedCompanyName', jobs.companyName);
-        localStorage.setItem('savedJobTitle', jobs.jobTitle);        
+        localStorage.setItem('savedJobTitle', jobs.jobTitle);
+        localStorage.setItem('savedJobLink', jobs.jobLink);
+        localStorage.setItem('savedRelevanceDegree', jobs.relevanceDegree);
     },
 
     load: () => {
         // gets the element from storage saved under "savedCompanyName"
         const savedCompanyName = localStorage.getItem('savedCompanyName');
         const savedJobTitle = localStorage.getItem('savedJobTitle');
+        const savedJobLink = localStorage.getItem('savedJobLink');
+        const savedRelevanceDegree = localStorage.getItem('savedRelevanceDegree');
         // sets value in jobs.companyName key
         jobs.companyName = savedCompanyName;
         jobs.jobTitle = savedJobTitle;
+        jobs.jobLink = savedJobLink;
+        jobs.relevanceDegree = savedRelevanceDegree;
     }
 }; 
 
@@ -28,6 +36,8 @@ jobs.load();
     // STATE
     const [companyName, setCompanyName] = useState(jobs.companyName);
     const [jobTitle, setJobTitle] = useState(jobs.jobTitle);
+    const [jobLink, setJobLink] = useState(jobs.jobLink);
+    const [relevanceDegree, setRelevanceDegree] = useState(jobs.relevanceDegree);
 
     // FUNCTIONS
     const companyNameHandler = (e) => {
@@ -38,10 +48,20 @@ jobs.load();
         setJobTitle(e.target.value);
     };
 
+    const jobLinkHandler = (e) => {
+        setJobLink(e.target.value);
+    };
+
+    const relevanceSelectHandler = (e) => {
+        setRelevanceDegree(e.target.value);
+    };
+
     const formHandleSubmit = (e) => {
         e.preventDefault(); 
         jobs.companyName = companyName; 
         jobs.jobTitle = jobTitle; 
+        jobs.jobLink = jobLink;
+        jobs.relevanceDegree = relevanceDegree;
         jobs.save();
     }
 
@@ -58,14 +78,14 @@ jobs.load();
                             COMPANY NAME: {jobs.companyName}
                         </h3>
                     </label>
-                    <input onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} />
+                    <input autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} />
 
                     <label>
                         <h3 className="small">
                             JOB TITLE:
                         </h3>
                     </label>
-                    <input onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} />
+                    <input autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} />
 
                     <label>
                         <h3 className="small">
@@ -79,7 +99,7 @@ jobs.load();
                             LINK TO JOB AD:
                         </h3>
                     </label>
-                    <input type="text" id="link" name="link" />
+                    <input autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} />
 
                     <div className="job-tracker-select-container">
 
@@ -87,7 +107,7 @@ jobs.load();
                                 <h3 className="small">
                                     RELEVANCE DEGREE:
                                 </h3>
-                                <select>
+                                <select onChange={relevanceSelectHandler} value={relevanceDegree}>
                                     <option value="small">
                                         SMALL
                                     </option>
@@ -103,7 +123,7 @@ jobs.load();
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select value={"pending"}>
+                                <select>
                                     <option value="pending">
                                         PENDING
                                     </option>
