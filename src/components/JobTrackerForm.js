@@ -91,35 +91,35 @@ jobs.load();
 
                 <h1 className="medium">TRACK A NEW JOB</h1>
 
-                <form onSubmit={formHandleSubmit} >
+                <form className="job-tracker-form" onSubmit={formHandleSubmit} >
 
                     <label>
                         <h3 className="small">
                             COMPANY NAME: {jobs.companyName}
                         </h3>
                     </label>
-                    <input autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} />
+                    <input className="input-bar font-small" autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} />
 
                     <label>
                         <h3 className="small">
                             JOB TITLE:
                         </h3>
                     </label>
-                    <input autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} />
+                    <input className="input-bar font-small" autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} />
 
                     <label>
                         <h3 className="small">
                             DATE OF INSERTION:
                         </h3>
                     </label>
-                    <input onChange={dateHandler} type="date" id="date" name="date" value={date} />
+                    <input className="input-bar font-small" onChange={dateHandler} type="date" id="date" name="date" value={date} />
 
                     <label>
                         <h3 className="small">
                             LINK TO JOB AD:
                         </h3>
                     </label>
-                    <input autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} />
+                    <input className="input-bar font-small" autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} />
 
                     <div className="job-tracker-select-container">
 

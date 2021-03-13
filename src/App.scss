@@ -25,17 +25,22 @@ body {
   color: $fontColor;
 }
 
-.huge {
+.font-huge, .font-med, .font-small {
+  font-family: textFont;
+  color: $fontColor;
+}
+
+.huge, .font-huge {
   font-size: 37px;
   margin: 0 auto;
 }
 
-.medium {
+.medium, .font-medium {
   font-size: 27px;
   margin: 0 auto;
 }
 
-.small {
+.small, .font-small {
   font-size: 17px;
   margin: 0 auto;
 }
@@ -87,7 +92,7 @@ p {
 
 .job-tracker-section, .job-journal-section, .job-interview-section {
   width: 200px;
-  height: 250px;
+  height: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,8 +104,8 @@ p {
 }
 
 .job-card-image {
-  min-width: 190px;
-  min-height: 190px;
+  min-width: 150px;
+  min-height: 150px;
   border: 5px solid $fontColor;
 }
 
@@ -112,6 +117,22 @@ p {
 .job-hunter-png {
   width:20%;
   margin-bottom: 20px;
+}
+
+// JOB TRACKER FORM
+
+.job-tracker-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-bar {
+  font-family: textFont;
+  background-color: $bgColor;
+  border: 5px solid $fontColor;
+  width: 90vh;
+  outline: none;
 }
 
 
