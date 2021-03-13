@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Screen from './Screen';
 import {
     Link
   } from "react-router-dom";
 
 const JobTrackerMain = () => {
-
-    const [companyName, setCompanyName] = useState();
-
 
     return (
         <Screen>
