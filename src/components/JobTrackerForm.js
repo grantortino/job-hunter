@@ -6,13 +6,17 @@ const jobs = {
     jobTitle: "",
     date: "",
     jobLink: "",
+    date: "",
     relevanceDegree: "",
+    status: "",
 
     save: () => {
         localStorage.setItem('savedCompanyName', jobs.companyName);
         localStorage.setItem('savedJobTitle', jobs.jobTitle);
         localStorage.setItem('savedJobLink', jobs.jobLink);
+        localStorage.setItem('savedDate', jobs.date);
         localStorage.setItem('savedRelevanceDegree', jobs.relevanceDegree);
+        localStorage.setItem('savedStatus', jobs.status);
     },
 
     load: () => {
@@ -20,12 +24,16 @@ const jobs = {
         const savedCompanyName = localStorage.getItem('savedCompanyName');
         const savedJobTitle = localStorage.getItem('savedJobTitle');
         const savedJobLink = localStorage.getItem('savedJobLink');
+        const savedDate = localStorage.getItem('savedDate');
         const savedRelevanceDegree = localStorage.getItem('savedRelevanceDegree');
+        const savedStatus = localStorage.getItem('savedStatus');
         // sets value in jobs.companyName key
         jobs.companyName = savedCompanyName;
         jobs.jobTitle = savedJobTitle;
         jobs.jobLink = savedJobLink;
+        jobs.date = savedDate;
         jobs.relevanceDegree = savedRelevanceDegree;
+        jobs.status = savedStatus;
     }
 }; 
 
@@ -37,7 +45,9 @@ jobs.load();
     const [companyName, setCompanyName] = useState(jobs.companyName);
     const [jobTitle, setJobTitle] = useState(jobs.jobTitle);
     const [jobLink, setJobLink] = useState(jobs.jobLink);
+    const [date, setDate] = useState(jobs.date);
     const [relevanceDegree, setRelevanceDegree] = useState(jobs.relevanceDegree);
+    const [status, setStatus] = useState(jobs.status);
 
     // FUNCTIONS
     const companyNameHandler = (e) => {
@@ -52,8 +62,16 @@ jobs.load();
         setJobLink(e.target.value);
     };
 
+    const dateHandler = (e) => {
+        setDate(e.target.value);
+    };
+
     const relevanceSelectHandler = (e) => {
         setRelevanceDegree(e.target.value);
+    };
+
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
     };
 
     const formHandleSubmit = (e) => {
@@ -61,7 +79,9 @@ jobs.load();
         jobs.companyName = companyName; 
         jobs.jobTitle = jobTitle; 
         jobs.jobLink = jobLink;
+        jobs.date = date;
         jobs.relevanceDegree = relevanceDegree;
+        jobs.status = status;
         jobs.save();
     }
 
@@ -92,7 +112,7 @@ jobs.load();
                             DATE OF INSERTION:
                         </h3>
                     </label>
-                    <input type="date" id="date" name="date" value="DD.MM.YYYY"/>
+                    <input onChange={dateHandler} type="date" id="date" name="date" value={date} />
 
                     <label>
                         <h3 className="small">
@@ -123,7 +143,7 @@ jobs.load();
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select>
+                                <select onChange={statusHandler} value={status}>
                                     <option value="pending">
                                         PENDING
                                     </option>
