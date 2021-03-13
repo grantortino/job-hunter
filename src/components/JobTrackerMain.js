@@ -17,15 +17,15 @@ const JobTrackerMain = () => {
             <div className="tracker-sections-container">
 
                 <Link to="/trackerform">
-                    <div className="job-tracker-section">
-                        <div className="job-card-image"></div>
+                    <div className="job-tracker-card-big">
+                        <div className="job-card-image-big"></div>
                         <p>Track A New Job</p>
                     </div>
                 </Link>
 
                 <div>
-                    <div className="job-tracker-section">
-                        <div className="job-card-image"></div>
+                    <div className="job-tracker-card-big">
+                        <div className="job-card-image-big"></div>
                         <p>Tracked Jobs</p>
                     </div>
                 </div>

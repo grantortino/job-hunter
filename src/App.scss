@@ -103,7 +103,15 @@ p {
   width: 100%;
 }
 
-.job-tracker-section, .job-journal-section, .job-interview-section {
+// .job-tracker-section, .job-journal-section, .job-interview-section {
+//   width: 200px;
+//   height: 230px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+.job-tracker-card-medium {
   width: 200px;
   height: 230px;
   display: flex;
@@ -111,15 +119,39 @@ p {
   align-items: center;
 }
 
-.job-card-image:hover {
+.job-card-image-medium {
+  min-width: 150px;
+  min-height: 150px;
+  border: 5px solid $fontColor;
+}
+
+.job-card-image-medium:hover {
   background-color: $fontColor;
   cursor: pointer;
 }
 
-.job-card-image {
-  min-width: 150px;
-  min-height: 150px;
+.job-tracker-card-big {
+  width: 300px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.job-card-image-big {
+  min-width: 250px;
+  min-height: 250px;
   border: 5px solid $fontColor;
+}
+
+.job-card-image-big:hover {
+  background-color: $fontColor;
+  cursor: pointer;
+}
+
+.job-card-image-big:hover {
+  background-color: $fontColor;
+  cursor: pointer;
 }
 
 .job-hunter-png-container {
@@ -140,7 +172,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .tracker-sections-container {

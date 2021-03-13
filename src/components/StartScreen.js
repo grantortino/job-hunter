@@ -17,19 +17,19 @@ const StartScreen = () => {
           <div className="sections-container">
 
             <Link to="/tracker">
-              <div className="job-tracker-section">
-                <div className="job-card-image"></div>
+              <div className="job-tracker-card-medium">
+                <div className="job-card-image-medium"></div>
                 <p>Job Tracker</p>
               </div>
             </Link>
 
-            <div className="job-journal-section">
-              <div className="job-card-image"></div>
+            <div className="job-journal-card-medium">
+              <div className="job-card-image-medium"></div>
               <p>Job Journal</p>
             </div>
 
-            <div className="job-interview-section">
-              <div className="job-card-image"></div>
+            <div className="job-interview-card-medium">
+              <div className="job-card-image-medium"></div>
               <p>Job Interview</p>
             </div>
           </div>
