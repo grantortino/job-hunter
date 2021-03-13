@@ -10,16 +10,24 @@ const JobTrackerMain = () => {
 
     return (
         <Screen>
-        <div>
-            <h3>JOB TRACKER</h3>
+        <div className="tracker-main-screen-containter">
+
+            <h3 className="huge">JOB TRACKER</h3>
+
             <div className="tracker-sections-container">
+
                 <Link to="/trackerform">
-                    <div>
-                        image 1
+                    <div className="job-tracker-section">
+                        <div className="job-card-image"></div>
+                        <p>Track A New Job</p>
                     </div>
                 </Link>
+
                 <div>
-                    image 2
+                    <div className="job-tracker-section">
+                        <div className="job-card-image"></div>
+                        <p>Tracked Jobs</p>
+                    </div>
                 </div>
             </div>
         </div>

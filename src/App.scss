@@ -132,6 +132,25 @@ p {
   margin-bottom: 20px;
 }
 
+// JOB TRACKER MAIN
+
+.tracker-main-screen-containter {
+  width: 100%;
+  min-height: 79vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tracker-sections-container {
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 // JOB TRACKER FORM
 
 .job-tracker-form {
