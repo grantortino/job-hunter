@@ -87,23 +87,13 @@ p {
 
 .job-tracker-section, .job-journal-section, .job-interview-section {
   width: 200px;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.job-tracker-section:hover {
-  background-color: $fontColor;
-  cursor: pointer;
-}
-
-.job-journal-section:hover {
-  background-color: $fontColor;
-  cursor: pointer;
-}
-
-.job-interview-section:hover {
+.job-card-image:hover {
   background-color: $fontColor;
   cursor: pointer;
 }

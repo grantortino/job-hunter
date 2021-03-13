@@ -38,13 +38,20 @@ jobs.load();
         setJobTitle(e.target.value);
     };
 
+    const formHandleSubmit = (e) => {
+        e.preventDefault(); 
+        jobs.companyName = companyName; 
+        jobs.jobTitle = jobTitle; 
+        jobs.save();
+    }
+
     return (
         <Screen>
             <div className="job-tracker-form-container">
 
                 <h1 className="medium">TRACK A NEW JOB</h1>
 
-                <form onSubmit={(e) => { e.preventDefault(); jobs.companyName = companyName; jobs.jobTitle = jobTitle; jobs.save() }}>
+                <form onSubmit={formHandleSubmit} >
 
                     <label>
                         <h3 className="small">
@@ -80,15 +87,15 @@ jobs.load();
                                 <h3 className="small">
                                     RELEVANCE DEGREE:
                                 </h3>
-                                <select name="relevance" id="relevance">
+                                <select>
                                     <option value="small">
-                                        <p>SMALL</p>
+                                        SMALL
                                     </option>
                                     <option value="medium">
-                                        <p>MEDIUM</p>
+                                        MEDIUM
                                     </option>
                                     <option value="high">
-                                        <p>HIGH</p>
+                                        HIGH
                                     </option>
                                 </select>
                         </div>
@@ -96,15 +103,15 @@ jobs.load();
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select name="status" id="status">
+                                <select value={"pending"}>
                                     <option value="pending">
-                                        <p>PENDING</p>
+                                        PENDING
                                     </option>
                                     <option value="rejected">
-                                        <p>REJECTED</p>
+                                        REJECTED
                                     </option>
                                     <option value="accepted">
-                                        <p>ACCEPTED</p>
+                                        ACCEPTED
                                     </option>
                                 </select>
                         </div>
