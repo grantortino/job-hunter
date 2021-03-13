@@ -8,6 +8,7 @@ const JobTrackerMain = () => {
 
     const [companyName, setCompanyName] = useState();
 
+
     return (
         <Screen>
         <div className="tracker-main-screen-containter">

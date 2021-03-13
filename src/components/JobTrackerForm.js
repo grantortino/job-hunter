@@ -40,7 +40,7 @@ const jobs = {
 jobs.load();
 
     const JobTrackerForm = () => {
-
+        
     // STATE
     const [companyName, setCompanyName] = useState(jobs.companyName);
     const [jobTitle, setJobTitle] = useState(jobs.jobTitle);
