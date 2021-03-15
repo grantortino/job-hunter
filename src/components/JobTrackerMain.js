@@ -21,12 +21,15 @@ const JobTrackerMain = () => {
                     </div>
                 </Link>
 
-                <div>
-                    <div className="job-tracker-card-big">
-                        <div className="job-card-image-big"></div>
-                        <p>Tracked Jobs</p>
+                <Link to="/trackedjobs">
+                    <div>
+                        <div className="job-tracker-card-big">
+                            <div className="job-card-image-big"></div>
+                            <p>Tracked Jobs</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
+                
             </div>
         </div>
         </Screen>

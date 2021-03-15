@@ -3,6 +3,7 @@ import Screen from './components/Screen';
 import StartScreen from './components/StartScreen';
 import JobTrackerMain from './components/JobTrackerMain';
 import JobTrackerForm from './components/JobTrackerForm';
+import TrackedJobs from './components/TrackedJobs';
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/trackerform">
             <JobTrackerForm />
+          </Route>
+          <Route path="/trackedjobs">
+            <TrackedJobs />
           </Route>
           <Route path="/">
             <StartScreen />
