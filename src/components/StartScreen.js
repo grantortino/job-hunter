@@ -16,19 +16,19 @@ const StartScreen = () => {
 
           <div className="sections-container">
 
-            <Link to="/tracker">
+            <Link to="/tracker" style={{ textDecoration: 'none' }}>
               <div className="job-tracker-card-medium">
                 <div className="job-card-image-medium"></div>
                 <p>Job Tracker</p>
               </div>
             </Link>
 
-            <div className="job-journal-card-medium">
+            <div className="job-tracker-card-medium">
               <div className="job-card-image-medium"></div>
               <p>Job Journal</p>
             </div>
 
-            <div className="job-interview-card-medium">
+            <div className="job-tracker-card-medium">
               <div className="job-card-image-medium"></div>
               <p>Job Interview</p>
             </div>

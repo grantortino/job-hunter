@@ -159,7 +159,7 @@ jobs.load();
                         <input className="buttons small" type="submit" value="DISCARD" />
                             {/* <h3 className="small">DISCARD</h3> */}
 
-                        <Link to="/tracker">
+                        <Link to="/tracker" style={{ textDecoration: 'none' }}>
                             <button className="back-buttons small">&larr;</button>
                         </Link>
 
