@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Screen from './Screen';
+import { Link } from 'react-router-dom';
 
 const jobs = {
     companyName: "",
@@ -154,14 +155,20 @@ jobs.load();
 
                         <input className="buttons small" type="submit" value="SAVE" />
                             {/* <h3 className="small">SAVE</h3> */}
+
                         <input className="buttons small" type="submit" value="DISCARD" />
                             {/* <h3 className="small">DISCARD</h3> */}
+
+                        <Link to="/tracker">
+                            <button className="back-buttons small">&larr;</button>
+                        </Link>
 
                     </div>
 
                 </form>
 
             </div>
+
         </Screen>
     );
 };

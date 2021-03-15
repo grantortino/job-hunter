@@ -1,6 +1,10 @@
 $fontColor: #E5E5E5;
 $bgColor: #0C734E;
 
+Link {
+  margin: 0 auto;
+}
+
 body {
   background-color: $bgColor;
   box-sizing: content-box;
@@ -15,13 +19,27 @@ body {
   border: 3px solid $fontColor;
   width: 150px;
   height: 40px;
+  cursor: pointer;
+  &:hover {
+    background-color: $fontColor;
+    color: $bgColor;
+    outline: none;
+  }
 }
 
-.buttons:hover {
-  background-color: $fontColor;
-  color: $bgColor;
-  outline: none;
+.back-buttons {
+  background-color: $bgColor;
+  border: 3px solid $fontColor;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  &:hover {
+    background-color: $fontColor;
+    color: $bgColor;
+    outline: none;
+  }
 }
+
 
 @font-face {
   font-family: textFont;

@@ -29,8 +29,12 @@ const JobTrackerMain = () => {
                         </div>
                     </div>
                 </Link>
-                
+
             </div>
+                            
+            <Link to="/">
+                <button className="buttons small">&larr;</button>
+            </Link>
         </div>
         </Screen>
     );
