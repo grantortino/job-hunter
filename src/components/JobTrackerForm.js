@@ -1,43 +1,7 @@
 import React, { useState } from 'react';
 import Screen from './Screen';
 import { Link } from 'react-router-dom';
-
-const jobs = {
-    companyName: "",
-    jobTitle: "",
-    date: "",
-    jobLink: "",
-    relevanceDegree: "",
-    status: "",
-
-    save: () => {
-        localStorage.setItem('savedCompanyName', jobs.companyName);
-        localStorage.setItem('savedJobTitle', jobs.jobTitle);
-        localStorage.setItem('savedJobLink', jobs.jobLink);
-        localStorage.setItem('savedDate', jobs.date);
-        localStorage.setItem('savedRelevanceDegree', jobs.relevanceDegree);
-        localStorage.setItem('savedStatus', jobs.status);
-    },
-
-    load: () => {
-        // gets the element from storage saved under "savedCompanyName"
-        const savedCompanyName = localStorage.getItem('savedCompanyName');
-        const savedJobTitle = localStorage.getItem('savedJobTitle');
-        const savedJobLink = localStorage.getItem('savedJobLink');
-        const savedDate = localStorage.getItem('savedDate');
-        const savedRelevanceDegree = localStorage.getItem('savedRelevanceDegree');
-        const savedStatus = localStorage.getItem('savedStatus');
-        // sets value in jobs.companyName key
-        jobs.companyName = savedCompanyName;
-        jobs.jobTitle = savedJobTitle;
-        jobs.jobLink = savedJobLink;
-        jobs.date = savedDate;
-        jobs.relevanceDegree = savedRelevanceDegree;
-        jobs.status = savedStatus;
-    }
-}; 
-
-jobs.load();
+import jobs from '../stores/JobStore';
 
     const JobTrackerForm = () => {
 
@@ -82,6 +46,7 @@ jobs.load();
         jobs.date = date;
         jobs.relevanceDegree = relevanceDegree;
         jobs.status = status;
+        jobs.addJob(companyName, jobTitle, jobLink, date, relevanceDegree, status);
         jobs.save();
     }
 
