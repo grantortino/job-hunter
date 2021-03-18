@@ -39,9 +39,9 @@ import jobs from '../stores/JobStore';
     };
 
     const formHandleSubmit = (e) => {
-        e.preventDefault(); 
-        jobs.companyName = companyName; 
-        jobs.jobTitle = jobTitle; 
+        e.preventDefault();
+        jobs.companyName = companyName;
+        jobs.jobTitle = jobTitle;
         jobs.jobLink = jobLink;
         jobs.date = date;
         jobs.relevanceDegree = relevanceDegree;
