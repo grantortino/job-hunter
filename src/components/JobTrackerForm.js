@@ -40,20 +40,18 @@ import jobs from '../stores/JobStore';
 
     const formHandleSubmit = (e) => {
         e.preventDefault();
-        jobs.companyName = companyName;
-        jobs.jobTitle = jobTitle;
-        jobs.jobLink = jobLink;
-        jobs.date = date;
-        jobs.relevanceDegree = relevanceDegree;
-        jobs.status = status;
         jobs.addJob(companyName, jobTitle, jobLink, date, relevanceDegree, status);
         jobs.save();
     }
 
+
+
     return (
         <Screen>
             <div className="job-tracker-form-container">
-
+            // MODAL COMPONENT - Confirmation 
+            // visible = state
+            {/* {visible && <Dialogue />} */}
                 <h1 className="medium">TRACK A NEW JOB</h1>
 
                 <form className="job-tracker-form" onSubmit={formHandleSubmit} >
@@ -61,12 +59,12 @@ import jobs from '../stores/JobStore';
                         <h3 className="small">
                             COMPANY NAME:
                         </h3>
-                    <input className="input-bar font-small" autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} />
+                    <input className="input-bar font-small" autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} value={companyName}/>
 
                         <h3 className="small">
                             JOB TITLE:
                         </h3>
-                    <input className="input-bar font-small" autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} />
+                    <input className="input-bar font-small" autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} value={jobTitle} />
 
                         <h3 className="small">
                             DATE OF INSERTION:
@@ -77,7 +75,7 @@ import jobs from '../stores/JobStore';
                         <h3 className="small">
                             LINK TO JOB AD:
                         </h3>
-                    <input className="input-bar font-small" autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} />
+                    <input className="input-bar font-small" autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} value={jobLink} />
 
                     <div className="job-tracker-select-container">
 
