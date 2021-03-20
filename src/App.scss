@@ -89,6 +89,7 @@ p {
 .screen-main {
   border: 5px solid $fontColor;
   min-width: 150vh;
+  max-width: 0vh;
   min-height: 80vh;
 }
 
@@ -269,24 +270,28 @@ p {
   height: 50vh;
   width: 60%;
   overflow: scroll;
-  border: 1px solid fuchsia;
+  border: 1px solid yellow;
 }
 
 .job-cards {
-  width: 60%;
+  width: 100%;
   height: 100%;
   border: 1px solid white;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .job-card {
-  width: 13vh;
+  width: 17vh;
   height: 29vh;
   display: flex;
   flex-direction: column;
+  padding: 1rem 1rem;
+  justify-content: space-around;
 }
 
 .job-display-block {
   border: 1px solid fuchsia;
+  margin: 2rem 0rem;
 }
