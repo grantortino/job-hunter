@@ -30,13 +30,15 @@ const Job = ({ job, status }) => {
     console.log(status)
     
     return (
-        <div className="job-card">
-            <img className="job-paw-img" src={jobPawPending} alt="Job Icon"/>
-            <div className="small">{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
-            <div className="font-small">{job.jobTitle === undefined ? 'Job Title Missing' : job.jobTitle}</div>
-            <a rel="noreferrer" className="font-small" href={job.jobLink} target="_blank">LINK</a>
-            <div className="font-small">{job.date}</div>
-            <div className="font-small pointer" onClick={() => {jobstore.remove(job.id); console.log('click!'); setQuickHack(!quickHack)}}>ERASE</div>
+        <div className="job-display-block">
+            <div className="job-card">
+                <img className="job-paw-img" src={jobPawPending} alt="Job Icon"/>
+                <div className="small">{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
+                <div className="font-small">{job.jobTitle === undefined ? 'Job Title Missing' : job.jobTitle}</div>
+                <a rel="noreferrer" className="font-small" href={job.jobLink} target="_blank">LINK</a>
+                <div className="font-small">{job.date}</div>
+                <div className="font-small pointer" onClick={() => {jobstore.remove(job.id); console.log('click!'); setQuickHack(!quickHack)}}>ERASE</div>
+            </div>
         </div>
     )
 };

@@ -269,6 +269,7 @@ p {
   height: 50vh;
   width: 60%;
   overflow: scroll;
+  border: 1px solid fuchsia;
 }
 
 .job-cards {
@@ -277,5 +278,15 @@ p {
   border: 1px solid white;
   display: flex;
   flex-wrap: wrap;
+}
 
+.job-card {
+  width: 13vh;
+  height: 29vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-display-block {
+  border: 1px solid fuchsia;
 }
