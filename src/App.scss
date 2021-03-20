@@ -254,7 +254,28 @@ p {
   justify-content: space-evenly;
 }
 
-.job-paw-img {
-  
+// TRACKED JOBS
+
+.tracked-jobs-container {
+  width: 100%;
+  min-height: 79vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
+.job-tracker-overscroll-container {
+  height: 50vh;
+  width: 60%;
+  overflow: scroll;
+}
+
+.job-cards {
+  width: 60%;
+  height: 100%;
+  border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+
+}
