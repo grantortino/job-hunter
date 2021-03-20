@@ -5,6 +5,10 @@ Link {
   margin: 0 auto;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 body {
   background-color: $bgColor;
   box-sizing: content-box;

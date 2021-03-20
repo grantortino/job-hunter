@@ -43,10 +43,6 @@ import jobs from '../stores/JobStore';
         jobs.addJob(companyName, jobTitle, jobLink, date, relevanceDegree, status);
         jobs.save();
     }
-            // MODAL COMPONENT - Confirmation 
-            // visible = state
-            {/* {visible && <Dialogue />} */} 
-
 
     return (
         <Screen>
