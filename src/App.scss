@@ -18,6 +18,14 @@ body {
   height: 100vh;
 }
 
+.text-align {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 .buttons {
   background-color: $bgColor;
   border: 3px solid $fontColor;
@@ -60,7 +68,7 @@ body {
   color: $fontColor;
 }
 
-.font-huge, .font-med, .font-small {
+.font-huge, .font-medium, .font-small {
   font-family: textFont;
   color: $fontColor;
 }
@@ -283,16 +291,22 @@ p {
 }
 
 .job-card {
-  width: 17vh;
-  height: 29vh;
+  width: 47vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem;
+  align-items: center;
   justify-content: space-around;
+  img {
+    width: 70%;
+  }
+  div {
+    margin: 0.5rem 0rem;
+  }
 
 }
 
 .job-display-block {
-  border: 1px solid fuchsia;
   margin: 2rem 0rem;
 }
