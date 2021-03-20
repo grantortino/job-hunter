@@ -43,15 +43,15 @@ import jobs from '../stores/JobStore';
         jobs.addJob(companyName, jobTitle, jobLink, date, relevanceDegree, status);
         jobs.save();
     }
-
+            // MODAL COMPONENT - Confirmation 
+            // visible = state
+            {/* {visible && <Dialogue />} */} 
 
 
     return (
         <Screen>
             <div className="job-tracker-form-container">
-            // MODAL COMPONENT - Confirmation 
-            // visible = state
-            {/* {visible && <Dialogue />} */}
+
                 <h1 className="medium">TRACK A NEW JOB</h1>
 
                 <form className="job-tracker-form" onSubmit={formHandleSubmit} >
@@ -84,8 +84,8 @@ import jobs from '../stores/JobStore';
                                     RELEVANCE DEGREE:
                                 </h3>
                                 <select className="select-dropdown font-small" onChange={relevanceSelectHandler} value={relevanceDegree}>
-                                    <option value="small">
-                                        SMALL
+                                    <option value="low">
+                                        LOW
                                     </option>
                                     <option value="medium">
                                         MEDIUM

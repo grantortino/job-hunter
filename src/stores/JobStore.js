@@ -15,13 +15,13 @@ const jobstore = {
         // gets the element from storage saved under "savedCompanyName"
         const savedJob = localStorage.getItem('savedJob');
 
-        this.jobs = savedJob || [];
+        // this.jobs = savedJob || [];
 
-        // if (savedJob === null) {
-        //     this.jobs = [];
-        // } else {
-        //     this.jobs = JSON.parse(savedJob);
-        // }
+        if (savedJob === null) {
+            this.jobs = [];
+        } else {
+            this.jobs = JSON.parse(savedJob);
+        }
 
     },
 
