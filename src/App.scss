@@ -282,7 +282,6 @@ p {
   width: 80%;
   display: flex;
   align-items: flex-end;
-  border-bottom: double $fontColor;
 }
 
 .job-tracker-overscroll-container {
@@ -296,7 +295,7 @@ p {
 .job-cards {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: space-around;
 }
 
@@ -314,7 +313,9 @@ p {
   div {
     margin: 0.5rem 0rem;
   }
-
+  .medium {
+    line-height: 33px;
+  }
 }
 
 .job-display-block {
@@ -343,7 +344,7 @@ p {
 
 .modal-buttons-container {
   display: flex;
-  width: 50vh;
+  width: 70vh;
   height: 23vh;
   display: flex;
   justify-content: space-around;
@@ -351,10 +352,12 @@ p {
 }
 
 .modal-button-card {
-  height: 210px;
+  max-height: 210px;
+  min-height: 130px;
   width: 150px;
   .font-small {
     padding-top: 10px;
     line-height: 17px;
   }
+
 }

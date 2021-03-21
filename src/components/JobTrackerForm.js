@@ -42,18 +42,28 @@ import Modal from './Modal';
 
     const formHandleSubmit = (e) => {
         e.preventDefault();
+        setIsVisible(true);
+    }
+
+    const onSubmit = () => {
         jobs.addJob(companyName, jobTitle, jobLink, date, relevanceDegree, status);
         jobs.save();
-    }
+        setIsVisible(false);
+    };
 
     return (
         <Screen>
 
             <div className="job-tracker-form-container">
 
-                {isVisible && <Modal companyName={companyName}/>}
+                {isVisible && <Modal 
+                companyName={companyName} 
+                onSubmit={onSubmit} 
+                modalHeaderText="ARE YOU SURE YOU WANT TO SAVE:"/>}
 
-                <h1 className="medium">TRACK A NEW JOB</h1>
+                <div className="pages-header-huge">
+                    <h1 className="huge">TRACK A NEW JOB</h1>
+                </div>
 
                 <form className="job-tracker-form" onSubmit={formHandleSubmit} >
 
