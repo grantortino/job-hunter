@@ -51,6 +51,10 @@ import Modal from './Modal';
         setIsVisible(false);
     };
 
+    const onClose = () => {
+        setIsVisible(false);
+    };
+
     return (
         <Screen>
 
@@ -59,8 +63,12 @@ import Modal from './Modal';
                 {isVisible && <Modal 
                 companyName={companyName} 
                 onSubmit={onSubmit} 
-                modalHeaderText="ARE YOU SURE YOU WANT TO SAVE:"/>}
-
+                onClose={onClose}
+                modalHeaderText="ARE YOU SURE YOU WANT TO SAVE:"
+                modalMainObject={companyName === undefined ? '-Company Name is Missing-'+"?" : `\"${companyName}\"?`}
+                />
+                }
+                
                 <div className="pages-header-huge">
                     <h1 className="huge">TRACK A NEW JOB</h1>
                 </div>
