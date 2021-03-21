@@ -8,24 +8,7 @@ import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/track
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
 
 
-const Job = ({ job, status }) => {
-
-    // when I modify the state, consequentially the component re-renders and displays the filtered jobs - it is a dirty hack
-    const [quickHack, setQuickHack] = useState(false);
-    const [image, setImage] = useState();
-
-    // const setImageHandler = () => {
-    //     if (job.status === "rejected") {
-    //         setImage(jobPawRejected);
-    //         return image;
-    //     } else if (job.status === "accepted") {
-    //         setImage(jobPawAccepted);
-    //         return image;
-    //     } else {
-    //         setImage(jobPawPending);
-    //         return image;
-    //     }
-    // };
+const Job = ({ job, status, isRefreshed, setIsRefreshed }) => {
 
     const textAlign = {textAlign: "center"};
     
@@ -44,7 +27,7 @@ const Job = ({ job, status }) => {
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
                 {/* <div className="font-medium">{job.date}</div> */}
                 <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
-                <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); setQuickHack(!quickHack)}}>ERASE</div>
+                <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); setIsRefreshed(!isRefreshed)}}>ERASE</div>
             </div>
         </div>
     )

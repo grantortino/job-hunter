@@ -66,6 +66,8 @@ import Modal from './Modal';
                 onClose={onClose}
                 modalHeaderText="ARE YOU SURE YOU WANT TO SAVE:"
                 modalMainObject={companyName === undefined ? '-Company Name is Missing-?' : `"${companyName}"?`}
+                modalSmallTextYes="And straight to the tracked jobs hub."
+                modalSmallTextNo="And back to the hunt."
                 />
                 }
                 
