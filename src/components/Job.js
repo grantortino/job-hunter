@@ -43,8 +43,8 @@ const Job = ({ job, status }) => {
                 <div className="font-medium" style={textAlign}>Front-End Web Developer</div>
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
                 {/* <div className="font-medium">{job.date}</div> */}
-                <div className="font-medium">{convertDate(job.date)}</div>
-                <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); console.log('click!'); setQuickHack(!quickHack)}}>ERASE</div>
+                <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
+                <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); setQuickHack(!quickHack)}}>ERASE</div>
             </div>
         </div>
     )
