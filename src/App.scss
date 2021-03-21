@@ -95,7 +95,7 @@ p {
 }
 
 .screen-main {
-  border: 5px solid $fontColor;
+  border: 5px ridge $fontColor;
   min-width: 150vh;
   max-width: 0vh;
   min-height: 80vh;
@@ -274,17 +274,24 @@ p {
   justify-content: space-around;
 }
 
+.pages-header-huge {
+  height: 9vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  border-bottom: double $fontColor;
+}
+
 .job-tracker-overscroll-container {
   height: 50vh;
   width: 80%;
   overflow: scroll;
-  border: 1px solid yellow;
-  padding: 1rem 1rem
+  padding: 1rem 1rem;
+  border: 5px ridge $fontColor;
 }
 
 .job-cards {
   width: 100%;
-  border: 1px solid white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

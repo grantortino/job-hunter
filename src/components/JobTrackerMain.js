@@ -10,7 +10,9 @@ const JobTrackerMain = () => {
         <Screen>
         <div className="tracker-main-screen-containter">
 
-            <h3 className="huge">JOB TRACKER</h3>
+            <div className="pages-header-huge">
+                <h3 className="huge">JOB TRACKER</h3>
+            </div>
 
             <div className="tracker-sections-container">
 

@@ -12,7 +12,9 @@ const TrackedJobs = () => {
         <Screen>
             <div className="tracked-jobs-container">
 
-                <h1 className="huge">TRACKED JOBS</h1>
+                <div className="pages-header-huge">
+                    <h1 className="huge">TRACKED JOBS</h1>
+                </div>
 
                 <div className="job-tracker-overscroll-container">
                     <div className="job-cards">
