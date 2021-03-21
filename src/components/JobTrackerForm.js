@@ -65,7 +65,7 @@ import Modal from './Modal';
                 onSubmit={onSubmit} 
                 onClose={onClose}
                 modalHeaderText="ARE YOU SURE YOU WANT TO SAVE:"
-                modalMainObject={companyName === undefined ? '-Company Name is Missing-'+"?" : `\"${companyName}\"?`}
+                modalMainObject={companyName === undefined ? '-Company Name is Missing-?' : `"${companyName}"?`}
                 />
                 }
                 
