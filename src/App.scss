@@ -1,5 +1,8 @@
 $fontColor: #E5E5E5;
 $bgColor: #0C734E;
+$lineHeightHuge: "line-height: 40px";
+
+
 
 Link {
   margin: 0 auto;
@@ -316,4 +319,42 @@ p {
 
 .job-display-block {
   margin: 2rem 0rem;
+}
+
+// MODAL
+
+.modal-container {
+  position: absolute;
+  width: 93vh;
+  height: 59vh;
+  background-color: $bgColor;
+  border: 5px ridge $fontColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  h1 {
+    width: 70%;
+    text-align: center;
+    line-height: 41px;
+  }
+
+}
+
+.modal-buttons-container {
+  display: flex;
+  width: 50vh;
+  height: 23vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-button-card {
+  height: 210px;
+  width: 150px;
+  .font-small {
+    padding-top: 10px;
+    line-height: 17px;
+  }
 }

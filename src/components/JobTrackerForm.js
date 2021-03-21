@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Screen from './Screen';
 import { Link } from 'react-router-dom';
 import jobs from '../stores/JobStore';
+import Modal from './Modal';
 
     const JobTrackerForm = () => {
 
@@ -12,6 +13,7 @@ import jobs from '../stores/JobStore';
     const [date, setDate] = useState(jobs.date);
     const [relevanceDegree, setRelevanceDegree] = useState(jobs.relevanceDegree);
     const [status, setStatus] = useState(jobs.status);
+    const [isVisible, setIsVisible] = useState(false);
 
     // FUNCTIONS
     const companyNameHandler = (e) => {
@@ -46,7 +48,10 @@ import jobs from '../stores/JobStore';
 
     return (
         <Screen>
+
             <div className="job-tracker-form-container">
+
+                {isVisible && <Modal companyName={companyName}/>}
 
                 <h1 className="medium">TRACK A NEW JOB</h1>
 

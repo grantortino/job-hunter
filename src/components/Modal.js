@@ -1,18 +1,18 @@
 import React from 'react';
 
-const Modal = () => {
+const Modal = ({ companyName }) => {
     return (
         <div className="modal-container">
             <h1 className="huge">ARE YOU SURE YOU WANT TO SAVE:</h1>
-            <h3 className="font-medium">Company Name</h3>
+            <h3 className="font-medium">{companyName}</h3>
             <div className="modal-buttons-container">
                 <div className="modal-button-card">
-                    <button className="buttons">YES</button>
-                    <p className="font-small">And straight to the tracked jobs hub.</p>
+                    <button className="buttons small">YES</button>
+                    <h3 className="font-small">And straight to the tracked jobs hub.</h3>
                 </div>
                 <div className="modal-button-card">
-                    <button className="buttons">NO</button>
-                    <p className="font-small">And back to the hunt.</p>
+                    <button className="buttons small">NO</button>
+                    <h3 className="font-small">And back to the hunt.</h3>
                 </div>
             </div>
         </div>
