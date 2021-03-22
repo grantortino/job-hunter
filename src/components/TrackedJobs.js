@@ -32,6 +32,10 @@ const TrackedJobs = () => {
         setIsVisible(false);
     };
 
+    const searchJobs = (e) => {
+        console.log(e.target.value);
+    };
+
     return (
 
         <Screen>
@@ -42,12 +46,16 @@ const TrackedJobs = () => {
                 onClose={onClose}
                 jobId={jobId}
                 onSubmit={onSubmit}
-                modalMainObject={jobCompanyName === undefined ? '-Company Name Missing-?' : `"${jobCompanyName}?"`}
+                modalMainObject={jobCompanyName === undefined ? '-Company Name Missing-?' : `"${jobCompanyName.toUpperCase()}?"`}
                 />
                 }
 
                 <div className="pages-header-huge">
                     <h1 className="huge">TRACKED JOBS</h1>
+                </div>
+
+                <div className="jobs-search">
+                    <input type="text" className="font-small" placeholder="search..." onChange={searchJobs}/>
                 </div>
 
                 <div className="job-tracker-overscroll-container">
