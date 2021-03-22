@@ -11,14 +11,18 @@ const TrackedJobs = () => {
 
     // state
     const [isRefreshed, setIsRefreshed] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
+
     // functions
     const onClose = () => {
         setIsVisible(false);
     };
-    const onSubmit = () => {
 
+    const onSubmit = () => {
+        setIsVisible(true);
     }
+
+
 
     return (
 
@@ -41,14 +45,6 @@ const TrackedJobs = () => {
                         {/* <img src={jobHunter} alt="job logo" />
                         <h1 className="medium">{jobs.companyName}</h1> */}
                         {jobstore.jobs.map((job) => (
-                            // <div key={job.id} >
-                            //     <img className="job-paw-img" src={jobPaw} alt="Job Icon"/>
-                            //     <div className="small">{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
-                            //     <div className="font-small">{job.jobTitle === undefined ? 'Job Title Missing' : job.jobTitle}</div>
-                            //     <a rel="noreferrer" className="font-small" href={job.jobLink} target="_blank">LINK</a>
-                            //     <div className="font-small">{job.date}</div>
-                            //     <div className="font-small pointer" onClick={() => {jobstore.remove(job.id); setQuickHack(!quickHack)}}>ERASE</div>
-                            // </div>
                             <Job key={job.id} job={job} isRefreshed={isRefreshed} setIsRefreshed={setIsRefreshed} objectName={job.companyName}/>
                         ))}
                     </div>
