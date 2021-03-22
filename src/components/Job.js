@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 // store
-import jobstore from '../stores/JobStore';
+// import jobstore from '../stores/JobStore';
 // assets
-import jobPaw from '../assets/job-hunter-characters/job-paw.png';
-import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
-import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
+// import jobPaw from '../assets/job-hunter-characters/job-paw.png';
+// import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
+// import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
 
 
-const Job = ({ job, onRemove }) => {
+const Job = ({ job, onRemove, objectName }) => {
 
     const textAlign = {textAlign: "center"};
     
@@ -26,6 +26,7 @@ const Job = ({ job, onRemove }) => {
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
                 <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
                 <div className="font-medium pointer" onClick={() => onRemove(job.id, job.companyName)}>ERASE</div>
+                {/* <div className="font-medium pointer" onClick={() => console.log(objectName)}>ERASE</div> */}
             </div>
         </div>
     )

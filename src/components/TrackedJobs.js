@@ -10,7 +10,6 @@ import jobstore from '../stores/JobStore';
 const TrackedJobs = () => {
 
     // state
-    const [isRefreshed, setIsRefreshed] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [jobId, setJobId] = useState();
     const [jobCompanyName, setJobCompanyName] = useState("");
@@ -24,6 +23,7 @@ const TrackedJobs = () => {
         setIsVisible(true);
         // WHY?!?!
         setJobCompanyName(name)
+        // WORKS
         setJobId(id);
     }
 
@@ -32,19 +32,17 @@ const TrackedJobs = () => {
         setIsVisible(false);
     };
 
-    console.log('job company name', jobCompanyName);
-
     return (
 
         <Screen>
             <div className="tracked-jobs-container">
 
                 {isVisible && <Modal
-                modalHeaderText="ARE YOU SURE YOU WANT TO REMOVE ELEMENT?"
+                modalHeaderText="ARE YOU SURE YOU WANT TO REMOVE ELEMENT:"
                 onClose={onClose}
                 jobId={jobId}
                 onSubmit={onSubmit}
-                modalMainObject={jobCompanyName}
+                modalMainObject={jobCompanyName === undefined ? '-Company Name Missing-?' : `"${jobCompanyName}?"`}
                 />
                 }
 
