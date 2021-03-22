@@ -22,12 +22,9 @@ const Job = ({ job, onRemove }) => {
             <div className="job-card">
                 <img className="job-paw-img" src={jobPawPending} alt="Job Icon"/>
                 <div className="medium underline" style={textAlign}>{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
-                {/* <div className="font-medium">{job.jobTitle === undefined ? 'Job Title Missing' : job.jobTitle}</div> */}
                 <div className="font-medium" style={textAlign}>Front-End Web Developer</div>
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
-                {/* <div className="font-medium">{job.date}</div> */}
                 <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
-                {/* <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); setIsRefreshed(!isRefreshed)}}>ERASE</div> */}
                 <div className="font-medium pointer" onClick={() => onRemove(job.id, job.companyName)}>ERASE</div>
             </div>
         </div>
