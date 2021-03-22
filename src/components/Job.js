@@ -8,7 +8,7 @@ import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/track
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
 
 
-const Job = ({ job, status, isRefreshed, setIsRefreshed }) => {
+const Job = ({ job, onRemove }) => {
 
     const textAlign = {textAlign: "center"};
     
@@ -27,7 +27,8 @@ const Job = ({ job, status, isRefreshed, setIsRefreshed }) => {
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
                 {/* <div className="font-medium">{job.date}</div> */}
                 <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
-                <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); setIsRefreshed(!isRefreshed)}}>ERASE</div>
+                {/* <div className="font-medium pointer" onClick={() => {jobstore.remove(job.id); setIsRefreshed(!isRefreshed)}}>ERASE</div> */}
+                <div className="font-medium pointer" onClick={() => onRemove(job.id, job.companyName)}>ERASE</div>
             </div>
         </div>
     )
