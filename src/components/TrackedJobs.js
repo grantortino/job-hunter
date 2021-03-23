@@ -13,6 +13,7 @@ const TrackedJobs = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [jobId, setJobId] = useState();
     const [jobCompanyName, setJobCompanyName] = useState("");
+    const [searchInput, setSearchInput] = useState("");
 
     // functions
     const onClose = () => {
@@ -33,7 +34,8 @@ const TrackedJobs = () => {
     };
 
     const searchJobs = (e) => {
-        console.log(e.target.value);
+        setSearchInput(e.target.value);
+        console.log(jobstore.search(searchInput));
     };
 
     return (
@@ -62,7 +64,7 @@ const TrackedJobs = () => {
                     <div className="job-cards">
                         {/* <img src={jobHunter} alt="job logo" />
                         <h1 className="medium">{jobs.companyName}</h1> */}
-                        {jobstore.jobs.map((job) => (
+                        {jobstore.search(searchInput).map((job) => (
                             <Job onRemove={onRemove} key={job.id} job={job} objectName={job.companyName} />
                         ))}
                     </div>

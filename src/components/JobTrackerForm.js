@@ -3,6 +3,7 @@ import Screen from './Screen';
 import { Link } from 'react-router-dom';
 import jobs from '../stores/JobStore';
 import Modal from './Modal';
+import jobstore from '../stores/JobStore';
 
     const JobTrackerForm = () => {
 
@@ -11,8 +12,8 @@ import Modal from './Modal';
     const [jobTitle, setJobTitle] = useState(jobs.jobTitle);
     const [jobLink, setJobLink] = useState(jobs.jobLink);
     const [date, setDate] = useState(jobs.date);
-    const [relevanceDegree, setRelevanceDegree] = useState(jobs.relevanceDegree);
-    const [status, setStatus] = useState(jobs.status);
+    const [relevanceDegree, setRelevanceDegree] = useState('low');
+    const [status, setStatus] = useState('pending');
     const [isVisible, setIsVisible] = useState(false);
 
     // FUNCTIONS
@@ -47,6 +48,7 @@ import Modal from './Modal';
 
     const onSubmit = () => {
         jobs.addJob(companyName, jobTitle, jobLink, date, relevanceDegree, status);
+        console.log(relevanceDegree)
         jobs.save();
         setIsVisible(false);
     };

@@ -2,6 +2,7 @@ import uuid from 'react-uuid';
 
 const jobstore = {
     jobs: [],
+    filteredJobs: [],
     addJob: function(companyName, jobTitle, jobLink, date, relevanceDegree, status) {
         // "this" refers to the scope 
         this.jobs.push({companyName, jobTitle, jobLink, date, relevanceDegree, status, id: uuid()});
@@ -27,7 +28,18 @@ const jobstore = {
 
     remove: function(jobId) {
         this.jobs = this.jobs.filter((job) => job.id !== jobId);
-    }
+    },
+
+    search: function(searchValue) {
+
+        if (searchValue === "") {
+            return this.jobs;
+        } else {
+            const filteredJobs = this.jobs.filter((job) => job.companyName === searchValue);
+            return filteredJobs;
+        }
+        
+    },
 
 };
 
