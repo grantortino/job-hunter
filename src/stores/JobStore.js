@@ -38,6 +38,7 @@ const jobstore = {
         } else {
             return this.filteredJobs = this.jobs.filter((job) => job.companyName.toLowerCase().includes(searchValue.toLowerCase()));
         }
+        
     },
 
 };
