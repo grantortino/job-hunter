@@ -31,12 +31,11 @@ const jobstore = {
     },
 
     search: function(searchValue) {
-        
+
         if (searchValue === "") {
             return this.jobs;
         } else {
-            // const filteredJobs = this.jobs.filter((job) => job.companyName === searchValue);
-            return this.filteredJobs = this.jobs.filter((job) => job.companyName === searchValue);
+            return this.filteredJobs = this.jobs.filter((job) => job.companyName.toLowerCase().includes(searchValue.toLowerCase()));
         }
     },
 
