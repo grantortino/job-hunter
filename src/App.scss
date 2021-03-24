@@ -297,6 +297,9 @@ p {
   border: 5px ridge $fontColor;
 }
 
+// JOB
+
+
 .job-cards {
   width: 100%;
   display: flex;
@@ -307,14 +310,15 @@ p {
 
 .job-card {
   width: 47vh;
-  height: 70vh;
+  height: 43vh;
   display: flex;
   flex-direction: column;
   padding: 1rem 1rem;
+  margin-bottom: 2rem;
   align-items: center;
   justify-content: space-around;
   img {
-    width: 70%;
+    width: 50%;
   }
   div {
     margin: 0.5rem 0rem;

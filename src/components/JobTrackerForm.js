@@ -3,7 +3,6 @@ import Screen from './Screen';
 import { Link } from 'react-router-dom';
 import jobs from '../stores/JobStore';
 import Modal from './Modal';
-import jobstore from '../stores/JobStore';
 
     const JobTrackerForm = () => {
 

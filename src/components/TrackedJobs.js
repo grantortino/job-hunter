@@ -57,7 +57,7 @@ const TrackedJobs = () => {
                 </div>
 
                 <div className="jobs-search">
-                    <input type="text" className="font-small" placeholder="search..." onChange={searchJobs}/>
+                    <input type="text" className="font-small" placeholder="search..." onChange={searchJobs} value={searchInput}/>
                 </div>
 
                 <div className="job-tracker-overscroll-container">
