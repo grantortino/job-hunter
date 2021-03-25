@@ -27,6 +27,7 @@ const jobstore = {
     },
 
     remove: function(jobId) {
+        // I MADE IT!
         this.jobs = this.jobs.filter((job) => job.id !== jobId);
         localStorage.setItem('savedJob', JSON.stringify(this.jobs));
     },

@@ -371,3 +371,14 @@ p {
   }
 
 }
+
+.jobs-search {
+  background-color: $bgColor;
+  outline: none;
+  border: 3px solid $fontColor;
+  height: 1.5rem;
+  padding: 0px 0px 0px 10px;
+  &::placeholder {
+    color: $fontColor;
+  }
+}
