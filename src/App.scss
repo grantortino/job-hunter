@@ -392,20 +392,18 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 3px dotted brown;
 }
 
 .job-editor-card {
   display: flex;
-  border: 1px solid yellow;
   min-width: 90vh;
-  min-height: 50vh;
+  min-height: 30vh;
   justify-content: space-around;
   align-items: center;
+  border: 5px solid $fontColor;
 }
 
 .job-editor-image {
-  border: 1px solid white;
   img {
     width: 30vh;
   }
@@ -413,28 +411,41 @@ p {
 
 .job-editor-content {
   min-width: 50vh;
-  min-height: 50vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
-  border: 1px solid fuchsia;
   justify-content: space-around;
 }
 
 .job-editor-select-container {
   min-width: 90vh;
   min-height: 5vh;
-  border: 1px solid white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   .job-editor-status-select {
     width: 30vh;
-    height: 5vh;
-    background-color: black;
+    height: 7vh;
+    select {
+      margin: 10px 0px;
+      padding: 5px;
+      width: 150px;
+      background-color: $bgColor;
+      border: 1px solid $fontColor;    }
   }
   .job-editor-relevance-select {
     min-width: 50vh;
-    height: 5vh;
-    background-color: black;
+    height: 7vh;
+    select {
+      margin: 10px 0px;
+      padding: 5px;
+      width: 150px;
+      background-color: $bgColor;
+      border: 1px solid $fontColor;    }
   }
+}
+
+.job-editor-buttons-container {
+  min-width: 90vh;
+  display: flex;
 }

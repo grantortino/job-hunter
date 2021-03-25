@@ -36,11 +36,44 @@ const JobEditor = () => {
 
                 <div className="job-editor-select-container">
                     <div className="job-editor-status-select">
+                        <div className="job-tracker-status-select">
+                                <h3 className="small">STATUS:</h3>
 
+                                <select className="select-dropdown font-small">
+                                    <option value="pending">
+                                        PENDING
+                                    </option>
+                                    <option value="rejected">
+                                        REJECTED
+                                    </option>
+                                    <option value="accepted">
+                                        ACCEPTED
+                                    </option>
+                                </select>
+                        </div>
                     </div>
                     <div className="job-editor-relevance-select">
-                        
+                        <div className="job-tracker-relevance-select">
+                                    <h3 className="small">
+                                        RELEVANCE DEGREE:
+                                    </h3>
+                                    <select className="select-dropdown font-small">
+                                        <option value="low">
+                                            LOW
+                                        </option>
+                                        <option value="medium">
+                                            MEDIUM
+                                        </option>
+                                        <option value="high">
+                                            HIGH
+                                        </option>
+                                    </select>
+                        </div>
                     </div>
+                </div>
+                <div className="job-editor-buttons-container">
+                    <button className="back-buttons small">&larr;</button>
+                    <button className="buttons small">SAVE</button>
                 </div>
 
             </div>
