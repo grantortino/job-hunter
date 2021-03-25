@@ -243,6 +243,7 @@ p {
     width: 150px;
     background-color: $bgColor;
     border: 1px solid $fontColor;
+    outline: none;
   }
 }
 
@@ -431,7 +432,9 @@ p {
       padding: 5px;
       width: 150px;
       background-color: $bgColor;
-      border: 1px solid $fontColor;    }
+      border: 1px solid $fontColor;
+      outline: none;
+    }
   }
   .job-editor-relevance-select {
     min-width: 50vh;
@@ -441,7 +444,9 @@ p {
       padding: 5px;
       width: 150px;
       background-color: $bgColor;
-      border: 1px solid $fontColor;    }
+      border: 1px solid $fontColor;
+      outline: none;
+    }
   }
 }
 
