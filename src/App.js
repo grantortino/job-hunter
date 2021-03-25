@@ -1,9 +1,12 @@
 import './App.scss';
+// components
 import Screen from './components/Screen';
 import StartScreen from './components/StartScreen';
 import JobTrackerMain from './components/JobTrackerMain';
 import JobTrackerForm from './components/JobTrackerForm';
 import TrackedJobs from './components/TrackedJobs';
+import JobEditor from './components/JobEditor';
+// router
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +21,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/editor">
+            <JobEditor />
+          </Route>
           <Route path="/tracker">
             <JobTrackerMain />
           </Route>
