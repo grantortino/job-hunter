@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Screen from './Screen';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import jobs from '../stores/JobStore';
 import Modal from './Modal';
+
 
     const JobTrackerForm = () => {
 
@@ -14,6 +15,7 @@ import Modal from './Modal';
     const [relevanceDegree, setRelevanceDegree] = useState('low');
     const [status, setStatus] = useState('pending');
     const [isVisible, setIsVisible] = useState(false);
+    const [isRedirected, setIsRedirected] = useState(false);
 
     // FUNCTIONS
     const companyNameHandler = (e) => {
@@ -50,6 +52,7 @@ import Modal from './Modal';
         console.log(relevanceDegree)
         jobs.save();
         setIsVisible(false);
+        setIsRedirected(true);
     };
 
     const onClose = () => {
@@ -60,6 +63,12 @@ import Modal from './Modal';
         <Screen>
 
             <div className="job-tracker-form-container">
+
+                {isRedirected && <Redirect
+                    to={{
+                        pathname: "/trackedjobs",
+                    }}
+                />}
 
                 {isVisible && <Modal 
                 companyName={companyName} 
