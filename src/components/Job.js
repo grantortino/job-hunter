@@ -6,6 +6,8 @@ import jobPaw from '../assets/job-hunter-characters/job-paw.png';
 import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
 import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
+// router
+import { Link } from 'react-router-dom';
 
 
 const Job = ({ job, onRemove, objectName }) => {
@@ -43,6 +45,9 @@ const Job = ({ job, onRemove, objectName }) => {
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
                 <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
                 <div className="font-medium pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
+                <Link to={`/jobs/${job.id}`}>
+                    <div className="font-medium pointer">EDIT</div>
+                </Link>
                 {/* <div className="font-medium pointer" onClick={() => console.log(objectName)}>ERASE</div> */}
             </div>
         </div>

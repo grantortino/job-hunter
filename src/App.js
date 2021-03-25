@@ -15,13 +15,16 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+
+
   return (
     <Router>
       <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/editor">
+          <Route path="/jobs/:id">
             <JobEditor />
           </Route>
           <Route path="/tracker">

@@ -7,9 +7,16 @@ import jobstore from '../stores/JobStore';
 // import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
 // import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
+// router
+import { useParams, Link } from 'react-router-dom';
 
 const JobEditor = () => {
-    console.log(jobstore);
+
+    let { id } = useParams();
+
+    jobstore.findJob(id);
+
+    const job = jobstore.findJob(id);
 
     return (
         <Screen>
@@ -25,9 +32,9 @@ const JobEditor = () => {
 
                     <div className="job-editor-content">
 
-                        <h1 className="medium">COMPANY NAME</h1>
+                        <h1 className="medium">{job.companyName}</h1>
 
-                        <h1 className="font-medium underline">Position</h1>
+                        <h1 className="font-medium underline">{job.jobTitle}</h1>
 
                         <h1 className="font-medium">DATE</h1>
 
@@ -72,7 +79,9 @@ const JobEditor = () => {
                     </div>
                 </div>
                 <div className="job-editor-buttons-container">
+                    <Link to="/trackedjobs">
                     <button className="back-buttons small">&larr;</button>
+                    </Link>
                     <button className="buttons small">SAVE</button>
                 </div>
 
