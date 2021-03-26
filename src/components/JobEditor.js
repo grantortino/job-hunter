@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 // components
 import Screen from './Screen';
+import ModalEditor from './ModalEditor';
 // store
 import jobstore from '../stores/JobStore';
 // assets
@@ -18,9 +19,20 @@ const JobEditor = () => {
 
     const job = jobstore.findJob(id);
 
+    // State
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    // functions 
+
+    const editorModalHandler = () => {
+        setIsVisible(true);
+    };
+
     return (
         <Screen>
             <div className="job-editor-container">
+            {isVisible && <ModalEditor job={job}/>}
                 <div className="pages-header-huge">
                     <h1 className="huge">JOB EDITOR</h1>
                 </div>
@@ -32,13 +44,14 @@ const JobEditor = () => {
 
                     <div className="job-editor-content">
 
-                        <h1 className="medium">{job.companyName}</h1>
+                        <h1 className="medium pointer" onClick={editorModalHandler}>{job.companyName}</h1>
 
-                        <h1 className="font-medium underline">{job.jobTitle}</h1>
+                        <h1 className="font-small underline pointer">Lallo Bistallo</h1>
 
-                        <h1 className="font-medium">DATE</h1>
+                        <h1 className="font-small pointer">{job.date}</h1>
 
                     </div>
+
                 </div>
 
                 <div className="job-editor-select-container">

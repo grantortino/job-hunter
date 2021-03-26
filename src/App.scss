@@ -407,15 +407,23 @@ p {
 .job-editor-image {
   img {
     width: 30vh;
+    padding: 10px;
   }
 }
 
 .job-editor-content {
   min-width: 50vh;
   min-height: 30vh;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  .underline {
+    width: 70%;
+    line-height: 20px;
+  }
 }
 
 .job-editor-select-container {

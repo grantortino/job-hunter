@@ -10,7 +10,7 @@ import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracke
 import { Link } from 'react-router-dom';
 
 
-const Job = ({ job, onRemove, objectName }) => {
+const Job = ({ job, onRemove }) => {
 
     const textAlign = {textAlign: "center"};
     
@@ -41,9 +41,9 @@ const Job = ({ job, onRemove, objectName }) => {
             <div className="job-card">
                 <img className="job-paw-img" src={jobStatusImageHandler()} alt="Job Icon"/>
                 <div className="medium underline" style={textAlign}>{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
-                <div className="font-medium" style={textAlign}>Front-End Web Developer</div>
+                <div className="font-small" style={textAlign}>Front-End Web Developer</div>
+                <div className="font-small">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
                 <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
-                <div className="font-medium">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
                 <div className="font-medium pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
                 <Link to={`/jobs/${job.id}`}>
                     <div className="font-medium pointer">EDIT</div>
