@@ -1,28 +1,27 @@
-import React, { useState } from 'react';
-// store
-import jobstore from '../stores/JobStore';
+import React, {useState} from 'react';
 
-const ModalEditor = ({ job }) => {
-    console.log('modal editor object', job);
+const ModalEditor = ({ value, name, isModalVisible, onSave, onClose }) => {
 
-    // state
-    const [companyHeader, setCompanyHeader] = useState(job.companyName);
-    const [positionHeader, setPositionHeader] = useState(job.jobTitle);
-    const [dateHeader, setDateHeader] = useState(job.date);
+    const [newValue, setNewValue] = useState(value);
 
-    // functions
-
-    const headerHandler = () => {
-        let header = "";
-        
+    const newValueHandler = (e) => {
+        setNewValue(e.target.value);
     };
 
-    return (
-        <div className="modal-container">
-            <h1 className="huge">ENTER NEW: {}</h1>
-            <input type="text"/>
-        </div>
-    );
+    if (name === isModalVisible) {
+        return (
+            <div className="modal-container">
+                <h1 className="huge">ENTER NEW:</h1>
+                <h1 className="font-medium">{value}</h1>
+                <input type="text" onChange={newValueHandler} />
+                <button className="buttons small" onClick={() => onSave(newValue)}>ACCEPT</button>
+                <button className="buttons small" onClick={onClose}>CLOSE</button>
+            </div>
+        );
+    } else {
+        return null;
+    }
+
 }; 
 
 export default ModalEditor;
