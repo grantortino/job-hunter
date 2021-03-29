@@ -2,7 +2,6 @@ import React from 'react';
 // store
 // import jobstore from '../stores/JobStore';
 // assets
-import jobPaw from '../assets/job-hunter-characters/job-paw.png';
 import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
 import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
@@ -21,7 +20,7 @@ const Job = ({ job, onRemove }) => {
 
     const jobStatusImageHandler = () => {
 
-        let image = jobPaw;
+        let image = "";
 
         if (job.status === 'pending') {
             image = jobPawPending;

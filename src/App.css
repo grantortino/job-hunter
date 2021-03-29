@@ -1,0 +1,612 @@
+Link {
+  margin: 0 auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+body {
+  background-color: #0C734E;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.buttons {
+  background-color: #0C734E;
+  border: 3px solid #E5E5E5;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: #E5E5E5;
+  color: #0C734E;
+  outline: none;
+}
+
+.back-buttons {
+  background-color: #0C734E;
+  border: 3px solid #E5E5E5;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.back-buttons:hover {
+  background-color: #E5E5E5;
+  color: #0C734E;
+  outline: none;
+}
+
+@font-face {
+  font-family: textFont;
+  src: url(./fonts/dogica/TTF/dogicapixel.ttf);
+}
+
+@font-face {
+  font-family: titleFont;
+  src: url(./fonts/press-start-2p/PressStart2P.ttf);
+}
+
+.huge, .medium, .small {
+  font-family: titleFont;
+  color: #E5E5E5;
+}
+
+.font-huge, .font-medium, .font-small {
+  font-family: textFont;
+  color: #E5E5E5;
+}
+
+.huge, .font-huge {
+  font-size: 33px;
+  margin: 0 auto;
+}
+
+.medium, .font-medium {
+  font-size: 23px;
+  margin: 0 auto;
+}
+
+.small, .font-small {
+  font-size: 13px;
+  margin: 0 auto;
+}
+
+p {
+  font-family: textFont;
+  color: #E5E5E5;
+  font-weight: bold;
+}
+
+.screen-main {
+  border: 5px ridge #E5E5E5;
+  min-width: 150vh;
+  max-width: 0vh;
+  min-height: 80vh;
+}
+
+.start-screen-containter {
+  width: 100%;
+  min-height: 79vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.job-tracker-form-container {
+  width: 100%;
+  min-height: 79vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.start-screen-header {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px 40px 0px;
+}
+
+.sections-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+.job-tracker-card-medium {
+  width: 200px;
+  height: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.job-card-image-medium {
+  min-width: 150px;
+  min-height: 150px;
+  border: 5px solid #E5E5E5;
+}
+
+.job-card-image-medium:hover {
+  background-color: #E5E5E5;
+  cursor: pointer;
+}
+
+.job-tracker-card-big {
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 500px;
+  min-height: 330px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.job-card-image-big {
+  min-width: 250px;
+  min-height: 250px;
+  border: 5px solid #E5E5E5;
+}
+
+.job-card-image-big:hover {
+  background-color: #E5E5E5;
+  cursor: pointer;
+}
+
+.job-card-image-big:hover {
+  background-color: #E5E5E5;
+  cursor: pointer;
+}
+
+.job-hunter-png-container {
+  width: 80%;
+  text-align: center;
+}
+
+.job-hunter-png {
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.tracker-main-screen-containter {
+  width: 100%;
+  min-height: 79vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.tracker-sections-container {
+  width: 80%;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.job-tracker-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70vh;
+}
+
+.job-tracker-select-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.job-tracker-select-container select {
+  margin: 10px 0px;
+  padding: 5px;
+  width: 150px;
+  background-color: #0C734E;
+  border: 1px solid #E5E5E5;
+  outline: none;
+}
+
+.job-tracker-relevance-select, .job-tracker-status-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0;
+  outline: none;
+}
+
+.input-bar {
+  font-family: textFont;
+  background-color: #0C734E;
+  border: 3px solid #E5E5E5;
+  height: 19px;
+  width: 90vh;
+  outline: none;
+  padding: 5px 15px;
+}
+
+.job-tracker-buttons-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.tracked-jobs-container {
+  width: 100%;
+  min-height: 79vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pages-header-huge {
+  height: 9vh;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.job-tracker-overscroll-container {
+  height: 50vh;
+  width: 80%;
+  overflow: scroll;
+  padding: 1rem 1rem;
+  border: 5px ridge #E5E5E5;
+}
+
+.job-cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.job-card {
+  width: 47vh;
+  height: 43vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.job-card img {
+  width: 50%;
+}
+
+.job-card div {
+  margin: 0.5rem 0rem;
+}
+
+.job-card .medium {
+  line-height: 33px;
+}
+
+.job-display-block {
+  margin: 2rem 0rem;
+}
+
+.modal-container {
+  position: absolute;
+  width: 93vh;
+  height: 59vh;
+  background-color: #0C734E;
+  border: 5px ridge #E5E5E5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.modal-container h1 {
+  width: 70%;
+  text-align: center;
+  line-height: 41px;
+}
+
+.modal-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70vh;
+  height: 23vh;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-button-card {
+  max-height: 210px;
+  min-height: 130px;
+  width: 150px;
+}
+
+.modal-button-card .font-small {
+  padding-top: 10px;
+  line-height: 17px;
+}
+
+.jobs-search {
+  background-color: #0C734E;
+  outline: none;
+  border: 3px solid #E5E5E5;
+  height: 1.5rem;
+  padding: 0px 0px 0px 10px;
+}
+
+.jobs-search::-webkit-input-placeholder {
+  color: #E5E5E5;
+}
+
+.jobs-search:-ms-input-placeholder {
+  color: #E5E5E5;
+}
+
+.jobs-search::-ms-input-placeholder {
+  color: #E5E5E5;
+}
+
+.jobs-search::placeholder {
+  color: #E5E5E5;
+}
+
+.job-editor-container {
+  width: 100%;
+  min-height: 79vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.job-editor-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 90vh;
+  min-height: 30vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 5px solid #E5E5E5;
+}
+
+.job-editor-image img {
+  width: 30vh;
+  padding: 10px;
+}
+
+.job-editor-content {
+  min-width: 50vh;
+  min-height: 30vh;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.job-editor-content .underline {
+  width: 70%;
+  line-height: 20px;
+}
+
+.job-editor-select-container {
+  min-width: 90vh;
+  min-height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.job-editor-select-container .job-editor-status-select {
+  width: 30vh;
+  height: 7vh;
+}
+
+.job-editor-select-container .job-editor-status-select select {
+  margin: 10px 0px;
+  padding: 5px;
+  width: 150px;
+  background-color: #0C734E;
+  border: 1px solid #E5E5E5;
+  outline: none;
+}
+
+.job-editor-select-container .job-editor-relevance-select {
+  min-width: 50vh;
+  height: 7vh;
+}
+
+.job-editor-select-container .job-editor-relevance-select select {
+  margin: 10px 0px;
+  padding: 5px;
+  width: 150px;
+  background-color: #0C734E;
+  border: 1px solid #E5E5E5;
+  outline: none;
+}
+
+.job-editor-buttons-container {
+  min-width: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=App.css.map */

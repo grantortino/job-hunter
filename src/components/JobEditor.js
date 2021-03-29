@@ -5,8 +5,8 @@ import ModalEditor from './ModalEditor';
 // store
 import jobstore from '../stores/JobStore';
 // assets
-// import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
-// import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
+import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
+import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
 // router
 import { useParams, Link } from 'react-router-dom';
@@ -22,31 +22,56 @@ const JobEditor = () => {
     // State
 
     const [isVisible, setIsVisible] = useState(false);
+    const [modalCompany, setModalCompany] = useState();
+    const [modalPosition, setModalPosition] = useState();
+    const [modalDate, setModalDate] = useState();
 
     // functions 
 
-    const editorModalHandler = () => {
+    const editorCompanyModalHandler = () => {
         setIsVisible(true);
+    };
+
+    const jobStatusImageHandler = () => {
+
+        let image = "";
+
+        if (job.status === 'pending') {
+            image = jobPawPending;
+            return image;
+        } else if (job.status === 'accepted') {
+            return image = jobPawAccepted;
+        } else if (job.status === 'rejected') {
+            return image = jobPawRejected;
+        }
+
+        return image;
+
     };
 
     return (
         <Screen>
             <div className="job-editor-container">
-            {isVisible && <ModalEditor job={job}/>}
+            {isVisible && <ModalEditor 
+            
+            job={job}
+            
+            />
+            }
                 <div className="pages-header-huge">
                     <h1 className="huge">JOB EDITOR</h1>
                 </div>
                 <div className="job-editor-card">
 
                     <div className="job-editor-image">
-                        <img className="job-paw-img" src={jobPawPending} alt="Job Icon"/>
+                        <img className="job-paw-img" src={jobStatusImageHandler()} alt="Job Icon"/>
                     </div>
 
                     <div className="job-editor-content">
 
-                        <h1 className="medium pointer" onClick={editorModalHandler}>{job.companyName}</h1>
+                        <h1 className="medium pointer" onClick={editorCompanyModalHandler}>{job.companyName}</h1>
 
-                        <h1 className="font-small underline pointer">Lallo Bistallo</h1>
+                        <h1 className="font-small underline pointer">Front-End Developer</h1>
 
                         <h1 className="font-small pointer">{job.date}</h1>
 
