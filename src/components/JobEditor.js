@@ -77,7 +77,7 @@ const JobEditor = () => {
 
                     <div className="job-editor-content">
 
-                        <h1 className="medium pointer" onClick={() => setIsModalVisible("Company Name")}>{job.companyName}</h1>
+                        <h1 className="medium pointer" onClick={() => setIsModalVisible("Company Name")}>{job.companyName.toUpperCase()}</h1>
 
                         <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Position")}>Front-End Developer</h1>
 
