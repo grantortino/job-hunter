@@ -65,7 +65,7 @@ const TrackedJobs = () => {
                         {/* <img src={jobHunter} alt="job logo" />
                         <h1 className="medium">{jobs.companyName}</h1> */}
                         {jobstore.search(searchInput).map((job) => (
-                            <Job onRemove={onRemove} key={job.id} job={job} objectName={job.companyName} />
+                            <Job onRemove={onRemove} key={job.id} job={job} />
                         ))}
                     </div>
                 </div>

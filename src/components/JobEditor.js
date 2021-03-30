@@ -19,24 +19,19 @@ const JobEditor = () => {
     // State
 
     const [isModalVisible, setIsModalVisible] = useState("");
+    const [option, setOption] = useState();
+    const [image, setImage] = useState();
 
     // functions 
 
-    const jobStatusImageHandler = () => {
+    const optionHandler = (e) => {
+        setOption(e.target.value);
+        console.log(option)
+    };
 
-        let image = "";
-
-        if (job.status === 'pending') {
-            image = jobPawPending;
-            return image;
-        } else if (job.status === 'accepted') {
-            return image = jobPawAccepted;
-        } else if (job.status === 'rejected') {
-            return image = jobPawRejected;
-        }
-
-        return image;
-
+    const convertDate = (dateString) => {
+        var date = new Date(dateString);
+        return date.getDate()+"/"+(date.getMonth() + 1)+"/"+date.getFullYear();
     };
 
     return (
@@ -48,14 +43,16 @@ const JobEditor = () => {
             isModalVisible={isModalVisible}
             onSave={(obj) => {job.companyName = obj; jobstore.save(); setIsModalVisible("")}}
             onClose={() => setIsModalVisible("")}
+            type="text"
             />
-            
+
             <ModalEditor
             value={job.jobTitle}
             name="Position"
             isModalVisible={isModalVisible}
             onSave={(obj) => {job.jobTitle = obj; jobstore.save(); setIsModalVisible("")}}
             onClose={() => setIsModalVisible("")}
+            type="text"
             />
             
             <ModalEditor
@@ -64,6 +61,7 @@ const JobEditor = () => {
             isModalVisible={isModalVisible}
             onSave={(obj) => {job.date = obj; jobstore.save(); setIsModalVisible("")}}
             onClose={() => setIsModalVisible("")}
+            type="date"
             />
             
                 <div className="pages-header-huge">
@@ -72,7 +70,7 @@ const JobEditor = () => {
                 <div className="job-editor-card">
 
                     <div className="job-editor-image">
-                        <img className="job-paw-img" src={jobStatusImageHandler()} alt="Job Icon"/>
+                        <img className="job-paw-img" alt="Job Icon" />
                     </div>
 
                     <div className="job-editor-content">
@@ -81,7 +79,7 @@ const JobEditor = () => {
 
                         <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Position")}>Front-End Developer</h1>
 
-                        <h1 className="font-small pointer" onClick={() => setIsModalVisible("Date")}>{job.date}</h1>
+                        <h1 className="font-small pointer" onClick={() => setIsModalVisible("Date")}>{convertDate(job.date)}</h1>
 
                     </div>
 
@@ -92,7 +90,7 @@ const JobEditor = () => {
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select className="select-dropdown font-small" onChange={(e) => {job.status = e.target.value; jobstore.save()}}>
+                                <select className="select-dropdown font-small" onClick={optionHandler}>
                                     <option value="pending">
                                         PENDING
                                     </option>
