@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // components
 import Screen from './Screen';
 import ModalEditor from './ModalEditor';
@@ -19,14 +19,28 @@ const JobEditor = () => {
     // State
 
     const [isModalVisible, setIsModalVisible] = useState("");
-    const [option, setOption] = useState();
-    const [image, setImage] = useState();
+    const [option, setOption] = useState(job.status);
+    const [logo, setLogo] = useState(jobPawPending);
 
-    // functions 
+    useEffect(() => {
+        if (option === "accepted") {
+            setLogo(jobPawAccepted);
+            return logo;
+        } else if (option === "rejected") {
+            setLogo(jobPawRejected);
+            return logo;
+        } else if (option === "pending") {
+            setLogo(jobPawPending);
+            return logo;
+        }
+    })
+
+    // functions
 
     const optionHandler = (e) => {
         setOption(e.target.value);
-        console.log(option)
+        job.status = e.target.value;
+        jobstore.save()
     };
 
     const convertDate = (dateString) => {
@@ -70,7 +84,7 @@ const JobEditor = () => {
                 <div className="job-editor-card">
 
                     <div className="job-editor-image">
-                        <img className="job-paw-img" alt="Job Icon" />
+                        <img className="job-paw-img" alt="Job Icon" src={logo} />
                     </div>
 
                     <div className="job-editor-content">
@@ -90,7 +104,7 @@ const JobEditor = () => {
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select className="select-dropdown font-small" onClick={optionHandler}>
+                                <select className="select-dropdown font-small" onChange={optionHandler}>
                                     <option value="pending">
                                         PENDING
                                     </option>
