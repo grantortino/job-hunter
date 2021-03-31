@@ -42,10 +42,10 @@ const Job = ({ job, onRemove }) => {
                 <div className="medium underline" style={textAlign}>{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
                 <div className="font-small" style={textAlign}>Front-End Web Developer</div>
                 <div className="font-small">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
-                <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank">LINK</a>
+                <a rel="noreferrer" className="font-medium" href={job.jobLink} target="_blank" style={{ textDecoration: 'none' }}>LINK</a>
                 <div className="font-medium pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
-                <Link to={`/jobs/${job.id}`}>
-                    <div className="font-medium pointer">EDIT</div>
+                <Link to={`/jobs/${job.id}`} style={{ textDecoration: 'none' }}>
+                    <div className="font-medium pointer" >EDIT</div>
                 </Link>
                 {/* <div className="font-medium pointer" onClick={() => console.log(objectName)}>ERASE</div> */}
             </div>

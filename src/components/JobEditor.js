@@ -104,7 +104,7 @@ const JobEditor = () => {
                         <div className="job-tracker-status-select">
                                 <h3 className="small">STATUS:</h3>
 
-                                <select className="select-dropdown font-small" onChange={optionHandler}>
+                                <select className="select-dropdown font-small" onChange={optionHandler} value={option}>
                                     <option value="pending">
                                         PENDING
                                     </option>
