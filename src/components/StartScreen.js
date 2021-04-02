@@ -23,10 +23,12 @@ const StartScreen = () => {
               </div>
             </Link>
 
+            <Link to="/journal" style={{ textDecoration: 'none' }}>
             <div className="job-tracker-card-medium">
               <div className="job-card-image-medium"></div>
               <p>Job Journal</p>
             </div>
+            </Link>
 
             <div className="job-tracker-card-medium">
               <div className="job-card-image-medium"></div>

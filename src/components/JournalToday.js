@@ -9,8 +9,8 @@ const JournalToday = () => {
 
     const entryHandler = () => {
         setNewEntry({
-            entryTitle: "Applied to Maltech",
-            entryContent: "Sent cover letter and cv and arbeitszeugnisse."
+            entryTitle: "Click to edit new entry",
+            entryContent: "Enter new commentary here"
         });
     };
 

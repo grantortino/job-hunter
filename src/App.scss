@@ -467,23 +467,61 @@ p {
   display: flex;
 }
 
-.new-entry-container {
-  border: 5px solid $fontColor;
-}
-
 // today-entries-container 
-.new-entry-container {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-}
 
 .entry-card {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: center;
   min-width: 90vh;
-  min-height: 30vh;
+  min-height: 55vh;
+  align-items: center;
+  // border: 5px solid fuchsia;
+}
+
+.new-entry-container {
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 5px solid fuchsia;
+  margin: 10px;
+  width: 50vh;
+  height: 45vh;
+  textarea {
+    height: 30vh;
+    width: 45vh;
+    border: 3px solid $fontColor;
+    padding: 5px 5px;
+    color: $fontColor;
+    background-color: $bgColor;
+    outline: none;
+    resize: none;
+    &::placeholder {
+      color: white;
+    }
+  }
 }
+
+.checkbox-container {
+  border: 1px solid fuchsia;
+  width: 45vh;
+  padding: 5px 5px;
+  .entry-title {
+    color: $bgColor;
+    background-color: $fontColor;
+    outline: none;
+    border: 3px solid $fontColor;
+    // padding: 5px 5px;
+    // width: 20vh;
+    &::placeholder {
+      color: $bgColor;
+    }
+  }
+  .entry-checkbox {
+
+  }
+}
+
+
+

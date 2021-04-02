@@ -16,14 +16,14 @@ const JobTrackerMain = () => {
 
             <div className="tracker-sections-container">
 
-                <Link to="/trackerform" style={{ textDecoration: 'none' }}>
+                <Link to="/today" style={{ textDecoration: 'none' }}>
                     <div className="job-tracker-card-big">
                         <div className="job-card-image-big"></div>
                         <p>TODAY</p>
                     </div>
                 </Link>
 
-                <Link to="/trackedjobs" style={{ textDecoration: 'none' }}>
+                <Link style={{ textDecoration: 'none' }}>
                     <div>
                         <div className="job-tracker-card-big">
                             <div className="job-card-image-big"></div>
