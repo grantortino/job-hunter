@@ -38,10 +38,10 @@ body {
   width: 150px;
   height: 40px;
   cursor: pointer;
+  outline: none;
   &:hover {
     background-color: $fontColor;
     color: $bgColor;
-    outline: none;
   }
 }
 
@@ -461,4 +461,29 @@ p {
 .job-editor-buttons-container {
   min-width: 90vh;
   display: flex;
+}
+
+.small-buttons-container {
+  display: flex;
+}
+
+.new-entry-container {
+  border: 5px solid $fontColor;
+}
+
+// today-entries-container 
+.new-entry-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.entry-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 90vh;
+  min-height: 30vh;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px solid fuchsia;
 }

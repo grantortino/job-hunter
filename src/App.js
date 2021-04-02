@@ -6,6 +6,8 @@ import JobTrackerMain from './components/JobTrackerMain';
 import JobTrackerForm from './components/JobTrackerForm';
 import TrackedJobs from './components/TrackedJobs';
 import JobEditor from './components/JobEditor';
+import JobJournalMain from './components/JobJournalMain';
+import JournalToday from './components/JournalToday';
 // router
 import {
   BrowserRouter as Router,
@@ -24,6 +26,12 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/journal">
+            <JobJournalMain />
+          </Route>
+          <Route path="/today">
+            <JournalToday />
+          </Route>
           <Route path="/jobs/:id">
             <JobEditor />
           </Route>

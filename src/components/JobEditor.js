@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // components
 import Screen from './Screen';
 import ModalEditor from './ModalEditor';
@@ -22,23 +22,20 @@ const JobEditor = () => {
     const [option, setOption] = useState(job.status);
     const [logo, setLogo] = useState(jobPawPending);
 
-    useEffect(() => {
-        if (option === "accepted") {
-            setLogo(jobPawAccepted);
-            return logo;
-        } else if (option === "rejected") {
-            setLogo(jobPawRejected);
-            return logo;
-        } else if (option === "pending") {
-            setLogo(jobPawPending);
-            return logo;
-        }
-    })
-
     // functions
 
     const optionHandler = (e) => {
+
         setOption(e.target.value);
+
+        if (e.target.value === "accepted") {
+            setLogo(jobPawAccepted);
+        } else if (e.target.value === "rejected") {
+            setLogo(jobPawRejected);
+        } else if (e.target.value === "pending") {
+            setLogo(jobPawPending);
+        }
+
         job.status = e.target.value;
         jobstore.save()
     };
