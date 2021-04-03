@@ -2,7 +2,7 @@ import uuid from 'react-uuid';
 
 const jobstore = {
     jobs: [],
-    entries: [],
+    entries: [{entryTitle: "bau", entryContent: "salumi"}],
     filteredJobs: [],
     addJob: function(companyName, jobTitle, jobLink, date, relevanceDegree, status) {
         // "this" refers to the scope 
@@ -14,11 +14,13 @@ const jobstore = {
 
     save: function() {
         localStorage.setItem('savedJob', JSON.stringify(this.jobs));
+        localStorage.setItem('savedEntry', JSON.stringify(this.entries));
     },
 
     load: function() {
         // gets the element from storage saved under "savedCompanyName"
         const savedJob = localStorage.getItem('savedJob');
+        const savedEntry = localStorage.getItem('savedEntry');
 
         // this.jobs = savedJob || [];
 
@@ -26,6 +28,12 @@ const jobstore = {
             this.jobs = [];
         } else {
             this.jobs = JSON.parse(savedJob);
+        }
+
+        if (savedEntry === null) {
+            this.entries = [];
+        } else {
+            this.entries = JSON.parse(savedEntry);
         }
 
     },
