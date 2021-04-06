@@ -23,14 +23,14 @@ const JobTrackerMain = () => {
                     </div>
                 </Link>
 
-                <Link style={{ textDecoration: 'none' }}>
+                {/* <Link style={{ textDecoration: 'none' }}> */}
                     <div>
                         <div className="job-tracker-card-big">
                             <div className="job-card-image-big"></div>
                             <p>YESTERDAY</p>
                         </div>
                     </div>
-                </Link>
+                {/* </Link> */}
 
             </div>
                             

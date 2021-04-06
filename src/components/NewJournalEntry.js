@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewJournalEntry = ({ newEntry, onEntrySave, setEntryContent, setEntryTitle }) => {
+const NewJournalEntry = ({ newEntry, onEntrySave, setEntryContent, setEntryTitle, onEntryClose }) => {
     // new onSAve funtion gets called with the new values and bring back them to journaltoday and process them into entryHandler. journal today needs to re-render when onSave is clicked
 
 
@@ -12,6 +12,7 @@ const NewJournalEntry = ({ newEntry, onEntrySave, setEntryContent, setEntryTitle
             </div>
             <textarea className="font-small" placeholder={newEntry.entryContent} onChange={(e) => setEntryContent(e.target.value)}></textarea>
             <button className="buttons small" onClick={onEntrySave}>SAVE</button>
+            <button className="buttons small" onClick={onEntryClose}>CLOSE</button>
         </div>
     );
 };

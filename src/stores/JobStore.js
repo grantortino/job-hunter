@@ -9,19 +9,18 @@ const jobstore = {
         this.jobs.push({companyName, jobTitle, jobLink, date, relevanceDegree, status, id: uuid()});
     },
     addEntry: function(entryTitle, entryContent) {
-        this.entries.push({entryTitle, entryContent, id:uuid()});
+        this.entries.push({ entryTitle, entryContent, id:uuid(), time: new Date() });
     },
 
     save: function() {
         localStorage.setItem('savedJob', JSON.stringify(this.jobs));
-        localStorage.setItem('savedEntry', JSON.stringify(this.entries));
+        localStorage.setItem('savedEntries', JSON.stringify(this.entries));
     },
 
     load: function() {
         // gets the element from storage saved under "savedCompanyName"
         const savedJob = localStorage.getItem('savedJob');
-        const savedEntry = localStorage.getItem('savedEntry');
-
+        const savedEntries = localStorage.getItem('savedEntries');
         // this.jobs = savedJob || [];
 
         if (savedJob === null) {
@@ -30,10 +29,12 @@ const jobstore = {
             this.jobs = JSON.parse(savedJob);
         }
 
-        if (savedEntry === null) {
+        if (savedEntries === null) {
             this.entries = [];
         } else {
-            this.entries = JSON.parse(savedEntry);
+            this.entries = JSON.parse(savedEntries);
+            // this.entries.map((entry) => entry.time = new Date(entry.time));
+            this.entries.forEach(entry => entry.time = new Date(entry.time));
         }
 
     },

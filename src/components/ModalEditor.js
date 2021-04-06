@@ -9,11 +9,9 @@ const ModalEditor = ({ value, name, isModalVisible, onSave, onClose, type }) => 
     };
 
     const convertDate = (dateString) => {
-        var date = new Date(dateString);
+        const date = new Date(dateString);
         return date.getDate()+"/"+(date.getMonth() + 1)+"/"+date.getFullYear();
     };
-
-    
 
     if (name === isModalVisible) {
         return (
