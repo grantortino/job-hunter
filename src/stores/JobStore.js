@@ -2,7 +2,7 @@ import uuid from 'react-uuid';
 
 const jobstore = {
     jobs: [],
-    entries: [{entryTitle: "bau", entryContent: "salumi"}],
+    entries: [],
     filteredJobs: [],
     addJob: function(companyName, jobTitle, jobLink, date, relevanceDegree, status) {
         // "this" refers to the scope 

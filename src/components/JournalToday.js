@@ -10,6 +10,8 @@ const JournalToday = () => {
 
     const [newEntry, setNewEntry] = useState(null);
     const [newButtonVisible, setNewButtonVisible] = useState(true);
+    const [entryTitle, setEntryTitle] = useState("");
+    const [entryContent, setEntryContent] = useState("");
 
     const entryHandler = () => {
         setNewEntry({
@@ -17,6 +19,13 @@ const JournalToday = () => {
             entryContent: "Enter new commentary here"
         });
         setNewButtonVisible(false);
+    };
+
+    const onEntrySave = () => {
+        jobstore.addEntry(entryTitle, entryContent);
+        jobstore.save();
+        setNewEntry(!newEntry);
+        setNewButtonVisible(!newButtonVisible);
     };
 
     return (
@@ -29,9 +38,9 @@ const JournalToday = () => {
                 <div className="entry-card">
                     {newButtonVisible && <button className="buttons medium" onClick={entryHandler}>NEW</button>}
                     {/* {newEntry === null ? null : <NewJournalEntry newEntry={newEntry} setNewEntry={setNewEntry} />} */}
-                    {newEntry && <NewJournalEntry newEntry={newEntry} setNewEntry={setNewEntry} />}
+                    {newEntry && <NewJournalEntry setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
                     {jobstore.entries.map((entry) => (
-                        <EntryComponent entryTitle={entry.entryTitle} entryContent={entry.entryContent} />
+                        <EntryComponent entryTitle={entry.entryTitle} entryContent={entry.entryContent} id={entry.id} />
                     ))}
                 </div>
             </div>

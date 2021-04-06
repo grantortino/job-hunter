@@ -512,14 +512,13 @@ p {
     background-color: $fontColor;
     outline: none;
     border: 3px solid $fontColor;
-    // padding: 5px 5px;
-    // width: 20vh;
+    width: 90%;
     &::placeholder {
       color: $bgColor;
     }
   }
   .entry-checkbox {
-
+    background-color: $bgColor;
   }
 }
 
