@@ -19,7 +19,7 @@ const ModalEditor = ({ value, name, isModalVisible, onSave, onClose, type }) => 
                 <h1 className="huge">ENTER NEW:</h1>
                 <h1 className="font-medium">{type === "date" ? convertDate(value) : value}</h1>
                 {/* <h1 className="font-medium">{value}</h1> */}
-                <input type={type} onChange={newValueHandler} />
+                <input type={type} onChange={newValueHandler} className="modal-editor-input font-small"/>
                 <button className="buttons small" onClick={() => onSave(newValue)}>ACCEPT</button>
                 <button className="buttons small" onClick={onClose}>CLOSE</button>
             </div>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 // components
 import Screen from './Screen';
 import NewJournalEntry from './NewJournalEntry';
 import EntryComponent from './EntryComponent';
-import ModalEditor from './ModalEditor';
+import ModalEntry from './ModalEntry';
 // store
 import jobstore from '../stores/JobStore';
 
@@ -52,6 +53,7 @@ const JournalToday = () => {
         setEditContent(entryContent);
     };
 
+
     const onCheckBox = () => {
         setCheckbox(!checkbox);
     };
@@ -64,39 +66,39 @@ const JournalToday = () => {
         <Screen>
             <div className="tracker-main-screen-containter">
 
-            <ModalEditor
-            value={editTitle}
-            name="Entry Title"
+            <ModalEntry
+            value1={editTitle}
+            value2={editContent}
+            setValue1={setEditTitle}
+            setValue2={setEditContent}
+            name="Visualize Modal"
             isModalVisible={isModalVisible}
-            // onSave={(obj) => {job.companyName = obj; jobstore.save(); setIsModalVisible("")}}
             onClose={() => setIsModalVisible("")}
             type="text"
-            />
-
-            <ModalEditor
-            value={editContent}
-            name="Entry Content"
-            isModalVisible={isModalVisible}
-            // onSave={(obj) => {job.companyName = obj; jobstore.save(); setIsModalVisible("")}}
-            onClose={() => setIsModalVisible("")}
-            type="text"
+            checkbox={checkbox}
             />
 
                 <div className="pages-header-huge">
-                    <h3 className="huge">TODAY {dateString}</h3>
+                    <h3 className="medium">TODAY {dateString}</h3>
                 </div>
-                <div className="entry-card">
+                {newButtonVisible && <button className="shadow-small-entry-element-button small" onClick={entryHandler}>NEW</button>}
 
-                    {newButtonVisible && <button className="buttons medium" onClick={entryHandler}>NEW</button>}
+                <div className="today-overscroll-wrapper">
+                {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
+                    <div className="entry-card">
+                        {visibleEntries.map((entry) => (
+                            <EntryComponent entry={entry} entryTime={entry.time} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit} entryTitle={entry.entryTitle} entryContent={entry.entryContent} key={entry.id} />
+                        ))}
 
-                    {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
-
-                    {visibleEntries.map((entry) => (
-                        <EntryComponent entryTime={entry.time} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit} entryTitle={entry.entryTitle} entryContent={entry.entryContent} key={entry.id} />
-                    ))}
-
+                    </div>
+                </div>
+                <div className="job-editor-buttons-container">
+                    <Link to="/journal">
+                        <button className="back-buttons small">&larr;</button>
+                    </Link>
                 </div>
             </div>
+
         </Screen>
     );
 };

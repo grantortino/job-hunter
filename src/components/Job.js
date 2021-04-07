@@ -43,11 +43,17 @@ const Job = ({ job, onRemove }) => {
                 <div className="font-small" style={textAlign}>Front-End Web Developer</div>
                 <div className="font-small">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
                 <div className="small-buttons-container">
-                    <a rel="noreferrer" className="font-small pointer" href={job.jobLink} target="_blank" style={{ textDecoration: 'none'}}>LINK</a>
-                    <div className="font-small pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
-                    <Link to={`/jobs/${job.id}`} style={{ textDecoration: 'none' }}>
+                    <div className="shadow-small-button">
+                        <a rel="noreferrer" className="font-small pointer" href={job.jobLink} target="_blank" style={{ textDecoration: 'none'}}>LINK</a>
+                    </div>
+                    <div className="shadow-small-button">
+                        <div className="font-small pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
+                    </div>
+                    <div className="shadow-small-button">
+                        <Link to={`/jobs/${job.id}`} style={{ textDecoration: 'none' }}>
                         <div className="font-small pointer" >EDIT</div>
                     </Link>
+                    </div>
                 </div>
                 {/* <div className="font-medium pointer" onClick={() => console.log(objectName)}>ERASE</div> */}
             </div>
