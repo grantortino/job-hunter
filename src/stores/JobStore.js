@@ -8,8 +8,8 @@ const jobstore = {
         // "this" refers to the scope 
         this.jobs.push({companyName, jobTitle, jobLink, date, relevanceDegree, status, id: uuid()});
     },
-    addEntry: function(entryTitle, entryContent) {
-        this.entries.push({ entryTitle, entryContent, id:uuid(), time: new Date() });
+    addEntry: function(entryTitle, entryContent, checkbox) {
+        this.entries.push({ entryTitle, entryContent, id:uuid(), time: new Date(), checkbox });
     },
 
     save: function() {

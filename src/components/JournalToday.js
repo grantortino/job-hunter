@@ -16,24 +16,25 @@ const JournalToday = () => {
     const [isModalVisible, setIsModalVisible] = useState("");
     const [editTitle, setEditTitle] = useState("");
     const [editContent, setEditContent] = useState("");
+    const [checkbox, setCheckbox] = useState(false);
 
 
     const dateOfToday = new Date();
     const dd = String(dateOfToday.getDate()).padStart(2, '0');
     const mm = String(dateOfToday.getMonth() + 1).padStart(2, '0'); //January is 0!
     const yyyy = dateOfToday.getFullYear();
-    const dateString = mm + '/' + dd + '/' + yyyy;
+    const dateString = dd + '/' + mm + '/' + yyyy;
 
     const entryHandler = () => {
         setNewEntry({
-            entryTitle: "Click to edit new entry",
+            entryTitle: "Click to edit entry title",
             entryContent: "Enter new commentary here"
         });
         setNewButtonVisible(false);
     };
 
     const onEntrySave = () => {
-        jobstore.addEntry(entryTitle, entryContent);
+        jobstore.addEntry(entryTitle, entryContent, checkbox);
         jobstore.save();
         setNewEntry(!newEntry);
         setNewButtonVisible(!newButtonVisible);
@@ -49,6 +50,10 @@ const JournalToday = () => {
     const onEntryEdit = (entryTitle, entryContent) => {
         setEditTitle(entryTitle);
         setEditContent(entryContent);
+    };
+
+    const onCheckBox = () => {
+        setCheckbox(!checkbox);
     };
 
     const sameDay = (date1, date2) => date1.getDate() === date2.getDate() && date1.getMonth() === date2.getMonth() && date1.getFullYear() === date2.getFullYear();
@@ -81,15 +86,15 @@ const JournalToday = () => {
                     <h3 className="huge">TODAY {dateString}</h3>
                 </div>
                 <div className="entry-card">
+
                     {newButtonVisible && <button className="buttons medium" onClick={entryHandler}>NEW</button>}
-                    {/* {newEntry === null ? null : <NewJournalEntry newEntry={newEntry} setNewEntry={setNewEntry} />} */}
-                    {newEntry && <NewJournalEntry onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
-                    {/* {jobstore.entries.map((entry) => (
-                        <EntryComponent entryTime={entry.time} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit} entryTitle={entry.entryTitle} entryContent={entry.entryContent} key={entry.id} />
-                    ))} */}
+
+                    {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
+
                     {visibleEntries.map((entry) => (
                         <EntryComponent entryTime={entry.time} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit} entryTitle={entry.entryTitle} entryContent={entry.entryContent} key={entry.id} />
                     ))}
+
                 </div>
             </div>
         </Screen>

@@ -477,7 +477,6 @@ p {
   min-width: 90vh;
   min-height: 55vh;
   align-items: center;
-  // border: 5px solid fuchsia;
 }
 
 .new-entry-container {
@@ -486,11 +485,11 @@ p {
   justify-content: space-around;
   align-items: center;
   margin: 10px;
-  width: 50vh;
+  width: 70vh;
   height: 45vh;
   textarea {
     height: 30vh;
-    width: 45vh;
+    width: 55vh;
     border: 3px solid $fontColor;
     padding: 5px 5px;
     color: $fontColor;
@@ -504,22 +503,28 @@ p {
 }
 
 .checkbox-container {
-  border: 1px solid fuchsia;
-  width: 45vh;
+  width: 55vh;
   padding: 5px 5px;
+  display: flex;
   .entry-title {
     color: $bgColor;
     background-color: $fontColor;
     outline: none;
     border: 3px solid $fontColor;
-    width: 90%;
+    width: 80%;
     &::placeholder {
       color: $bgColor;
     }
   }
   .entry-checkbox {
-    background-color: $bgColor;
+    width: 7%;
   }
+}
+
+.entry-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 55vh;
 }
 
 
