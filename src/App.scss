@@ -374,6 +374,15 @@ p {
 
 }
 
+.modal-editor-input {
+  outline: none;
+  padding-left: 10px;
+  background-color: $bgColor;
+  border: 5px solid $fontColor;
+  width: 40vh;
+  height: 3vh;
+}
+
 .jobs-search {
   background-color: $bgColor;
   outline: none;
@@ -467,18 +476,18 @@ p {
 .small-buttons-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 5vh;
   width: 35vh;
 }
 
-.paiu {
+.shadow-small-button {
   min-height: 4vh;
   display: flex;
   align-items: center;
   border: 1px solid $fontColor;
-  border-bottom: 5px solid $fontColor;
-  border-right: 5px solid $fontColor;
+  border-bottom: 3px solid $fontColor;
+  border-right: 3px solid $fontColor;
   padding: 5px;
   &:hover {
     border-bottom: 1px solid $fontColor;
@@ -547,5 +556,6 @@ p {
   width: 55vh;
 }
 
+// ENTRY COMPONENT
 
 
