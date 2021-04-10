@@ -48,12 +48,6 @@ const JournalToday = () => {
 
     // onClick event to edit entry
 
-    const onEntryEdit = (entryTitle, entryContent) => {
-        setEditTitle(entryTitle);
-        setEditContent(entryContent);
-    };
-
-
     const onCheckBox = () => {
         setCheckbox(!checkbox);
     };
@@ -81,13 +75,14 @@ const JournalToday = () => {
                 <div className="pages-header-huge">
                     <h3 className="medium">TODAY {dateString}</h3>
                 </div>
-                {newButtonVisible && <button className="shadow-small-entry-element-button small" onClick={entryHandler}>NEW</button>}
+                {/* {newButtonVisible && <button className="shadow-small-entry-element-button small" onClick={entryHandler}>NEW</button>} */}
+                <button className={newButtonVisible ? 'shadow-small-entry-element-button small' : 'shadow-small-entry-element-button small invisible'} onClick={entryHandler}>NEW</button>
+                {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
 
                 <div className="today-overscroll-wrapper">
-                {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
                     <div className="entry-card">
                         {visibleEntries.map((entry) => (
-                            <EntryComponent entry={entry} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit}  key={entry.id} />
+                            <EntryComponent entry={entry} setIsModalVisible={setIsModalVisible}  key={entry.id} />
                         ))}
 
                     </div>

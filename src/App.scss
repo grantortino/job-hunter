@@ -7,6 +7,10 @@ Link {
   margin: 0 auto;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 
 .pointer {
   cursor: pointer;
@@ -506,7 +510,6 @@ p {
 }
 
 .entry-card {
-  border: 1px solid fuchsia;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
@@ -516,6 +519,7 @@ p {
 }
 
 .new-entry-container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -582,7 +586,6 @@ p {
   .entry-element-content {
     padding: 5px;
     overflow: scroll;
-    border: 1px solid fuchsia;
     width: 30vh;
     height: 20vh;
   }

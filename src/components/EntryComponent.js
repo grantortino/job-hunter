@@ -3,14 +3,10 @@ import checked from '../assets/job-hunter-characters/job-hunter-svg/check-box-ch
 import unchecked from '../assets/job-hunter-characters/job-hunter-svg/check-box-unchecked.svg';
 import jobstore from '../stores/JobStore';
 
-const EntryComponent = ({ entry, checkbox }) => {
-
-    // const convertDate = (dateString) => {
-    //     var date = new Date(dateString);
-    //     return date.getDate()+"/"+(date.getMonth() + 1)+"/"+date.getFullYear();
-    // };
+const EntryComponent = ({ entry }) => {
 
     const [editActive, setEditActive] = useState(false);
+    const [isChecked, setIsChecked] = useState(entry.checkbox);
     const [newEntryTitle, setNewEntryTitle] = useState(entry.entryTitle);
     const [newEntryContent, setNewEntryContent] = useState(entry.entryContent);
 
@@ -21,14 +17,19 @@ const EntryComponent = ({ entry, checkbox }) => {
         jobstore.save();
     };
 
+    const checkBoxHandler = () => {
+        setIsChecked(!isChecked);
+        entry.checkbox = isChecked;
+        jobstore.save();
+    };
 
-    editActive ? console.log("yes") : console.log("no");
+    console.log(isChecked)
 
     if (editActive === false) {
         return (
             <div className="entry-element-container">
                 <div className="entry-element-checkbox-title">
-                    <img src={checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small"/>
+                    <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small" onClick={() => checkBoxHandler()}/>
                     <h1 className="entry-element-title small">{entry.entryTitle.toUpperCase()}</h1>
                 </div>
                 <h1 className="entry-element-content font-small">{entry.entryContent}</h1>
@@ -43,7 +44,7 @@ const EntryComponent = ({ entry, checkbox }) => {
     return (
         <div className="entry-element-container">
             <div className="entry-element-checkbox-title">
-                <img src={checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small"/>
+                <img src={isChecked ? checked : unchecked} alt="checkbox" className="entry-checkbox-small" onClick={() => checkBoxHandler()}/>
                 <input className="entry-element-title small" value={newEntryTitle} onChange={(e) => setNewEntryTitle(e.target.value)}/>
             </div>
             <textarea className="entry-element-content font-small" onChange={(e) => setNewEntryContent(e.target.value)}>{newEntryContent}</textarea>
