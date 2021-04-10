@@ -65,6 +65,15 @@ const JobEditor = () => {
             onClose={() => setIsModalVisible("")}
             type="text"
             />
+
+            <ModalEditor
+            value={job.jobLink}
+            name="Link"
+            isModalVisible={isModalVisible}
+            onSave={(obj) => {job.jobLink = obj; jobstore.save(); setIsModalVisible("")}}
+            onClose={() => setIsModalVisible("")}
+            type="text"
+            />
             
             <ModalEditor
             value={job.date}
@@ -89,6 +98,8 @@ const JobEditor = () => {
                         <h1 className="medium pointer" onClick={() => setIsModalVisible("Company Name")}>{job.companyName.toUpperCase()}</h1>
 
                         <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Position")}>Front-End Developer</h1>
+                        
+                        <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Link")}>LINK</h1>
 
                         <h1 className="font-small pointer" onClick={() => setIsModalVisible("Date")}>{convertDate(job.date)}</h1>
 

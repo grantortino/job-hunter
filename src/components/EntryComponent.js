@@ -23,13 +23,11 @@ const EntryComponent = ({ entry }) => {
         jobstore.save();
     };
 
-    console.log(isChecked)
-
     if (editActive === false) {
         return (
             <div className="entry-element-container">
                 <div className="entry-element-checkbox-title">
-                    <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small" onClick={() => checkBoxHandler()}/>
+                    <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/>
                     <h1 className="entry-element-title small">{entry.entryTitle.toUpperCase()}</h1>
                 </div>
                 <h1 className="entry-element-content font-small">{entry.entryContent}</h1>
@@ -44,7 +42,7 @@ const EntryComponent = ({ entry }) => {
     return (
         <div className="entry-element-container">
             <div className="entry-element-checkbox-title">
-                <img src={isChecked ? checked : unchecked} alt="checkbox" className="entry-checkbox-small" onClick={() => checkBoxHandler()}/>
+                <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/>
                 <input className="entry-element-title small" value={newEntryTitle} onChange={(e) => setNewEntryTitle(e.target.value)}/>
             </div>
             <textarea className="entry-element-content font-small" onChange={(e) => setNewEntryContent(e.target.value)}>{newEntryContent}</textarea>
