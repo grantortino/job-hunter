@@ -87,7 +87,7 @@ const JournalToday = () => {
                 {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
                     <div className="entry-card">
                         {visibleEntries.map((entry) => (
-                            <EntryComponent entry={entry} entryTime={entry.time} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit} entryTitle={entry.entryTitle} entryContent={entry.entryContent} key={entry.id} />
+                            <EntryComponent entry={entry} setIsModalVisible={setIsModalVisible} onEntryEdit={onEntryEdit}  key={entry.id} />
                         ))}
 
                     </div>
