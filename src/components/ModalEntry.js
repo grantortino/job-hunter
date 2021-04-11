@@ -3,7 +3,7 @@ import checked from '../assets/job-hunter-characters/job-hunter-svg/check-box-ch
 import unchecked from '../assets/job-hunter-characters/job-hunter-svg/check-box-unchecked.svg';
 import jobstore from '../stores/JobStore';
 
-const ModalEntry = ({ value1, value2, setEditTitle, setEditContent, checkbox, name, isModalVisible, onSave, onClose, type }) => {
+const ModalEntry = ({ value1, value2, checkbox, name, isModalVisible, onSave, onClose, type }) => {
 
     const [newValue1, setNewValue1] = useState();
     const [newValue2, setNewValue2] = useState();

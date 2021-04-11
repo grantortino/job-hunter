@@ -17,9 +17,12 @@ const EntryComponent = ({ entry, onRemove }) => {
         jobstore.save();
     };
 
+    
+
     const checkBoxHandler = () => {
         setIsChecked(!isChecked);
         entry.checkbox = isChecked;
+        console.log(isChecked);
         jobstore.save();
     };
 
@@ -27,6 +30,7 @@ const EntryComponent = ({ entry, onRemove }) => {
         return (
             <div className="entry-element-container">
                 <div className="entry-element-checkbox-title">
+                    {/* <img src={isChecked ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/> */}
                     <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/>
                     <h1 className="entry-element-title small">{entry.entryTitle.toUpperCase()}</h1>
                 </div>
