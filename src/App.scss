@@ -504,7 +504,7 @@ p {
 
 .today-overscroll-wrapper {
   border: 5px solid $fontColor;
-  width: 130vh;
+  width: 100vh;
   height: 50vh;
   overflow: scroll;
 }
@@ -575,7 +575,7 @@ p {
   justify-content: space-around;
   max-width: 40vh;
   // width: 100%;
-  max-height: 60vh;
+  height: 30vh;
   margin: 5px;
   .entry-element-title{
     text-align: left;

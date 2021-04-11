@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 // components
 import Screen from './Screen';
+import Modal from './Modal';
 import NewJournalEntry from './NewJournalEntry';
 import EntryComponent from './EntryComponent';
 import ModalEntry from './ModalEntry';
@@ -18,6 +19,7 @@ const JournalToday = () => {
     const [editTitle, setEditTitle] = useState("");
     const [editContent, setEditContent] = useState("");
     const [checkbox, setCheckbox] = useState(false);
+    const [removeModalVisibile, setRemoveModalVisible] = useState("");
 
 
     const dateOfToday = new Date();
@@ -46,6 +48,12 @@ const JournalToday = () => {
         setNewButtonVisible(!newButtonVisible);
     };
 
+    const onRemove = (id, title) => {
+        setRemoveModalVisible(!removeModalVisibile);
+        setEntryTitle(title);
+        jobstore.remove(id);
+    };
+
     // onClick event to edit entry
 
     const onCheckBox = () => {
@@ -59,6 +67,13 @@ const JournalToday = () => {
     return (
         <Screen>
             <div className="tracker-main-screen-containter">
+
+            {removeModalVisibile && 
+            <Modal 
+            onRemove={onRemove}
+            modalMainObject={entryTitle}
+            />
+            }
 
             <ModalEntry
             value1={editTitle}
@@ -82,7 +97,7 @@ const JournalToday = () => {
                 <div className="today-overscroll-wrapper">
                     <div className="entry-card">
                         {visibleEntries.map((entry) => (
-                            <EntryComponent entry={entry} setIsModalVisible={setIsModalVisible}  key={entry.id} />
+                            <EntryComponent entry={entry} onRemove={onRemove} key={entry.id} />
                         ))}
 
                     </div>

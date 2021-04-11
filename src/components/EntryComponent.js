@@ -3,7 +3,7 @@ import checked from '../assets/job-hunter-characters/job-hunter-svg/check-box-ch
 import unchecked from '../assets/job-hunter-characters/job-hunter-svg/check-box-unchecked.svg';
 import jobstore from '../stores/JobStore';
 
-const EntryComponent = ({ entry }) => {
+const EntryComponent = ({ entry, onRemove }) => {
 
     const [editActive, setEditActive] = useState(false);
     const [isChecked, setIsChecked] = useState(entry.checkbox);
@@ -33,7 +33,7 @@ const EntryComponent = ({ entry }) => {
                 <h1 className="entry-element-content font-small">{entry.entryContent}</h1>
                 <div className="entry-component-small-buttons">
                     <button className="shadow-small-entry-element-button font-small" onClick={() => setEditActive(!editActive)}>EDIT</button>
-                    <button className="shadow-small-entry-element-button font-small">REMOVE</button>
+                    <button className="shadow-small-entry-element-button font-small" onClick={() => onRemove(entry.id, entry.entryTitle, entry.entryContent)}>REMOVE</button>
                 </div>
             </div>
         );    
