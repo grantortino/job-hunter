@@ -512,7 +512,7 @@ p {
 .entry-card {
   display: flex;
   flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: center;
   min-width: 90vh;
   min-height: 55vh;
@@ -693,4 +693,20 @@ p {
   width: 35vh;
   justify-content: center;
   line-height: 20px;
+}
+
+.yesterday-entry-container {
+  border: 1px solid $fontColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px;
+  width: 21vh;
+  height: 21vh;
+}
+
+.yesterday-entries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

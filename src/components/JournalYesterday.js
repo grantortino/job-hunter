@@ -1,6 +1,9 @@
 import React from 'react';
-import Screen from './Screen';
 import { Link } from 'react-router-dom';
+//components
+import Screen from './Screen';
+import YesterdayEntryComponent from './YesterdayEntryComponent.js';
+//store
 import jobstore from '../stores/JobStore';
 
 const JournalYesterday = () => {
@@ -66,7 +69,11 @@ const JournalYesterday = () => {
                 </div>
 
                 <div className="today-overscroll-wrapper">
-                    
+                    <div className="yesterday-entries">
+                        {jobstore.entries.map((entry) => (
+                            <YesterdayEntryComponent entry={entry} key={entry.id} />
+                        ))}
+                    </div>
                 </div>
 
                 <div className="job-editor-buttons-container">
