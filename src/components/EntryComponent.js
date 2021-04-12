@@ -36,8 +36,8 @@ const EntryComponent = ({ entry, onRemove }) => {
                 </div>
                 <h1 className="entry-element-content font-small">{entry.entryContent}</h1>
                 <div className="entry-component-small-buttons">
-                    <button className="shadow-small-entry-element-button font-small" onClick={() => setEditActive(!editActive)}>EDIT</button>
-                    <button className="shadow-small-entry-element-button font-small" onClick={() => onRemove(entry.id, entry.entryTitle)}>REMOVE</button>
+                    <button className="shadow-small-entry-element-button font-small pointer" onClick={() => setEditActive(!editActive)}>EDIT</button>
+                    <button className="shadow-small-entry-element-button font-small pointer" onClick={() => onRemove(entry.id, entry.entryTitle)}>REMOVE</button>
                 </div>
             </div>
         );    
@@ -51,8 +51,8 @@ const EntryComponent = ({ entry, onRemove }) => {
             </div>
             <textarea className="entry-element-content-textarea font-small" onChange={(e) => setNewEntryContent(e.target.value)}>{newEntryContent}</textarea>
             <div className="entry-component-small-buttons">
-                <button className="shadow-small-entry-element-button font-small" onClick={() => entrySaveHandler(newEntryTitle, newEntryContent)}>SAVE</button>
-                <button className="shadow-small-entry-element-button font-small" onClick={() => onRemove(entry.id, entry.entryTitle)}>REMOVE</button>
+                <button className="shadow-small-entry-element-button font-small pointer" onClick={() => entrySaveHandler(newEntryTitle, newEntryContent)}>SAVE</button>
+                <button className="shadow-small-entry-element-button font-small pointer" onClick={() => onRemove(entry.id, entry.entryTitle)}>REMOVE</button>
             </div>
         </div>
     );

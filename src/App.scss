@@ -580,22 +580,23 @@ p {
   border: 1px solid white;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  max-width: 40vh;
-  height: 30vh;
+  // justify-content: space-around;
+  align-items: center;
+  width: 100vh;
+  height: auto;
   margin: 5px;
   .entry-element-title{
-    text-align: left;
-    width: 30vh;
-    height: auto;
+    width: 90vh;
+    height: 1.5rem;
     line-height: 20px;
   }
   .entry-element-content {
     padding: 5px;
     overflow: scroll;
-    width: 30vh;
-    height: 20vh;
+    width: 90vh;
+    height: auto;
     resize: none;
+    line-height: 17px;
   }
 }
 
@@ -605,13 +606,13 @@ p {
 
 .entry-element-checkbox-title {
   display: flex;
-  align-items: flex-start;
-  width: 30vh;
+  width: 90vh;
   padding: 10px;
+  height: 1rem;
   .entry-checkbox-small {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 5px;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 10px;
   }
   h1 {
     margin: 0 auto;
@@ -621,6 +622,8 @@ p {
 .entry-component-small-buttons {
   display: flex;
   margin: 10px 0px;
+  width: 30vh;
+
 }
 
 .shadow-small-entry-element-button {
@@ -642,9 +645,8 @@ p {
 }
 
 .entry-element-title-input {
-  text-align: left;
   width: 100%;
-  height: 2rem;
+  height: 1.5rem;
   line-height: 20px;
   background-color: $fontColor;
   color: $bgColor;
@@ -652,12 +654,43 @@ p {
   outline: none;
 }
 .entry-element-content-textarea {
+  border: 1px dashed $bgColor;
   padding: 5px;
   overflow: scroll;
-  width: 30vh;
+  width: 90vh;
   height: 20vh;
   resize: none;
   background-color: $fontColor;
   color: $bgColor;
   outline: none;
+}
+
+// YESTERDAY 
+
+.select-dropdown-yesterday, .yesterday-year-search {
+  margin: 10px 0px;
+  padding: 5px;
+  width: 150px;
+  background-color: $bgColor;
+  border: 1px solid $fontColor;
+  outline: none;
+}
+
+.yesterday-year-search {
+  color: $fontColor;
+  height: 1rem;
+}
+
+.yesterday-select-wrapper {
+  display: flex;
+  width: 100vh;
+  justify-content: space-around;
+}
+
+.yesterday-month-container, .yesterday-year-container {
+  display: flex;
+  align-items: center;
+  width: 35vh;
+  justify-content: center;
+  line-height: 20px;
 }
