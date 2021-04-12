@@ -47,12 +47,12 @@ const EntryComponent = ({ entry, onRemove }) => {
         <div className="entry-element-container">
             <div className="entry-element-checkbox-title">
                 <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/>
-                <input className="entry-element-title small" value={newEntryTitle} onChange={(e) => setNewEntryTitle(e.target.value)}/>
+                <input className="entry-element-title-input small" value={newEntryTitle.toUpperCase()} onChange={(e) => setNewEntryTitle(e.target.value)}/>
             </div>
-            <textarea className="entry-element-content font-small" onChange={(e) => setNewEntryContent(e.target.value)}>{newEntryContent}</textarea>
+            <textarea className="entry-element-content-textarea font-small" onChange={(e) => setNewEntryContent(e.target.value)}>{newEntryContent}</textarea>
             <div className="entry-component-small-buttons">
                 <button className="shadow-small-entry-element-button font-small" onClick={() => entrySaveHandler(newEntryTitle, newEntryContent)}>SAVE</button>
-                <button className="shadow-small-entry-element-button font-small">REMOVE</button>
+                <button className="shadow-small-entry-element-button font-small" onClick={() => onRemove(entry.id, entry.entryTitle)}>REMOVE</button>
             </div>
         </div>
     );

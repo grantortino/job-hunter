@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import checked from '../assets/job-hunter-characters/job-hunter-svg/check-box-checked.svg';
 import unchecked from '../assets/job-hunter-characters/job-hunter-svg/check-box-unchecked.svg';
-import jobstore from '../stores/JobStore';
 
 const ModalEntry = ({ value1, value2, checkbox, name, isModalVisible, onSave, onClose, type }) => {
 

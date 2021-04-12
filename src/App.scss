@@ -582,7 +582,6 @@ p {
   flex-direction: column;
   justify-content: space-around;
   max-width: 40vh;
-  // width: 100%;
   height: 30vh;
   margin: 5px;
   .entry-element-title{
@@ -596,6 +595,7 @@ p {
     overflow: scroll;
     width: 30vh;
     height: 20vh;
+    resize: none;
   }
 }
 
@@ -639,4 +639,25 @@ p {
     background-color: #0d6343;
   }
 
+}
+
+.entry-element-title-input {
+  text-align: left;
+  width: 100%;
+  height: 2rem;
+  line-height: 20px;
+  background-color: $fontColor;
+  color: $bgColor;
+  border: none;
+  outline: none;
+}
+.entry-element-content-textarea {
+  padding: 5px;
+  overflow: scroll;
+  width: 30vh;
+  height: 20vh;
+  resize: none;
+  background-color: $fontColor;
+  color: $bgColor;
+  outline: none;
 }
