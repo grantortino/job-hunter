@@ -45,6 +45,10 @@ const jobstore = {
         localStorage.setItem('savedJob', JSON.stringify(this.jobs));
     },
 
+    removeEntry: function (entryId) {
+
+    },
+
     search: function(searchValue) {
 
         if (searchValue === "") {

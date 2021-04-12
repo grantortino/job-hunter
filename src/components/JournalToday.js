@@ -54,6 +54,8 @@ const JournalToday = () => {
         jobstore.remove(id);
     };
 
+    
+
     // onClick event to edit entry
 
     const onCheckBox = () => {
