@@ -20,6 +20,7 @@ const JournalToday = () => {
     const [editContent, setEditContent] = useState("");
     const [checkbox, setCheckbox] = useState(false);
     const [removeModalVisibile, setRemoveModalVisible] = useState("");
+    const [entryId, setEntryId] = useState();
 
 
     const dateOfToday = new Date();
@@ -51,10 +52,18 @@ const JournalToday = () => {
     const onRemove = (id, title) => {
         setRemoveModalVisible(!removeModalVisibile);
         setEntryTitle(title);
-        jobstore.remove(id);
+        setEntryId(id);
     };
 
-    
+    const onSubmit = () => {
+        jobstore.removeEntry(entryId);
+        setRemoveModalVisible(!removeModalVisibile);
+    }
+
+    const onClose = () => {
+        setRemoveModalVisible(!removeModalVisibile);
+    }
+
 
     // onClick event to edit entry
 
@@ -74,6 +83,9 @@ const JournalToday = () => {
             <Modal 
             onRemove={onRemove}
             modalMainObject={entryTitle}
+            modalHeaderText="REMOVE:"
+            onSubmit={onSubmit}
+            onClose={onClose}
             />
             }
 
@@ -92,7 +104,6 @@ const JournalToday = () => {
                 <div className="pages-header-huge">
                     <h3 className="medium">TODAY {dateString}</h3>
                 </div>
-                {/* {newButtonVisible && <button className="shadow-small-entry-element-button small" onClick={entryHandler}>NEW</button>} */}
                 <button className={newButtonVisible ? 'shadow-small-entry-element-button small' : 'shadow-small-entry-element-button small invisible'} onClick={entryHandler}>NEW</button>
                 {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
 

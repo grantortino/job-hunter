@@ -46,7 +46,8 @@ const jobstore = {
     },
 
     removeEntry: function (entryId) {
-
+        this.entries = this.entries.filter((entry) => entry.id !== entryId);
+        localStorage.setItem('savedEntries', JSON.stringify(this.entries));
     },
 
     search: function(searchValue) {

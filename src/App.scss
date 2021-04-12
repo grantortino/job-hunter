@@ -512,7 +512,7 @@ p {
 .entry-card {
   display: flex;
   flex-direction: row-reverse;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   justify-content: center;
   min-width: 90vh;
   min-height: 55vh;
@@ -527,14 +527,18 @@ p {
   margin: 10px;
   width: 70vh;
   height: 45vh;
+  border: 5px solid $fontColor;
+  background-color: $bgColor;
   textarea {
     height: 30vh;
     width: 55vh;
     padding: 5px 5px;
     color: $fontColor;
     background-color: $bgColor;
+    border: 1px solid $fontColor;
     outline: none;
     resize: none;
+    margin: 10px 0px;
     &::placeholder {
       color: white;
     }
@@ -545,18 +549,21 @@ p {
   width: 55vh;
   padding: 5px 5px;
   display: flex;
+  align-items: center;
   .entry-title {
     color: $bgColor;
     background-color: $fontColor;
     outline: none;
     border: 3px solid $fontColor;
     width: 80%;
+    height: 3vh;
     &::placeholder {
       color: $bgColor;
     }
   }
   .entry-checkbox-big {
-    width: 7%;
+    width: 5vh;
+    height: 5vh;
   }
 }
 
@@ -564,6 +571,7 @@ p {
   display: flex;
   justify-content: space-between;
   width: 55vh;
+  margin: 10px 0px;
 }
 
 // ENTRY COMPONENT

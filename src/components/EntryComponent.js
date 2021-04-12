@@ -37,7 +37,7 @@ const EntryComponent = ({ entry, onRemove }) => {
                 <h1 className="entry-element-content font-small">{entry.entryContent}</h1>
                 <div className="entry-component-small-buttons">
                     <button className="shadow-small-entry-element-button font-small" onClick={() => setEditActive(!editActive)}>EDIT</button>
-                    <button className="shadow-small-entry-element-button font-small" onClick={() => onRemove(entry.id, entry.entryTitle, entry.entryContent)}>REMOVE</button>
+                    <button className="shadow-small-entry-element-button font-small" onClick={() => onRemove(entry.id, entry.entryTitle)}>REMOVE</button>
                 </div>
             </div>
         );    

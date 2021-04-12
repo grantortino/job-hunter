@@ -8,14 +8,14 @@ const NewJournalEntry = ({ newEntry, onEntrySave, setEntryContent, setEntryTitle
     return (
         <div className="new-entry-container">
             <div className="checkbox-container">
-                <img src={checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox"/>
-                <input className="entry-title small" type="text" placeholder={newEntry.entryTitle} onChange={(e) => setEntryTitle(e.target.value)}></input>
+                <img src={checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-big"/>
+                <input className="entry-title font-small" type="text" placeholder={newEntry.entryTitle} onChange={(e) => setEntryTitle(e.target.value)}></input>
             </div>
             <textarea className="font-small" placeholder={newEntry.entryContent} onChange={(e) => setEntryContent(e.target.value)}></textarea>
             <div className="entry-button-container">
-                <button className="buttons small" onClick={onEntrySave}>SAVE</button>
-                <button className="buttons small" onClick={onCheckBox} >CHECK</button>
-                <button className="buttons small" onClick={onEntryClose}>CLOSE</button>
+                <button className="shadow-small-entry-element-button font-small" onClick={onEntrySave}>SAVE</button>
+                <button className="shadow-small-entry-element-button font-small" onClick={onCheckBox} >CHECK</button>
+                <button className="shadow-small-entry-element-button font-small" onClick={onEntryClose}>CLOSE</button>
             </div>
         </div>
     );
