@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Screen = ({ children }) => {
+const Screen = ({ children, header }) => {
 
     return (
         <>
         <div className="screen-main">
+            <div className="screen-header">
+                    <h3 className="medium">{header}</h3>
+            </div>
             {children}
         </div>
         <div className="screen-buttons">

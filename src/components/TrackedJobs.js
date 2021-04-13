@@ -40,7 +40,7 @@ const TrackedJobs = () => {
 
     return (
 
-        <Screen>
+        <Screen header="TRACKED JOBS">
             <div className="tracked-jobs-container">
 
                 {isVisible && <Modal
@@ -51,10 +51,6 @@ const TrackedJobs = () => {
                 modalMainObject={jobCompanyName === undefined ? '-Company Name Missing-?' : `"${jobCompanyName.toUpperCase()}?"`}
                 />
                 }
-
-                <div className="pages-header-huge">
-                    <h1 className="huge">TRACKED JOBS</h1>
-                </div>
 
                 <div>
                     <input type="text" className="font-small jobs-search" placeholder="search here..." onChange={searchJobs} value={searchInput}/>

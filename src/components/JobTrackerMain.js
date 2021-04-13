@@ -7,12 +7,12 @@ import {
 const JobTrackerMain = () => {
 
     return (
-        <Screen>
+        <Screen header="JOB TRACKER">
         <div className="tracker-main-screen-containter">
 
-            <div className="pages-header-huge">
+            {/* <div className="pages-header-huge">
                 <h3 className="huge">JOB TRACKER</h3>
-            </div>
+            </div> */}
 
             <div className="tracker-sections-container">
 

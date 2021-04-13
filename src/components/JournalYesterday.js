@@ -15,11 +15,8 @@ const JournalYesterday = () => {
     // filter entries but how?
 
     return (
-        <Screen>
+        <Screen header="YESTERDAY">
             <div className="tracker-main-screen-containter">
-                <div className="pages-header-huge">
-                        <h3 className="medium">YESTERDAY</h3>
-                </div>
 
                 <div className="yesterday-select-wrapper">
                         

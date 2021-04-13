@@ -60,7 +60,7 @@ import Modal from './Modal';
     };
 
     return (
-        <Screen>
+        <Screen header="TRACK A NEW JOB">
 
             <div className="job-tracker-form-container">
 
@@ -80,10 +80,6 @@ import Modal from './Modal';
                 modalSmallTextNo="And back to the hunt."
                 />
                 }
-                
-                <div className="pages-header-huge">
-                    <h1 className="huge">TRACK A NEW JOB</h1>
-                </div>
 
                 <form className="job-tracker-form" onSubmit={formHandleSubmit} >
 
