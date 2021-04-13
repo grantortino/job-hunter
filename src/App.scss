@@ -355,7 +355,11 @@ p {
     text-align: center;
     line-height: 41px;
   }
+}
 
+.modal-object {
+  width: 90%;
+  line-height: 35px;
 }
 
 .modal-buttons-container {
@@ -587,7 +591,8 @@ p {
   margin: 5px;
   .entry-element-title{
     width: 90vh;
-    height: 1.5rem;
+    // height: 1.5rem;
+    height: auto;
     line-height: 20px;
   }
   .entry-element-content {
@@ -608,7 +613,8 @@ p {
   display: flex;
   width: 90vh;
   padding: 10px;
-  height: 1rem;
+  // height: 1rem;
+  height: auto;
   .entry-checkbox-small {
     width: 1.5rem;
     height: 1.5rem;
@@ -646,7 +652,8 @@ p {
 
 .entry-element-title-input {
   width: 100%;
-  height: 1.5rem;
+  // height: 1.5rem;
+  height: auto;
   line-height: 20px;
   background-color: $fontColor;
   color: $bgColor;

@@ -104,7 +104,8 @@ const JournalToday = () => {
                 <div className="pages-header-huge">
                     <h3 className="medium">TODAY {dateString}</h3>
                 </div>
-                <button className={newButtonVisible ? 'shadow-small-entry-element-button small' : 'shadow-small-entry-element-button small invisible'} onClick={entryHandler}>NEW</button>
+                {/* <button className={newButtonVisible ? 'shadow-small-entry-element-button small' : 'shadow-small-entry-element-button small invisible'} onClick={entryHandler}>NEW</button> */}
+                <button className={newButtonVisible ? 'buttons small' : 'buttons small invisible'} onClick={entryHandler}>NEW</button>
                 {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
 
                 <div className="today-overscroll-wrapper">

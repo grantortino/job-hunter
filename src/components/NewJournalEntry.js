@@ -8,7 +8,7 @@ const NewJournalEntry = ({ newEntry, onEntrySave, setEntryContent, setEntryTitle
     return (
         <div className="new-entry-container">
             <div className="checkbox-container">
-                <img src={checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-big"/>
+                <img src={checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-big pointer" onClick={onCheckBox}/>
                 <input className="entry-title font-small" type="text" placeholder={newEntry.entryTitle} onChange={(e) => setEntryTitle(e.target.value)}></input>
             </div>
             <textarea className="font-small" placeholder={newEntry.entryContent} onChange={(e) => setEntryContent(e.target.value)}></textarea>

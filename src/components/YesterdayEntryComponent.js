@@ -1,5 +1,4 @@
 import React from 'react';
-import jobstore from '../stores/JobStore';
 
 const YesterdayEntryComponent = ({entry}) => {
 
@@ -22,6 +21,7 @@ const YesterdayEntryComponent = ({entry}) => {
     };
 
     const dd = String(entry.time.getDate()).padStart(2, '0');
+
 
     return (
         <div className="yesterday-entry-container pointer">
