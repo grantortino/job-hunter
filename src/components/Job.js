@@ -40,7 +40,7 @@ const Job = ({ job, onRemove }) => {
             <div className="job-card">
                 <img className="job-paw-img" src={jobStatusImageHandler()} alt="Job Icon"/>
                 <div className="medium underline" style={textAlign}>{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
-                <div className="font-small" style={textAlign}>Front-End Web Developer</div>
+                <div className="font-small" style={textAlign}>{job.jobTitle}</div>
                 <div className="font-small">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
                 <div className="small-buttons-container">
                     <div className="shadow-small-button">

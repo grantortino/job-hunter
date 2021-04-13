@@ -6,7 +6,7 @@ const Screen = ({ children, header }) => {
         <>
         <div className="screen-main">
             <div className="screen-header">
-                    <h3 className="medium">{header}</h3>
+                    <h3 className="ultra-huge">{header}</h3>
             </div>
             {children}
         </div>

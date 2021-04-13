@@ -74,7 +74,7 @@ body {
   src: url(./fonts/press-start-2p/PressStart2P.ttf);
 }
 
-.huge, .medium, .small {
+.huge, .medium, .small, .ultra-huge {
   font-family: titleFont;
   color: $fontColor;
 }
@@ -82,6 +82,11 @@ body {
 .font-huge, .font-medium, .font-small {
   font-family: textFont;
   color: $fontColor;
+}
+
+.ultra-huge {
+  font-size: 43px;
+  margin: 0 auto;
 }
 
 .huge, .font-huge {
@@ -108,8 +113,15 @@ p {
 .screen-main {
   border: 5px ridge $fontColor;
   min-width: 150vh;
-  // max-width: 0vh;
-  min-height: 85vh;
+  max-width: 0vh;
+  max-height: 90vh;
+}
+
+.screen-header {
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .start-screen-containter {
@@ -280,7 +292,7 @@ p {
 // TRACKED JOBS
 
 .tracked-jobs-container {
-  width: 100%;
+  // width: 100%;
   min-height: 79vh;
   display: flex;
   flex-direction: column;
@@ -360,6 +372,7 @@ p {
 .modal-object {
   width: 90%;
   line-height: 35px;
+  text-align: center;
 }
 
 .modal-buttons-container {
@@ -493,13 +506,17 @@ p {
   min-height: 4vh;
   display: flex;
   align-items: center;
-  border: 1px solid $fontColor;
+  // border: 1px solid $fontColor;
   border-bottom: 3px solid $fontColor;
   border-right: 3px solid $fontColor;
+  border-left: 1px solid $fontColor;
+  border-top: 1px solid $fontColor;
   padding: 5px;
   &:hover {
-    border-bottom: 1px solid $fontColor;
-    border-right: 1px solid $fontColor;
+    border-bottom: 1px solid #c2c2c2;
+    border-right: 1px solid #c2c2c2;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
     background-color: #0d6343;
   }
 }
@@ -638,17 +655,23 @@ p {
   min-height: 4vh;
   display: flex;
   align-items: center;
-  border: 1px solid $fontColor;
   border-bottom: 3px solid $fontColor;
   border-right: 3px solid $fontColor;
+  border-left: 1px solid $fontColor;
+  border-top: 1px solid $fontColor;
   padding: 5px;
   &:hover {
-    border-bottom: 1px solid $fontColor;
-    border-right: 1px solid $fontColor;
+    border-bottom: 1px solid #c2c2c2;
+    border-right: 1px solid #c2c2c2;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
     background-color: #0d6343;
   }
 
 }
+
+
+
 
 .entry-element-title-input {
   width: 100%;
