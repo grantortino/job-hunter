@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 //components
 import Screen from './Screen';
@@ -10,7 +10,7 @@ const JournalYesterday = () => {
 
     const [month, setMonth] = useState(4);
 
-    console.log(month);
+    
 
     // filter entries but how?
 

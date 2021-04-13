@@ -66,13 +66,9 @@ const jobstore = {
         // return jobElement[0];
     },
 
-    findEntriesByMonth: function(month) {
-        console.log(month);
-        
+    findEntriesByMonth: function(month) {        
         return (this.entries.filter((entry) => {
-            console.log(entry.time);
-            console.log(entry.time.getMonth() +1);
-            return entry.time.getMonth() != month;
+            return entry.time.getMonth() + 1 == month;
         }));
     }
 
