@@ -17,21 +17,19 @@ const EntryComponent = ({ entry, onRemove }) => {
         jobstore.save();
     };
 
-    
-
     const checkBoxHandler = () => {
+        entry.checkbox = !isChecked;
+        // setIsChecked changes the value of the variable but not immediately (typical React speed regulation)
         setIsChecked(!isChecked);
-        entry.checkbox = isChecked;
-        console.log(isChecked);
         jobstore.save();
     };
-
+    
     if (editActive === false) {
         return (
             <div className="entry-element-container">
                 <div className="entry-element-checkbox-title">
                     {/* <img src={isChecked ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/> */}
-                    <img src={entry.checkbox ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/>
+                    <img src={isChecked ? checked : unchecked} alt="checkbox" className="entry-checkbox-small pointer" onClick={() => checkBoxHandler()}/>
                     <h1 className="entry-element-title small">{entry.entryTitle.toUpperCase()}</h1>
                 </div>
                 <h1 className="entry-element-content font-small">{entry.entryContent}</h1>

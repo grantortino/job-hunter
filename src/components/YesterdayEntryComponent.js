@@ -1,6 +1,7 @@
 import React from 'react';
 
 const YesterdayEntryComponent = ({entry}) => {
+
     return (
         <div className="yesterday-entry-container pointer">
             <p className="font-small">wednesday</p>

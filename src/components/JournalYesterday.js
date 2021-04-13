@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 //components
 import Screen from './Screen';
@@ -7,6 +7,13 @@ import YesterdayEntryComponent from './YesterdayEntryComponent.js';
 import jobstore from '../stores/JobStore';
 
 const JournalYesterday = () => {
+
+    const [month, setMonth] = useState(4);
+
+    console.log(month);
+
+    // filter entries but how?
+
     return (
         <Screen>
             <div className="tracker-main-screen-containter">
@@ -20,41 +27,41 @@ const JournalYesterday = () => {
 
                             <p className="font-small">Select Month: </p>
 
-                            <select className="select-dropdown-yesterday font-small">
-                                            <option value="january">
+                            <select className="select-dropdown-yesterday font-small" defaultValue={month} onChange={(e) => setMonth(e.target.value)}>
+                                            <option value="1">
                                                 JANUARY
                                             </option>
-                                            <option value="february">
+                                            <option value="2">
                                                 FEBRUARY
                                             </option>
-                                            <option value="march">
+                                            <option value="3">
                                                 MARCH
                                             </option>
-                                            <option value="april">
+                                            <option value="4">
                                                 APRIL
                                             </option>
-                                            <option value="may">
+                                            <option value="5">
                                                 MAY
                                             </option>
-                                            <option value="june">
+                                            <option value="6">
                                                 JUNE
                                             </option>
-                                            <option value="july">
+                                            <option value="7">
                                                 JULY
                                             </option>
-                                            <option value="august">
+                                            <option value="8">
                                                 AUGUST
                                             </option>
-                                            <option value="september">
+                                            <option value="9">
                                                 SEPTEMBER
                                             </option>
-                                            <option value="october">
+                                            <option value="10">
                                                 OCTOBER
                                             </option>
-                                            <option value="november">
+                                            <option value="11">
                                                 NOVEMBER
                                             </option>
-                                            <option value="december">
+                                            <option value="12">
                                                 DECEMBER
                                             </option>
                             </select>
@@ -70,7 +77,7 @@ const JournalYesterday = () => {
 
                 <div className="today-overscroll-wrapper">
                     <div className="yesterday-entries">
-                        {jobstore.entries.map((entry) => (
+                        {jobstore.findEntriesByMonth(month).map((entry) => (
                             <YesterdayEntryComponent entry={entry} key={entry.id} />
                         ))}
                     </div>

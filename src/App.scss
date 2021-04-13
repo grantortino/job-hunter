@@ -562,8 +562,8 @@ p {
     }
   }
   .entry-checkbox-big {
-    width: 5vh;
-    height: 5vh;
+    width: 4vh;
+    height: 4vh;
   }
 }
 
@@ -653,7 +653,9 @@ p {
   border: none;
   outline: none;
 }
+
 .entry-element-content-textarea {
+  margin-top: 10px;
   border: 1px dashed $bgColor;
   padding: 5px;
   overflow: scroll;
@@ -663,6 +665,7 @@ p {
   background-color: $fontColor;
   color: $bgColor;
   outline: none;
+  line-height: 15px;
 }
 
 // YESTERDAY 
