@@ -8,8 +8,9 @@ import jobstore from '../stores/JobStore';
 import jobPawAccepted from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-accepted.svg';
 import jobPawRejected from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-rejected.svg';
 import jobPawPending from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw-pending.svg';
+import jobStatus from '../assets/job-hunter-characters/job-hunter-svg/tracked-job-paw.svg';
 // router
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const JobEditor = () => {
 
@@ -20,7 +21,7 @@ const JobEditor = () => {
 
     const [isModalVisible, setIsModalVisible] = useState("");
     const [option, setOption] = useState(job.status);
-    const [logo, setLogo] = useState(jobPawPending);
+    const [logo, setLogo] = useState(jobStatus);
     const [degree, setDegree] = useState(job.relevanceDegree);
 
     // functions
