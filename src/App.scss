@@ -327,23 +327,33 @@ p {
 }
 
 .job-card {
-  width: 47vh;
-  height: 43vh;
+  border: 3px solid $fontColor;
+  display: flex;
+  width: 50vh;
+  height: 23vh;
+  padding: 10px;
+}
+
+.job-image-container {
+  width: 20vh;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: space-around;
+  align-content: center;
+  justify-content: center;
   img {
-    width: 50%;
+    width: 100%;
   }
-  div {
-    margin: 0.5rem 0rem;
-  }
-  .medium {
-    line-height: 33px;
-  }
+}
+
+.job-content-container {
+  width: 50vh;
+  height: 23vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .job-company-title{
+    line-height: 30px;
+  }  
 }
 
 .job-display-block {

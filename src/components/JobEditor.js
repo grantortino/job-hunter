@@ -21,6 +21,7 @@ const JobEditor = () => {
     const [isModalVisible, setIsModalVisible] = useState("");
     const [option, setOption] = useState(job.status);
     const [logo, setLogo] = useState(jobPawPending);
+    const [degree, setDegree] = useState(job.relevanceDegree);
 
     // functions
 
@@ -46,7 +47,7 @@ const JobEditor = () => {
     };
 
     return (
-        <Screen>
+        <Screen header="JOB EDITOR">
             <div className="job-editor-container">
             <ModalEditor
             value={job.companyName}
@@ -84,9 +85,6 @@ const JobEditor = () => {
             type="date"
             />
             
-                <div className="pages-header-huge">
-                    <h1 className="huge">JOB EDITOR</h1>
-                </div>
                 <div className="job-editor-card">
 
                     <div className="job-editor-image">
@@ -97,7 +95,7 @@ const JobEditor = () => {
 
                         <h1 className="medium pointer" onClick={() => setIsModalVisible("Company Name")}>{job.companyName.toUpperCase()}</h1>
 
-                        <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Position")}>Front-End Developer</h1>
+                        <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Position")}>{job.jobTitle}</h1>
                         
                         <h1 className="font-small underline pointer" onClick={() => setIsModalVisible("Link")}>LINK</h1>
 
@@ -130,7 +128,7 @@ const JobEditor = () => {
                                     <h3 className="small">
                                         RELEVANCE DEGREE:
                                     </h3>
-                                    <select className="select-dropdown font-small" onChange={(e) => {job.relevanceDegree = e.target.value; jobstore.save()}}>
+                                    <select className="select-dropdown font-small" value={degree} onChange={(e) => {job.relevanceDegree = e.target.value; setDegree(e.target.value); jobstore.save()}}>
                                         <option value="low">
                                             LOW
                                         </option>

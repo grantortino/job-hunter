@@ -38,21 +38,26 @@ const Job = ({ job, onRemove }) => {
     return (
         <div className="job-display-block">
             <div className="job-card">
-                <img className="job-paw-img" src={jobStatusImageHandler()} alt="Job Icon"/>
-                <div className="medium underline" style={textAlign}>{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
-                <div className="font-small" style={textAlign}>{job.jobTitle}</div>
-                <div className="font-small">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
-                <div className="small-buttons-container">
-                    <div className="shadow-small-button">
-                        <a rel="noreferrer" className="font-small pointer" href={job.jobLink} target="_blank" style={{ textDecoration: 'none'}}>LINK</a>
-                    </div>
-                    <div className="shadow-small-button">
-                        <div className="font-small pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
-                    </div>
-                    <div className="shadow-small-button">
-                        <Link to={`/jobs/${job.id}`} style={{ textDecoration: 'none' }}>
-                        <div className="font-small pointer" >EDIT</div>
-                    </Link>
+                <div className="job-image-container">
+                    <img className="job-paw-img" src={jobStatusImageHandler()} alt="Job Icon"/>
+                    <p className="font-small">{job.relevanceDegree}</p>
+                </div>
+                <div className="job-content-container">
+                    <div className="medium underline job-company-title" style={textAlign}>{job.companyName === undefined ? 'Company Name Missing' : job.companyName.toUpperCase()}</div>
+                    <div className="font-small" style={textAlign}>{job.jobTitle}</div>
+                    <div className="font-small">{job.date === undefined ? <div className="medium bold">Date?</div> : convertDate(job.date)}</div>
+                    <div className="small-buttons-container">
+                        <div className="shadow-small-button">
+                            <a rel="noreferrer" className="font-small pointer" href={job.jobLink} target="_blank" style={{ textDecoration: 'none'}}>LINK</a>
+                        </div>
+                        <div className="shadow-small-button">
+                            <div className="font-small pointer" onClick={() => onRemove(job.id, job.companyName)}>REMOVE</div>
+                        </div>
+                        <div className="shadow-small-button">
+                            <Link to={`/jobs/${job.id}`} style={{ textDecoration: 'none' }}>
+                            <div className="font-small pointer" >EDIT</div>
+                        </Link>
+                        </div>
                     </div>
                 </div>
                 {/* <div className="font-medium pointer" onClick={() => console.log(objectName)}>ERASE</div> */}
