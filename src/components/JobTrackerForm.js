@@ -146,9 +146,6 @@ import Modal from './Modal';
                         <input className="buttons small" type="submit" value="SAVE" />
                             {/* <h3 className="small">SAVE</h3> */}
 
-                        <input className="buttons small" type="submit" value="DISCARD" />
-                            {/* <h3 className="small">DISCARD</h3> */}
-
                     </div>
 
                 </form>

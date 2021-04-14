@@ -47,7 +47,7 @@ const JobEditor = () => {
     };
 
     return (
-        <Screen header="JOB EDITOR">
+        <Screen header="JOB EDITOR"  arrowLink="/trackedjobs" buttonMessage="SAVE">
             <div className="job-editor-container">
             <ModalEditor
             value={job.companyName}
@@ -141,11 +141,6 @@ const JobEditor = () => {
                                     </select>
                         </div>
                     </div>
-                </div>
-                <div className="job-editor-buttons-container">
-                    <Link to="/trackedjobs">
-                        <button className="back-buttons small">&larr;</button>
-                    </Link>
                 </div>
 
             </div>

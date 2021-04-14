@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Screen = ({ children, header, arrowLink }) => {
+const Screen = ({ children, header, arrowLink, buttonMessage }) => {
 
-    console.log(header)
+    const backArrowSymbol = "&larr;"
 
     return (
         <>
@@ -16,7 +16,8 @@ const Screen = ({ children, header, arrowLink }) => {
             <div className="screen-buttons">
                 {/* <Link to={arrowLink}> */}
                 <Link to={arrowLink}>
-                    <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>&larr;</button>
+                    {/* <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>&larr;</button> */}
+                    <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>{buttonMessage === undefined ? 'BACK' : buttonMessage}</button>
                 </Link>
 
                 <button className="buttons small">LOGIN</button>
