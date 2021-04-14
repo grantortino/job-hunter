@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Screen from './Screen';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import jobs from '../stores/JobStore';
 import Modal from './Modal';
 

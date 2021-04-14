@@ -1,7 +1,7 @@
 $fontColor: #E5E5E5;
+$darkFontColor: #c2c2c2;
 $bgColor: #0C734E;
-$lineHeightHuge: "line-height: 40px";
-
+$darkBgColor: #0d6343;
 
 Link {
   margin: 0 auto;
@@ -529,11 +529,11 @@ p {
   border-top: 1px solid $fontColor;
   padding: 5px;
   &:hover {
-    border-bottom: 1px solid #c2c2c2;
-    border-right: 1px solid #c2c2c2;
+    border-bottom: 1px solid $darkFontColor;
+    border-right: 1px solid $darkFontColor;
     border-left: 3px solid black;
     border-top: 3px solid black;
-    background-color: #0d6343;
+    background-color: $darkBgColor;
   }
 }
 
@@ -677,11 +677,11 @@ p {
   border-top: 1px solid $fontColor;
   padding: 5px;
   &:hover {
-    border-bottom: 1px solid #c2c2c2;
-    border-right: 1px solid #c2c2c2;
+    border-bottom: 1px solid $darkFontColor;
+    border-right: 1px solid $darkFontColor;
     border-left: 3px solid black;
     border-top: 3px solid black;
-    background-color: #0d6343;
+    background-color: $darkBgColor;
   }
 
 }

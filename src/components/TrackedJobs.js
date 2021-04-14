@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 // components
 import Screen from './Screen';
 import Job from './Job';

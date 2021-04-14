@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 // components
 import Screen from './Screen';
 import Modal from './Modal';
@@ -24,10 +23,10 @@ const JournalToday = () => {
 
 
     const dateOfToday = new Date();
-    const dd = String(dateOfToday.getDate()).padStart(2, '0');
-    const mm = String(dateOfToday.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = dateOfToday.getFullYear();
-    const dateString = dd + '/' + mm + '/' + yyyy;
+    // const dd = String(dateOfToday.getDate()).padStart(2, '0');
+    // const mm = String(dateOfToday.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // const yyyy = dateOfToday.getFullYear();
+    // const dateString = dd + '/' + mm + '/' + yyyy;
 
     const entryHandler = () => {
         setNewEntry({
