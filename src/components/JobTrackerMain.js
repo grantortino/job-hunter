@@ -3,6 +3,10 @@ import Screen from './Screen';
 import {
     Link
   } from "react-router-dom";
+// assets
+import trackNewJobSvg from '../assets/job-hunter-characters/job-hunter-svg/track-new-job.svg';
+import trackedJobsSvg from '../assets/job-hunter-characters/job-hunter-svg/tracked-jobs.svg';
+
 
 const JobTrackerMain = () => {
 
@@ -18,7 +22,7 @@ const JobTrackerMain = () => {
 
                 <Link to="/trackerform" style={{ textDecoration: 'none' }}>
                     <div className="job-tracker-card-big">
-                        <div className="job-card-image-big"></div>
+                        <img className="job-card-image-big" src={trackNewJobSvg} alt="track new job svg"></img>
                         <p>Track A New Job</p>
                     </div>
                 </Link>
@@ -26,7 +30,7 @@ const JobTrackerMain = () => {
                 <Link to="/trackedjobs" style={{ textDecoration: 'none' }}>
                     <div>
                         <div className="job-tracker-card-big">
-                            <div className="job-card-image-big"></div>
+                            <img className="job-card-image-big" src={trackedJobsSvg} alt="tracked jobs svg"></img>
                             <p>Tracked Jobs</p>
                         </div>
                     </div>
