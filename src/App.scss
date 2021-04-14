@@ -133,6 +133,15 @@ p {
   justify-content: center;
 }
 
+.screen-buttons {
+  margin-top: 7px;
+  button {
+    margin-right: 20px;
+  }
+}
+
+// JOB TRACKER FORM
+
 .job-tracker-form-container {
   width: 100%;
   min-height: 79vh;
@@ -499,10 +508,6 @@ p {
   }
 }
 
-.job-editor-buttons-container {
-  min-width: 90vh;
-  display: flex;
-}
 
 .small-buttons-container {
   display: flex;

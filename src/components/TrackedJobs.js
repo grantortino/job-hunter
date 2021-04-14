@@ -40,7 +40,7 @@ const TrackedJobs = () => {
 
     return (
 
-        <Screen header="TRACKED JOBS">
+        <Screen header="TRACKED JOBS" arrowLink="/tracker">
             <div className="tracked-jobs-container">
 
                 {isVisible && <Modal
@@ -66,9 +66,6 @@ const TrackedJobs = () => {
                     </div>
                 </div>
 
-                <Link to="/tracker">
-                    <button className="buttons small">&larr;</button>
-                </Link>
             </div>
         </Screen>
     )

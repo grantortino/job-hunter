@@ -60,7 +60,7 @@ import Modal from './Modal';
     };
 
     return (
-        <Screen header="TRACK A NEW JOB">
+        <Screen header="TRACK A NEW JOB" arrowLink="/tracker">
 
             <div className="job-tracker-form-container">
 
@@ -142,10 +142,6 @@ import Modal from './Modal';
                     </div>
 
                     <div className="job-tracker-buttons-container">
-
-                        <Link to="/tracker" style={{ textDecoration: 'none' }}>
-                                <button className="back-buttons small">&larr;</button>
-                        </Link>
 
                         <input className="buttons small" type="submit" value="SAVE" />
                             {/* <h3 className="small">SAVE</h3> */}

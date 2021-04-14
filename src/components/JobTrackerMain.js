@@ -7,7 +7,7 @@ import {
 const JobTrackerMain = () => {
 
     return (
-        <Screen header="JOB TRACKER">
+        <Screen header="JOB TRACKER" arrowLink="/">
         <div className="tracker-main-screen-containter">
 
             {/* <div className="pages-header-huge">
@@ -34,9 +34,6 @@ const JobTrackerMain = () => {
 
             </div>
                             
-            <Link to="/">
-                <button className="buttons small">&larr;</button>
-            </Link>
         </div>
         </Screen>
     );

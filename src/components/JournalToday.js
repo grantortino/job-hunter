@@ -76,7 +76,7 @@ const JournalToday = () => {
     const visibleEntries = jobstore.entries.filter((entry) => sameDay(entry.time, dateOfToday));
 
     return (
-        <Screen header="TODAY">
+        <Screen header="TODAY" arrowLink="/journal">
             <div className="tracker-main-screen-containter">
 
             {removeModalVisibile && 
@@ -116,11 +116,7 @@ const JournalToday = () => {
 
                     </div>
                 </div>
-                <div className="job-editor-buttons-container">
-                    <Link to="/journal">
-                        <button className="back-buttons small">&larr;</button>
-                    </Link>
-                </div>
+                
             </div>
 
         </Screen>

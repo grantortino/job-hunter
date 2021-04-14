@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 //components
 import Screen from './Screen';
 import YesterdayEntryComponent from './YesterdayEntryComponent.js';
@@ -8,14 +7,12 @@ import jobstore from '../stores/JobStore';
 
 const JournalYesterday = () => {
 
-    const [month, setMonth] = useState();
-
-    
+    const [month, setMonth] = useState(new Date().getMonth() + 1);
 
     // filter entries but how?
 
     return (
-        <Screen header="YESTERDAY">
+        <Screen header="YESTERDAY" arrowLink="/journal">
             <div className="tracker-main-screen-containter">
 
                 <div className="yesterday-select-wrapper">
@@ -80,11 +77,6 @@ const JournalYesterday = () => {
                     </div>
                 </div>
 
-                <div className="job-editor-buttons-container">
-                    <Link to="/journal">
-                        <button className="back-buttons small">&larr;</button>
-                    </Link>
-                </div>
             </div>
         </Screen>
     )

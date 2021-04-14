@@ -7,7 +7,7 @@ import {
 const JobTrackerMain = () => {
 
     return (
-        <Screen header="JOB JOURNAL">
+        <Screen header="JOB JOURNAL" arrowLink="/">
         <div className="tracker-main-screen-containter">
 
             <div className="tracker-sections-container">
@@ -30,9 +30,6 @@ const JobTrackerMain = () => {
 
             </div>
                             
-            <Link to="/">
-                <button className="buttons small">&larr;</button>
-            </Link>
         </div>
         </Screen>
     );
