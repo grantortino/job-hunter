@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Screen = ({ children, header, arrowLink, buttonMessage }) => {
 
-    const backArrowSymbol = "&larr;"
-
     return (
         <>
         <div className="screen-main">

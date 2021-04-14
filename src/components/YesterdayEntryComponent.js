@@ -26,9 +26,9 @@ const YesterdayEntryComponent = ({entry}) => {
     return (
         <div className="yesterday-entry-container pointer">
             <p className="font-small">{displayNameOfDay(entry.time)}</p>
-            <p className="huge">{dd}</p>
+            <p className="ultra-huge">{dd}</p>
             <div></div>
-            <p className="font-small" style={{textAlign: "center"}}>{entry.entryTitle}</p>
+            {/* <p className="font-small" style={{textAlign: "center"}}>{entry.entryTitle}</p> */}
         </div>
     )
 };
