@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 // components
 import Screen from './Screen';
 import Job from './Job';
@@ -50,6 +51,10 @@ const TrackedJobs = () => {
                 modalMainObject={jobCompanyName === undefined ? '-Company Name Missing-?' : `"${jobCompanyName.toUpperCase()}?"`}
                 />
                 }
+
+                <Link to="/trackerform">
+                    <button className="buttons small">NEW</button>
+                </Link>
 
                 <div>
                     <input type="text" className="font-small jobs-search" placeholder="search here..." onChange={searchJobs} value={searchInput}/>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Screen from './Screen';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import jobs from '../stores/JobStore';
 import Modal from './Modal';
 
@@ -142,10 +142,12 @@ import Modal from './Modal';
                     </div>
 
                     <div className="job-tracker-buttons-container">
-
-                        <input className="buttons small" type="submit" value="SAVE" />
-                            {/* <h3 className="small">SAVE</h3> */}
-
+                        <div>
+                            <input className="buttons small" type="submit" value="SAVE" />
+                        </div>
+                        <Link to="/trackedjobs">
+                            <button className="buttons small">JOBS</button>
+                        </Link>
                     </div>
 
                 </form>

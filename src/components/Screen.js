@@ -13,7 +13,7 @@ const Screen = ({ children, header, arrowLink, buttonMessage }) => {
         </div>
             <div className="screen-buttons">
                 {/* <Link to={arrowLink}> */}
-                <Link to={arrowLink}>
+                <Link to={arrowLink === undefined ? 'to="/' : arrowLink}>
                     {/* <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>&larr;</button> */}
                     <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>{buttonMessage === undefined ? 'BACK' : buttonMessage}</button>
                 </Link>

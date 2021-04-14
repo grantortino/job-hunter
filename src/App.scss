@@ -40,8 +40,8 @@ body {
 .buttons {
   background-color: $bgColor;
   border: 3px solid $fontColor;
-  width: 150px;
-  height: 40px;
+  width: 15vh;
+  height: 4vh;
   cursor: pointer;
   outline: none;
   &:hover {
@@ -85,22 +85,22 @@ body {
 }
 
 .ultra-huge {
-  font-size: 43px;
+  font-size: 5vh;
   margin: 0 auto;
 }
 
 .huge, .font-huge {
-  font-size: 33px;
+  font-size: 3vh;
   margin: 0 auto;
 }
 
 .medium, .font-medium {
-  font-size: 23px;
+  font-size: 2vh;
   margin: 0 auto;
 }
 
 .small, .font-small {
-  font-size: 13px;
+  font-size: 1.5vh;
   margin: 0 auto;
 }
 
@@ -130,7 +130,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.start-screen-jhlogo {
+  width: 100%;;
 }
 
 .screen-buttons {
@@ -160,33 +164,22 @@ p {
   // justify-content: center;
 }
 
-.sections-container {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-// .job-tracker-section, .job-journal-section, .job-interview-section {
-//   width: 200px;
-//   height: 230px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-.job-tracker-card-medium {
-  width: 200px;
-  height: 210px;
+.main-sections-container {
+  width: 60vh;
+  height: 30vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-content: center;
+  justify-content: space-around;
 }
 
-.job-card-image-medium {
-  min-width: 150px;
-  min-height: 150px;
-  border: 5px solid $fontColor;
+.main-section {
+  display: flex;
+  align-items: center;
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .job-card-image-medium:hover {
@@ -202,12 +195,17 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+  img {
+    width: 27vh;
+  }
 }
 
 .job-card-image-big {
-  min-width: 250px;
-  min-height: 250px;
+  max-width: 33vh;
+  max-height: 33vh;
   border: 5px solid $fontColor;
+
 }
 
 .job-card-image-big:hover {
@@ -242,6 +240,12 @@ p {
 }
 
 .tracker-sections-container {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.tracker-main-sections-container {
   width: 80%;
   height: 50vh;
   display: flex;
@@ -295,7 +299,7 @@ p {
 .job-tracker-buttons-container {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 // TRACKED JOBS
@@ -428,7 +432,7 @@ p {
   background-color: $bgColor;
   outline: none;
   border: 3px solid $fontColor;
-  height: 1.5rem;
+  height: 3vh;
   padding: 0px 0px 0px 10px;
   &::placeholder {
     color: $fontColor;

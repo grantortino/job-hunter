@@ -13,11 +13,13 @@ const ModalEditor = ({ value, name, isModalVisible, onSave, onClose, type }) => 
         return date.getDate()+"/"+(date.getMonth() + 1)+"/"+date.getFullYear();
     };
 
+
+
     if (name === isModalVisible) {
         return (
             <div className="modal-container">
                 <h1 className="huge">ENTER NEW:</h1>
-                <h1 className="font-medium">{type === "date" ? convertDate(value) : value.toUpperCase()}</h1>
+                <h1 className="font-medium">{type === "date" ? convertDate(value) : value}</h1>
                 {/* <h1 className="font-medium">{value}</h1> */}
                 <input type={type} onChange={newValueHandler} className="modal-editor-input font-small"/>
                 <button className="buttons small" onClick={() => onSave(newValue)}>ACCEPT</button>

@@ -23,7 +23,7 @@ const JobTrackerMain = () => {
                 <Link to="/trackerform" style={{ textDecoration: 'none' }}>
                     <div className="job-tracker-card-big">
                         <img className="job-card-image-big" src={trackNewJobSvg} alt="track new job svg"></img>
-                        <p>Track A New Job</p>
+                        <p className="small">TRACK A NEW JOB</p>
                     </div>
                 </Link>
 
@@ -31,7 +31,7 @@ const JobTrackerMain = () => {
                     <div>
                         <div className="job-tracker-card-big">
                             <img className="job-card-image-big" src={trackedJobsSvg} alt="tracked jobs svg"></img>
-                            <p>Tracked Jobs</p>
+                            <p className="small">TRACKED JOBS</p>
                         </div>
                     </div>
                 </Link>

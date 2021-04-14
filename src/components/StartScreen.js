@@ -1,32 +1,38 @@
 import React from 'react';
 import Screen from './Screen';
 import { Link } from 'react-router-dom';
+// assets
+import jhLogo from '../assets/job-hunter-characters/job-hunter-svg/job-hunter-logo.svg';
+import handSelector from '../assets/job-hunter-characters/job-hunter-svg/hand-selector.svg';
 
 const StartScreen = () => {
     return (
-        <Screen header="JOB HUNTER">
+        <Screen header="IN PAIN-DEMIC TIMES:">
+        
         <div className="start-screen-containter">
 
-          <div className="sections-container">
+          <img src={jhLogo} alt="Job Hunter Logo" className="start-screen-jhlogo"/>
+
+          <div className="main-sections-container">
 
             <Link to="/tracker" style={{ textDecoration: 'none' }}>
-              <div className="job-tracker-card-medium">
-                <div className="job-card-image-medium"></div>
-                <p>Job Tracker</p>
+              <div className="main-section">
+                <img src={handSelector} alt="" className="tracker-hand-selector"/>
+                <h1 className="huge">TRACKER</h1>
               </div>
             </Link>
 
             <Link to="/journal" style={{ textDecoration: 'none' }}>
-            <div className="job-tracker-card-medium">
-              <div className="job-card-image-medium"></div>
-              <p>Job Journal</p>
-            </div>
+              <div className="main-section">
+              <img src={handSelector} alt="" className="tracker-hand-selector"/>
+              <h1 className="huge">JOURNAL</h1>
+              </div>
             </Link>
+              <div className="main-section">
+              <img src={handSelector} alt="" className="tracker-hand-selector"/>
+              <h1 className="huge">INTERVIEW</h1>
+              </div>
 
-            <div className="job-tracker-card-medium">
-              <div className="job-card-image-medium"></div>
-              <p>Job Interview</p>
-            </div>
           </div>
         </div>
       </Screen>
