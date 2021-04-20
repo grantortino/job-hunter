@@ -50,18 +50,18 @@ body {
   }
 }
 
-.back-buttons {
-  background-color: $bgColor;
-  border: 3px solid $fontColor;
-  width: 50px;
-  height: 40px;
-  cursor: pointer;
-  &:hover {
-    background-color: $fontColor;
-    color: $bgColor;
-    outline: none;
-  }
-}
+// .back-buttons {
+//   background-color: $bgColor;
+//   border: 3px solid $fontColor;
+//   width: 50px;
+//   height: 40px;
+//   cursor: pointer;
+//   &:hover {
+//     background-color: $fontColor;
+//     color: $bgColor;
+//     outline: none;
+//   }
+// }
 
 
 @font-face {
@@ -188,10 +188,10 @@ p {
 }
 
 .job-tracker-card-big {
-  max-width: 500px;
-  min-width: 300px;
-  max-height: 500px;
-  min-height: 330px;
+  max-width: 50vh;
+  min-width: 30vh;
+  max-height: 50vh;
+  min-height: 33vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,7 +270,7 @@ p {
   select {
     margin: 10px 0px;
     padding: 5px;
-    width: 150px;
+    width: 25vh;
     background-color: $bgColor;
     border: 1px solid $fontColor;
     outline: none;
@@ -290,7 +290,7 @@ p {
   font-family: textFont;
   background-color: $bgColor;
   border: 3px solid $fontColor;
-  height: 19px;
+  height: 3vh;
   width: 90vh;
   outline: none;
   padding: 5px 15px;
@@ -321,7 +321,7 @@ p {
 }
 
 .job-tracker-overscroll-container {
-  height: 50vh;
+  height: 40vh;
   width: 80%;
   overflow: scroll;
   padding: 1rem 1rem;
@@ -409,9 +409,9 @@ p {
 }
 
 .modal-button-card {
-  max-height: 210px;
-  min-height: 130px;
-  width: 150px;
+  min-height: 20vh;
+  width: 15vh;
+  text-align: center;
   .font-small {
     padding-top: 10px;
     line-height: 17px;
@@ -493,7 +493,7 @@ p {
     select {
       margin: 10px 0px;
       padding: 5px;
-      width: 150px;
+      width: 25vh;
       background-color: $bgColor;
       border: 1px solid $fontColor;
       outline: none;
@@ -505,7 +505,7 @@ p {
     select {
       margin: 10px 0px;
       padding: 5px;
-      width: 150px;
+      width: 25vh;
       background-color: $bgColor;
       border: 1px solid $fontColor;
       outline: none;
@@ -723,7 +723,7 @@ p {
 .select-dropdown-yesterday, .yesterday-year-search {
   margin: 10px 0px;
   padding: 5px;
-  width: 150px;
+  width: 25vh;
   background-color: $bgColor;
   border: 1px solid $fontColor;
   outline: none;
