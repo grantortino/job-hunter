@@ -72,28 +72,26 @@ const jobstore = {
     },
 
     findEntriesByMonth: function(month) {
-        // return (this.entries.filter((entry) => {
-        //     return entry.time.getMonth() + 1 == month;
-        // }));
 
-        return {
-            date2: [
-                { time:"2", entryTitle:"A", entryContent: "FFF"},
-                { time:"2", entryTitle:"B", entryContent: "TTT"}
-            ],
-            date3: [
-                { time:"3", entryTitle:"C", entryContent: "GGG"}
-            ]
-        };
+        const groupedEntries = {};
 
-        // const groupedEntries = {};
+        this.entries.forEach((entry) => {
+            const keyForEntry = entry.time.getMonth();
+            // if (groupedEntries[keyForEntry] === undefined) {
+            //     groupedEntries[keyForEntry] = [];
+            //     groupedEntries[keyForEntry].push(entry);
+            // } else {
+            //     groupedEntries[keyForEntry].push(entry);
+            // }
+            if (groupedEntries[keyForEntry] === undefined) {
+                groupedEntries[keyForEntry] = [];
+            }
 
-        // let keyName = "entryDate";
+            groupedEntries[keyForEntry].push(entry);
+        });
 
-        // this.entries.forEach((entry) => {
-        //     groupedEntries[keyName] = [entry];
-        // })
-        console.log(month)
+        return groupedEntries
+
     },
 
 };
