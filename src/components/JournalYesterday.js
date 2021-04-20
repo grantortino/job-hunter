@@ -11,12 +11,14 @@ const JournalYesterday = () => {
 
     // filter entries but how?
 
+    const groupedEntries = jobstore.findEntriesByMonth(month);
+
     return (
         <Screen header="YESTERDAY" arrowLink="/journal">
             <div className="tracker-main-screen-containter">
 
                 <div className="yesterday-select-wrapper">
-                        
+
                         <div className="yesterday-month-container">
 
                             <p className="font-small">Select Month: </p>
@@ -71,8 +73,11 @@ const JournalYesterday = () => {
 
                 <div className="today-overscroll-wrapper">
                     <div className="yesterday-entries">
-                        {jobstore.findEntriesByMonth(month).map((entry) => (
+                        {/* {jobstore.findEntriesByMonth(month).map((entry) => (
                             <YesterdayEntryComponent entry={entry} key={entry.id} />
+                        ))} */}
+                        {Object.keys(groupedEntries).map((key) => (
+                            <div className="ultra-huge">{groupedEntries[key].length}</div>
                         ))}
                     </div>
                 </div>

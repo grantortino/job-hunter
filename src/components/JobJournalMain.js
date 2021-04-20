@@ -18,7 +18,7 @@ const JobTrackerMain = () => {
                 <Link to="/today" style={{ textDecoration: 'none' }}>
                     <div className="job-tracker-card-big">
                         <img className="job-card-image-big" src={journalTodayLogo} alt="job journal logo"></img>
-                        <p className="small">TODAY</p>
+                        <p className="medium">TODAY</p>
                     </div>
                 </Link>
 
@@ -26,7 +26,7 @@ const JobTrackerMain = () => {
                     <div>
                         <div className="job-tracker-card-big">
                         <img className="job-card-image-big" src={journalYesterdayLogo} alt="job journal logo"></img>                            
-                        <p className="small">YESTERDAY</p>
+                        <p className="medium">YESTERDAY</p>
                         </div>
                     </div>
                 </Link>

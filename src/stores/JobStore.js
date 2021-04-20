@@ -1,13 +1,18 @@
 import uuid from 'react-uuid';
 
 const jobstore = {
+
     jobs: [],
+
     entries: [],
+
     filteredJobs: [],
+
     addJob: function(companyName, jobTitle, jobLink, date, relevanceDegree, status) {
-        // "this" refers to the scope 
+        // "this" refers to the scope
         this.jobs.push({companyName, jobTitle, jobLink, date, relevanceDegree, status, id: uuid()});
     },
+
     addEntry: function(entryTitle, entryContent, checkbox) {
         this.entries.push({ entryTitle, entryContent, id:uuid(), time: new Date(), checkbox });
     },
@@ -57,7 +62,7 @@ const jobstore = {
         } else {
             return this.filteredJobs = this.jobs.filter((job) => job.companyName.toLowerCase().includes(searchValue.toLowerCase()));
         }
-        
+
     },
 
     findJob: function(id) {
@@ -66,11 +71,30 @@ const jobstore = {
         // return jobElement[0];
     },
 
-    findEntriesByMonth: function(month) {        
-        return (this.entries.filter((entry) => {
-            return entry.time.getMonth() + 1 == month;
-        }));
-    }
+    findEntriesByMonth: function(month) {
+        // return (this.entries.filter((entry) => {
+        //     return entry.time.getMonth() + 1 == month;
+        // }));
+
+        return {
+            date2: [
+                { time:"2", entryTitle:"A", entryContent: "FFF"},
+                { time:"2", entryTitle:"B", entryContent: "TTT"}
+            ],
+            date3: [
+                { time:"3", entryTitle:"C", entryContent: "GGG"}
+            ]
+        };
+
+        // const groupedEntries = {};
+
+        // let keyName = "entryDate";
+
+        // this.entries.forEach((entry) => {
+        //     groupedEntries[keyName] = [entry];
+        // })
+        console.log(month)
+    },
 
 };
 
