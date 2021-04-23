@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Screen from './Screen';
 import { Link } from 'react-router-dom';
 // assets
@@ -6,6 +6,7 @@ import jhLogo from '../assets/job-hunter-characters/job-hunter-svg/job-hunter-lo
 import handSelector from '../assets/job-hunter-characters/job-hunter-svg/hand-selector.svg';
 
 const StartScreen = () => {
+
     return (
         <Screen header="IN PAIN-DEMIC TIMES:">
         
@@ -17,21 +18,17 @@ const StartScreen = () => {
 
             <Link to="/tracker" style={{ textDecoration: 'none' }}>
               <div className="main-section">
-                <img src={handSelector} alt="" className="tracker-hand-selector"/>
+                <img className='tracker-hand-selector' src={handSelector} alt="hand selector"   />
                 <h1 className="huge">TRACKER</h1>
               </div>
             </Link>
 
             <Link to="/journal" style={{ textDecoration: 'none' }}>
               <div className="main-section">
-              <img src={handSelector} alt="" className="tracker-hand-selector"/>
+              <img className='tracker-hand-selector' src={handSelector} alt="hand selector" />
               <h1 className="huge">JOURNAL</h1>
               </div>
             </Link>
-              <div className="main-section">
-              <img src={handSelector} alt="" className="tracker-hand-selector"/>
-              <h1 className="huge">INTERVIEW</h1>
-              </div>
 
           </div>
         </div>

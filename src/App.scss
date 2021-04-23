@@ -47,6 +47,7 @@ body {
   &:hover {
     background-color: $fontColor;
     color: $bgColor;
+    transition-duration: 0.2s;
   }
 }
 
@@ -165,8 +166,8 @@ p {
 }
 
 .main-sections-container {
-  width: 60vh;
-  height: 30vh;
+  width: 40vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -180,11 +181,22 @@ p {
     width: 3rem;
     height: 3rem;
   }
+  &:hover {
+    .tracker-hand-selector { 
+      transition-duration: 0.5s;
+      visibility: visible;
+    }
+  }
+}
+
+.tracker-hand-selector { 
+  visibility: hidden;
 }
 
 .job-card-image-medium:hover {
   background-color: $fontColor;
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 
 .job-tracker-card-big {
@@ -211,11 +223,15 @@ p {
 .job-card-image-big:hover {
   background-color: $fontColor;
   cursor: pointer;
+  transition-duration: 0.2s;
+
 }
 
 .job-card-image-big:hover {
   background-color: $fontColor;
   cursor: pointer;
+  transition-duration: 0.2s;
+
 }
 
 .job-hunter-png-container {
@@ -538,6 +554,8 @@ p {
     border-left: 3px solid black;
     border-top: 3px solid black;
     background-color: $darkBgColor;
+    transition-duration: 0.2s;
+
   }
 }
 
@@ -686,6 +704,7 @@ p {
     border-left: 3px solid black;
     border-top: 3px solid black;
     background-color: $darkBgColor;
+    transition-duration: 0.2s;
   }
 
 }

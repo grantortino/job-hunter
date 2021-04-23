@@ -4,6 +4,8 @@ import Screen from './Screen';
 import YesterdayEntryComponent from './YesterdayEntryComponent.js';
 //store
 import jobstore from '../stores/JobStore';
+//utils
+import DateFormat from '../utils/DateFormat';
 
 const JournalYesterday = () => {
 
@@ -11,7 +13,7 @@ const JournalYesterday = () => {
 
     // filter entries but how?
 
-    const groupedEntries = jobstore.findEntriesByMonth(month);
+    const groupedEntries = jobstore.groupEntriesByDay(month);
 
     return (
         <Screen header="YESTERDAY" arrowLink="/journal">
@@ -77,7 +79,8 @@ const JournalYesterday = () => {
                             <YesterdayEntryComponent entry={entry} key={entry.id} />
                         ))} */}
                         {Object.keys(groupedEntries).map((key) => (
-                            <div className="font-small" onClick={() => console.log(groupedEntries[key][0])}>{groupedEntries[key][0].time.getMonth() + 1}</div>
+                            // <div className="font-small" onClick={() => console.log(groupedEntries)}>{DateFormat.displayNameOfDay(groupedEntries[key][0].time)}</div>
+                            <YesterdayEntryComponent entriesForToday={groupedEntries[key]} />
                         ))}
                     </div>
                 </div>
