@@ -77,7 +77,7 @@ const JournalYesterday = () => {
                             <YesterdayEntryComponent entry={entry} key={entry.id} />
                         ))} */}
                         {Object.keys(groupedEntries).map((key) => (
-                            <div className="ultra-huge">{groupedEntries[key].length}</div>
+                            <div className="font-small" onClick={() => console.log(groupedEntries[key][0])}>{groupedEntries[key][0].time.getMonth() + 1}</div>
                         ))}
                     </div>
                 </div>

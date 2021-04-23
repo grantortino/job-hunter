@@ -75,8 +75,38 @@ const jobstore = {
 
         const groupedEntries = {};
 
+        const displayNameOfDay = (d) => {
+
+            const weekday = new Array(7);
+            const monthName = new Array(12);
+
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            monthName[0] = "January";
+            monthName[1] = "February";
+            monthName[2] = "March";
+            monthName[3] = "April";
+            monthName[4] = "May";
+            monthName[5] = "June";
+            monthName[6] = "July";
+            monthName[7] = "August";
+            monthName[8] = "September"
+            monthName[9] = "October";
+            monthName[10] = "November";
+            monthName[11] = "December";
+      
+            return `${weekday[d.getDay()]} ${String(d.getDate()).padStart(2, '0')} ${monthName[d.getMonth()]}`;
+
+        };
+
         this.entries.forEach((entry) => {
-            const keyForEntry = entry.time.getMonth();
+            const keyForEntry = displayNameOfDay(entry.time);
             // if (groupedEntries[keyForEntry] === undefined) {
             //     groupedEntries[keyForEntry] = [];
             //     groupedEntries[keyForEntry].push(entry);
@@ -90,7 +120,7 @@ const jobstore = {
             groupedEntries[keyForEntry].push(entry);
         });
 
-        return groupedEntries
+        return groupedEntries;
 
     },
 
