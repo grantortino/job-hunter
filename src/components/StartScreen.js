@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Screen from './Screen';
 import { Link } from 'react-router-dom';
 // assets
@@ -19,14 +19,14 @@ const StartScreen = () => {
             <Link to="/tracker" style={{ textDecoration: 'none' }}>
               <div className="main-section">
                 <img className='tracker-hand-selector' src={handSelector} alt="hand selector"   />
-                <h1 className="huge">TRACKER</h1>
+                <h1 className="start-screen-option huge">TRACKER</h1>
               </div>
             </Link>
 
             <Link to="/journal" style={{ textDecoration: 'none' }}>
               <div className="main-section">
               <img className='tracker-hand-selector' src={handSelector} alt="hand selector" />
-              <h1 className="huge">JOURNAL</h1>
+              <h1 className="start-screen-option huge">JOURNAL</h1>
               </div>
             </Link>
 

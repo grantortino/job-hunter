@@ -4,8 +4,6 @@ import Screen from './Screen';
 import YesterdayEntryComponent from './YesterdayEntryComponent.js';
 //store
 import jobstore from '../stores/JobStore';
-//utils
-import DateFormat from '../utils/DateFormat';
 
 const JournalYesterday = () => {
 
@@ -13,7 +11,7 @@ const JournalYesterday = () => {
 
     // filter entries but how?
 
-    const groupedEntries = jobstore.groupEntriesByDay(month);
+    const groupedEntries = jobstore.groupedEntriesByDay(month);
 
     return (
         <Screen header="YESTERDAY" arrowLink="/journal">

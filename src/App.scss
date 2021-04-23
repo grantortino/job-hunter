@@ -131,6 +131,11 @@ p {
   }
 }
 
+.start-screen-option {
+  color: $darkFontColor;
+
+}
+
 // JOB TRACKER FORM
 
 .job-tracker-form-container {
@@ -168,8 +173,11 @@ p {
   }
   &:hover {
     .tracker-hand-selector { 
-      transition-duration: 0.5s;
       visibility: visible;
+    }
+    .start-screen-option {
+      color: $fontColor;
+      transition-duration: 0.1s;
     }
   }
 }

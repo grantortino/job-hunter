@@ -72,7 +72,7 @@ const jobstore = {
         // return jobElement[0];
     },
 
-    groupEntriesByDay: function(month) {
+    groupedEntriesByDay: function(month) {
 
         const groupedEntries = {};
 
