@@ -78,8 +78,8 @@ const JournalToday = () => {
         <Screen header="TODAY" arrowLink="/journal">
             <div className="tracker-main-screen-containter">
 
-            {removeModalVisibile && 
-            <Modal 
+            {removeModalVisibile &&
+            <Modal
             onRemove={onRemove}
             modalMainObject={entryTitle}
             modalHeaderText="REMOVE:"
@@ -100,22 +100,18 @@ const JournalToday = () => {
             checkbox={checkbox}
             />
 
-                {/* <div className="pages-header-huge">
-                    <h3 className="medium">TODAY {dateString}</h3>
-                </div> */}
-                {/* <button className={newButtonVisible ? 'shadow-small-entry-element-button small' : 'shadow-small-entry-element-button small invisible'} onClick={entryHandler}>NEW</button> */}
-                <button className={newButtonVisible ? 'buttons small' : 'buttons small invisible'} onClick={entryHandler}>NEW</button>
-                {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
+            <button className={newButtonVisible ? 'buttons small' : 'buttons small invisible'} onClick={entryHandler}>NEW</button>
+            {newEntry && <NewJournalEntry checkbox={checkbox} onCheckBox={onCheckBox} onEntryClose={onEntryClose} setEntryTitle={setEntryTitle} setEntryContent={setEntryContent} onEntrySave={onEntrySave} newEntry={newEntry} setNewEntry={setNewEntry} />}
 
-                <div className="today-overscroll-wrapper">
-                    <div className="entry-card">
-                        {visibleEntries.map((entry) => (
-                            <EntryComponent entry={entry} onRemove={onRemove} key={entry.id} />
-                        ))}
+            <div className="today-overscroll-wrapper">
+                <div className="entry-card">
+                    {visibleEntries.map((entry) => (
+                        <EntryComponent entry={entry} onRemove={onRemove} key={entry.id} />
+                    ))}
 
-                    </div>
                 </div>
-                
+            </div>
+
             </div>
 
         </Screen>
