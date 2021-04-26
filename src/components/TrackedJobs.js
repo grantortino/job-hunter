@@ -40,7 +40,7 @@ const TrackedJobs = () => {
 
     return (
 
-        <Screen>
+        <Screen header="TRACKED JOBS" arrowLink="/tracker">
             <div className="tracked-jobs-container">
 
                 {isVisible && <Modal
@@ -52,9 +52,9 @@ const TrackedJobs = () => {
                 />
                 }
 
-                <div className="pages-header-huge">
-                    <h1 className="huge">TRACKED JOBS</h1>
-                </div>
+                <Link to="/trackerform">
+                    <button className="buttons small">NEW</button>
+                </Link>
 
                 <div>
                     <input type="text" className="font-small jobs-search" placeholder="search here..." onChange={searchJobs} value={searchInput}/>
@@ -65,14 +65,11 @@ const TrackedJobs = () => {
                         {/* <img src={jobHunter} alt="job logo" />
                         <h1 className="medium">{jobs.companyName}</h1> */}
                         {jobstore.search(searchInput).map((job) => (
-                            <Job onRemove={onRemove} key={job.id} job={job} objectName={job.companyName} />
+                            <Job onRemove={onRemove} key={job.id} job={job} />
                         ))}
                     </div>
                 </div>
 
-                <Link to="/tracker">
-                    <button className="buttons small">&larr;</button>
-                </Link>
             </div>
         </Screen>
     )

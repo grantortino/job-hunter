@@ -60,7 +60,7 @@ import Modal from './Modal';
     };
 
     return (
-        <Screen>
+        <Screen header="TRACK A NEW JOB" arrowLink="/tracker">
 
             <div className="job-tracker-form-container">
 
@@ -80,30 +80,26 @@ import Modal from './Modal';
                 modalSmallTextNo="And back to the hunt."
                 />
                 }
-                
-                <div className="pages-header-huge">
-                    <h1 className="huge">TRACK A NEW JOB</h1>
-                </div>
 
                 <form className="job-tracker-form" onSubmit={formHandleSubmit} >
 
-                        <h3 className="small">
+                        <h3 className="medium">
                             COMPANY NAME:
                         </h3>
                     <input className="input-bar font-small" autoComplete="off" onChange={companyNameHandler} type="text" id="cname" name="cname" placeholder={companyName} value={companyName}/>
 
-                        <h3 className="small">
+                        <h3 className="medium">
                             JOB TITLE:
                         </h3>
                     <input className="input-bar font-small" autoComplete="off" onChange={jobTitleHandler} type="text" id="jtitle" name="jtitle" placeholder={jobTitle} value={jobTitle} />
 
-                        <h3 className="small">
+                        <h3 className="medium">
                             DATE OF INSERTION:
                         </h3>
 
                     <input className="input-bar font-small" onChange={dateHandler} type="date" id="date" name="date" value={date} />
 
-                        <h3 className="small">
+                        <h3 className="medium">
                             LINK TO JOB AD:
                         </h3>
                     <input className="input-bar font-small" autoComplete="off" onChange={jobLinkHandler} type="text" id="link" name="link" placeholder={jobLink} value={jobLink} />
@@ -111,7 +107,7 @@ import Modal from './Modal';
                     <div className="job-tracker-select-container">
 
                         <div className="job-tracker-relevance-select">
-                                <h3 className="small">
+                                <h3 className="medium">
                                     RELEVANCE DEGREE:
                                 </h3>
                                 <select className="select-dropdown font-small" onChange={relevanceSelectHandler} value={relevanceDegree}>
@@ -128,7 +124,7 @@ import Modal from './Modal';
                         </div>
 
                         <div className="job-tracker-status-select">
-                                <h3 className="small">STATUS:</h3>
+                                <h3 className="medium">STATUS:</h3>
 
                                 <select className="select-dropdown font-small" onChange={statusHandler} value={status}>
                                     <option value="pending">
@@ -146,17 +142,12 @@ import Modal from './Modal';
                     </div>
 
                     <div className="job-tracker-buttons-container">
-
-                        <input className="buttons small" type="submit" value="SAVE" />
-                            {/* <h3 className="small">SAVE</h3> */}
-
-                        <input className="buttons small" type="submit" value="DISCARD" />
-                            {/* <h3 className="small">DISCARD</h3> */}
-
-                        <Link to="/tracker" style={{ textDecoration: 'none' }}>
-                            <button className="back-buttons small">&larr;</button>
+                        <div>
+                            <input className="buttons small" type="submit" value="SAVE" />
+                        </div>
+                        <Link to="/trackedjobs">
+                            <button className="buttons small">JOBS</button>
                         </Link>
-
                     </div>
 
                 </form>

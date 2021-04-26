@@ -1,11 +1,16 @@
 $fontColor: #E5E5E5;
+$darkFontColor: #c2c2c2;
 $bgColor: #0C734E;
-$lineHeightHuge: "line-height: 40px";
-
+$darkBgColor: #0d6343;
 
 Link {
   margin: 0 auto;
 }
+
+.invisible {
+  visibility: hidden;
+}
+
 
 .pointer {
   cursor: pointer;
@@ -35,29 +40,16 @@ body {
 .buttons {
   background-color: $bgColor;
   border: 3px solid $fontColor;
-  width: 150px;
-  height: 40px;
+  width: 15vh;
+  height: 4vh;
   cursor: pointer;
+  outline: none;
   &:hover {
     background-color: $fontColor;
     color: $bgColor;
-    outline: none;
+    transition-duration: 0.2s;
   }
 }
-
-.back-buttons {
-  background-color: $bgColor;
-  border: 3px solid $fontColor;
-  width: 50px;
-  height: 40px;
-  cursor: pointer;
-  &:hover {
-    background-color: $fontColor;
-    color: $bgColor;
-    outline: none;
-  }
-}
-
 
 @font-face {
   font-family: textFont;
@@ -69,7 +61,7 @@ body {
   src: url(./fonts/press-start-2p/PressStart2P.ttf);
 }
 
-.huge, .medium, .small {
+.huge, .medium, .small, .ultra-huge {
   font-family: titleFont;
   color: $fontColor;
 }
@@ -79,18 +71,23 @@ body {
   color: $fontColor;
 }
 
+.ultra-huge {
+  font-size: 5vh;
+  margin: 0 auto;
+}
+
 .huge, .font-huge {
-  font-size: 33px;
+  font-size: 3vh;
   margin: 0 auto;
 }
 
 .medium, .font-medium {
-  font-size: 23px;
+  font-size: 2vh;
   margin: 0 auto;
 }
 
 .small, .font-small {
-  font-size: 13px;
+  font-size: 1.5vh;
   margin: 0 auto;
 }
 
@@ -104,21 +101,46 @@ p {
   border: 5px ridge $fontColor;
   min-width: 150vh;
   max-width: 0vh;
-  min-height: 80vh;
+  max-height: 90vh;
+}
+
+.screen-header {
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .start-screen-containter {
   width: 100%;
-  min-height: 79vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
+
+.start-screen-jhlogo {
+  width: 100%;;
+}
+
+.screen-buttons {
+  margin-top: 7px;
+  button {
+    margin-right: 20px;
+  }
+}
+
+.start-screen-option {
+  color: $darkFontColor;
+
+}
+
+// JOB TRACKER FORM
 
 .job-tracker-form-container {
   width: 100%;
-  min-height: 79vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,67 +153,78 @@ p {
   flex-direction: column;
   align-items: center;
   padding: 20px 0px 40px 0px;
-  // justify-content: center;
 }
 
-.sections-container {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-// .job-tracker-section, .job-journal-section, .job-interview-section {
-//   width: 200px;
-//   height: 230px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-.job-tracker-card-medium {
-  width: 200px;
-  height: 210px;
+.main-sections-container {
+  width: 40vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-content: center;
+  justify-content: space-around;
 }
 
-.job-card-image-medium {
-  min-width: 150px;
-  min-height: 150px;
-  border: 5px solid $fontColor;
+.main-section {
+  display: flex;
+  align-items: center;
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+  &:hover {
+    .tracker-hand-selector { 
+      visibility: visible;
+    }
+    .start-screen-option {
+      color: $fontColor;
+      transition-duration: 0.1s;
+    }
+  }
+}
+
+.tracker-hand-selector { 
+  visibility: hidden;
 }
 
 .job-card-image-medium:hover {
   background-color: $fontColor;
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 
 .job-tracker-card-big {
-  max-width: 500px;
-  min-width: 300px;
-  max-height: 500px;
-  min-height: 330px;
+  max-width: 50vh;
+  min-width: 30vh;
+  max-height: 50vh;
+  min-height: 33vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+  img {
+    width: 27vh;
+  }
 }
 
 .job-card-image-big {
-  min-width: 250px;
-  min-height: 250px;
+  max-width: 33vh;
+  max-height: 33vh;
   border: 5px solid $fontColor;
+
 }
 
 .job-card-image-big:hover {
   background-color: $fontColor;
   cursor: pointer;
+  transition-duration: 0.2s;
+
 }
 
 .job-card-image-big:hover {
   background-color: $fontColor;
   cursor: pointer;
+  transition-duration: 0.2s;
+
 }
 
 .job-hunter-png-container {
@@ -208,7 +241,7 @@ p {
 
 .tracker-main-screen-containter {
   width: 100%;
-  min-height: 79vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,6 +249,12 @@ p {
 }
 
 .tracker-sections-container {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.tracker-main-sections-container {
   width: 80%;
   height: 50vh;
   display: flex;
@@ -240,7 +279,7 @@ p {
   select {
     margin: 10px 0px;
     padding: 5px;
-    width: 150px;
+    width: 25vh;
     background-color: $bgColor;
     border: 1px solid $fontColor;
     outline: none;
@@ -260,7 +299,7 @@ p {
   font-family: textFont;
   background-color: $bgColor;
   border: 3px solid $fontColor;
-  height: 19px;
+  height: 3vh;
   width: 90vh;
   outline: none;
   padding: 5px 15px;
@@ -269,14 +308,13 @@ p {
 .job-tracker-buttons-container {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 // TRACKED JOBS
 
 .tracked-jobs-container {
-  width: 100%;
-  min-height: 79vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -291,7 +329,7 @@ p {
 }
 
 .job-tracker-overscroll-container {
-  height: 50vh;
+  height: 40vh;
   width: 80%;
   overflow: scroll;
   padding: 1rem 1rem;
@@ -310,23 +348,34 @@ p {
 }
 
 .job-card {
-  width: 47vh;
-  height: 43vh;
+  border: 3px solid $fontColor;
+  display: flex;
+  width: 50vh;
+  height: 23vh;
+  padding: 10px;
+}
+
+.job-image-container {
+  width: 20vh;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1rem;
-  margin-bottom: 2rem;
-  align-items: center;
-  justify-content: space-around;
+  align-content: center;
+  justify-content: center;
   img {
-    width: 50%;
+    width: 100%;
+    margin-bottom: 10px;
   }
-  div {
-    margin: 0.5rem 0rem;
-  }
-  .medium {
-    line-height: 33px;
-  }
+}
+
+.job-content-container {
+  width: 50vh;
+  height: 23vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .job-company-title{
+    line-height: 30px;
+  }  
 }
 
 .job-display-block {
@@ -350,7 +399,12 @@ p {
     text-align: center;
     line-height: 41px;
   }
+}
 
+.modal-object {
+  width: 90%;
+  line-height: 35px;
+  text-align: center;
 }
 
 .modal-buttons-container {
@@ -363,9 +417,9 @@ p {
 }
 
 .modal-button-card {
-  max-height: 210px;
-  min-height: 130px;
-  width: 150px;
+  min-height: 20vh;
+  width: 15vh;
+  text-align: center;
   .font-small {
     padding-top: 10px;
     line-height: 17px;
@@ -373,11 +427,20 @@ p {
 
 }
 
+.modal-editor-input {
+  outline: none;
+  padding-left: 10px;
+  background-color: $bgColor;
+  border: 5px solid $fontColor;
+  width: 40vh;
+  height: 3vh;
+}
+
 .jobs-search {
   background-color: $bgColor;
   outline: none;
   border: 3px solid $fontColor;
-  height: 1.5rem;
+  height: 3vh;
   padding: 0px 0px 0px 10px;
   &::placeholder {
     color: $fontColor;
@@ -388,7 +451,7 @@ p {
 
 .job-editor-container {
   width: 100%;
-  min-height: 79vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -438,7 +501,7 @@ p {
     select {
       margin: 10px 0px;
       padding: 5px;
-      width: 150px;
+      width: 25vh;
       background-color: $bgColor;
       border: 1px solid $fontColor;
       outline: none;
@@ -450,7 +513,7 @@ p {
     select {
       margin: 10px 0px;
       padding: 5px;
-      width: 150px;
+      width: 25vh;
       background-color: $bgColor;
       border: 1px solid $fontColor;
       outline: none;
@@ -458,7 +521,313 @@ p {
   }
 }
 
-.job-editor-buttons-container {
-  min-width: 90vh;
+
+.small-buttons-container {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 5vh;
+  width: 35vh;
 }
+
+.shadow-small-button {
+  min-height: 4vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid $fontColor;
+  border-right: 3px solid $fontColor;
+  border-left: 1px solid $fontColor;
+  border-top: 1px solid $fontColor;
+  padding: 5px;
+  &:hover {
+    border-bottom: 1px solid $darkFontColor;
+    border-right: 1px solid $darkFontColor;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    background-color: $darkBgColor;
+    transition-duration: 0.2s;
+
+  }
+}
+
+// today-entries-container 
+
+.today-overscroll-wrapper {
+  border: 5px solid $fontColor;
+  width: 100vh;
+  height: 50vh;
+  overflow: scroll;
+}
+
+.entry-card {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  min-width: 90vh;
+  min-height: 55vh;
+}
+
+.new-entry-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  width: 70vh;
+  height: 45vh;
+  border: 5px solid $fontColor;
+  background-color: $bgColor;
+  textarea {
+    height: 30vh;
+    width: 55vh;
+    padding: 5px 5px;
+    color: $fontColor;
+    background-color: $bgColor;
+    border: 1px solid $fontColor;
+    outline: none;
+    resize: none;
+    margin: 10px 0px;
+    &::placeholder {
+      color: white;
+    }
+  }
+}
+
+.checkbox-container {
+  width: 55vh;
+  padding: 5px 5px;
+  display: flex;
+  align-items: center;
+  .entry-title {
+    color: $bgColor;
+    background-color: $fontColor;
+    outline: none;
+    border: 3px solid $fontColor;
+    width: 80%;
+    height: 3vh;
+    &::placeholder {
+      color: $bgColor;
+    }
+  }
+  .entry-checkbox-big {
+    width: 4vh;
+    height: 4vh;
+  }
+}
+
+.entry-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 55vh;
+  margin: 10px 0px;
+}
+
+// ENTRY COMPONENT
+
+.entry-element-container {
+  border: 1px solid $fontColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vh;
+  height: auto;
+  margin: 5px;
+  .entry-element-title{
+    width: 90vh;
+    height: auto;
+    line-height: 20px;
+  }
+  .entry-element-content {
+    padding: 5px;
+    overflow: scroll;
+    width: 90vh;
+    height: auto;
+    resize: none;
+    line-height: 17px;
+  }
+}
+
+.entry-checkbox-small {
+  width: 7%;
+}
+
+.entry-element-checkbox-title {
+  display: flex;
+  width: 90vh;
+  padding: 10px;
+  height: auto;
+  .entry-checkbox-small {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 10px;
+  }
+  h1 {
+    margin: 0 auto;
+  }
+}
+
+.entry-component-small-buttons {
+  display: flex;
+  margin: 10px 0px;
+  width: 30vh;
+
+}
+
+.shadow-small-entry-element-button {
+  outline: none;
+  background-color: $bgColor;
+  min-height: 4vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid $fontColor;
+  border-right: 3px solid $fontColor;
+  border-left: 1px solid $fontColor;
+  border-top: 1px solid $fontColor;
+  padding: 5px;
+  &:hover {
+    border-bottom: 1px solid $darkFontColor;
+    border-right: 1px solid $darkFontColor;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    background-color: $darkBgColor;
+    transition-duration: 0.2s;
+  }
+
+}
+
+
+
+
+.entry-element-title-input {
+  width: 100%;
+  height: auto;
+  line-height: 20px;
+  background-color: $fontColor;
+  color: $bgColor;
+  border: none;
+  outline: none;
+}
+
+.entry-element-content-textarea {
+  margin-top: 10px;
+  border: 1px dashed $bgColor;
+  padding: 5px;
+  overflow: scroll;
+  width: 90vh;
+  height: 20vh;
+  resize: none;
+  background-color: $fontColor;
+  color: $bgColor;
+  outline: none;
+  line-height: 15px;
+}
+
+// YESTERDAY 
+
+.select-dropdown-yesterday, .yesterday-year-search {
+  margin: 10px 0px;
+  padding: 5px;
+  width: 25vh;
+  background-color: $bgColor;
+  border: 1px solid $fontColor;
+  outline: none;
+}
+
+.yesterday-year-search {
+  color: $fontColor;
+  height: 1rem;
+}
+
+.yesterday-select-wrapper {
+  display: flex;
+  width: 100vh;
+  justify-content: space-around;
+}
+
+.yesterday-month-container, .yesterday-year-container {
+  display: flex;
+  align-items: center;
+  width: 35vh;
+  justify-content: center;
+  line-height: 20px;
+}
+
+.yesterday-entry-container {
+  border: 1px solid $fontColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px;
+  width: 21vh;
+  height: 21vh;
+  &:hover {
+    border: 1px dotted $fontColor;
+    background-color: $darkBgColor;
+    transition-duration: 0.5s;
+  }
+}
+
+.yesterday-entries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// PAST ENTRIES MODAL
+
+.past-entries-scroll-container {
+  height: 49vh;
+  overflow: scroll;
+}
+
+.past-entry-date {
+  padding: 2vh;
+  border-bottom: 3px dotted $fontColor;
+}
+
+.modal-for-entries-container {
+  position: absolute;
+  width: 93vh;
+  height: 59vh;
+  background-color: $bgColor;
+  border: 5px ridge $fontColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .past-entry-container {
+    margin: 2.5vh 0vh;
+
+    .past-entriers-checkbox-title {
+      width: 90vh;
+      display: flex;
+      line-height: 3vh;
+
+    }
+    img {
+      display: inline;
+      width: 3vh;
+      height: 3vh;
+      margin: 0.5vh;
+
+    }
+    .past-entry-title {
+      width: 100vh;
+      padding: 1vh;
+
+    }
+    .past-entry-content {
+      padding: 0.5vh;
+      line-height: 2vh;
+
+    }
+  }
+}
+
+.past-entry-button {
+  text-align: center;
+  margin: 0.5vh;
+} 
+
+

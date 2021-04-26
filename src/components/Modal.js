@@ -6,8 +6,7 @@ const Modal = ({ onSubmit, children, modalHeaderText, modalMainObject, onClose, 
         <div className="modal-container">
                     {children}
             <h1 className="huge">{modalHeaderText}</h1>
-            {/* <h3 className="font-medium">{`"${companyName}"`}</h3> */}
-            <h3 className="font-medium">{modalMainObject}</h3>
+            <h3 className="modal-object font-medium">{modalMainObject}</h3>
             <div className="modal-buttons-container">
                 <div className="modal-button-card">
                     <button className="buttons small" onClick={onSubmit}>YES</button>

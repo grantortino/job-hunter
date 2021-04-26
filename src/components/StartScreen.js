@@ -1,37 +1,35 @@
 import React from 'react';
 import Screen from './Screen';
-import jobHunter from '../assets/job-hunter-characters/job-hunter.png';
 import { Link } from 'react-router-dom';
+// assets
+import jhLogo from '../assets/job-hunter-characters/job-hunter-svg/job-hunter-logo.svg';
+import handSelector from '../assets/job-hunter-characters/job-hunter-svg/hand-selector.svg';
 
 const StartScreen = () => {
+
     return (
-        <Screen>
+        <Screen header="IN PAIN-DEMIC TIMES:">
+        
         <div className="start-screen-containter">
 
-          <div className="start-screen-header">
-            <h1 className="huge">JOB</h1>
-            <img src={jobHunter} className="job-hunter-png" alt="job hunter base" />
-            <h1 className="huge">HUNTER</h1>
-          </div>
+          <img src={jhLogo} alt="Job Hunter Logo" className="start-screen-jhlogo"/>
 
-          <div className="sections-container">
+          <div className="main-sections-container">
 
             <Link to="/tracker" style={{ textDecoration: 'none' }}>
-              <div className="job-tracker-card-medium">
-                <div className="job-card-image-medium"></div>
-                <p>Job Tracker</p>
+              <div className="main-section">
+                <img className='tracker-hand-selector' src={handSelector} alt="hand selector"   />
+                <h1 className="start-screen-option huge">TRACKER</h1>
               </div>
             </Link>
 
-            <div className="job-tracker-card-medium">
-              <div className="job-card-image-medium"></div>
-              <p>Job Journal</p>
-            </div>
+            <Link to="/journal" style={{ textDecoration: 'none' }}>
+              <div className="main-section">
+              <img className='tracker-hand-selector' src={handSelector} alt="hand selector" />
+              <h1 className="start-screen-option huge">JOURNAL</h1>
+              </div>
+            </Link>
 
-            <div className="job-tracker-card-medium">
-              <div className="job-card-image-medium"></div>
-              <p>Job Interview</p>
-            </div>
           </div>
         </div>
       </Screen>

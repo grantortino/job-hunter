@@ -3,40 +3,37 @@ import Screen from './Screen';
 import {
     Link
   } from "react-router-dom";
+// assets
+import trackNewJobSvg from '../assets/job-hunter-characters/job-hunter-svg/track-new-job.svg';
+import trackedJobsSvg from '../assets/job-hunter-characters/job-hunter-svg/tracked-jobs.svg';
+
 
 const JobTrackerMain = () => {
 
     return (
-        <Screen>
+        <Screen header="JOB TRACKER" arrowLink="/">
         <div className="tracker-main-screen-containter">
-
-            <div className="pages-header-huge">
-                <h3 className="huge">JOB TRACKER</h3>
-            </div>
 
             <div className="tracker-sections-container">
 
                 <Link to="/trackerform" style={{ textDecoration: 'none' }}>
                     <div className="job-tracker-card-big">
-                        <div className="job-card-image-big"></div>
-                        <p>Track A New Job</p>
+                        <img className="job-card-image-big" src={trackNewJobSvg} alt="track new job svg"></img>
+                        <p className="medium">TRACK A NEW JOB</p>
                     </div>
                 </Link>
 
                 <Link to="/trackedjobs" style={{ textDecoration: 'none' }}>
                     <div>
                         <div className="job-tracker-card-big">
-                            <div className="job-card-image-big"></div>
-                            <p>Tracked Jobs</p>
+                            <img className="job-card-image-big" src={trackedJobsSvg} alt="tracked jobs svg"></img>
+                            <p className="medium">TRACKED JOBS</p>
                         </div>
                     </div>
                 </Link>
 
             </div>
                             
-            <Link to="/">
-                <button className="buttons small">&larr;</button>
-            </Link>
         </div>
         </Screen>
     );
