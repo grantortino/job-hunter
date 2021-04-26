@@ -32,6 +32,7 @@ const JournalYesterday = () => {
                 {modalForEntriesVisible && 
                 <ModalForEntries 
                     dataForModal={dataForModal}
+                    onClose={() => setModalForEntriesVisible(false)}
                 />
                 }
 

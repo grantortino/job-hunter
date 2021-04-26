@@ -774,3 +774,54 @@ p {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+// PAST ENTRIES MODAL
+
+.past-entries-scroll-container {
+  height: 49vh;
+  overflow: scroll;
+}
+
+.past-entry-date {
+  padding: 1vh;
+}
+
+.modal-for-entries-container {
+  position: absolute;
+  width: 93vh;
+  height: 59vh;
+  background-color: $bgColor;
+  border: 5px ridge $fontColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .past-entry-container {
+    margin-bottom: 2.5vh;
+    .past-entriers-checkbox-title {
+      width: 90vh;
+      display: flex;
+      line-height: 3vh;
+    }
+    img {
+      display: inline;
+      width: 3vh;
+      height: 3vh;
+      margin: 0.5vh;
+    }
+    .past-entry-title {
+      width: 100vh;
+      padding: 1vh;
+    }
+    .past-entry-content {
+      padding: 0.5vh;
+      line-height: 2vh;
+    }
+  }
+}
+
+.past-entry-button {
+  text-align: center;
+  margin: 0.5vh;
+}  
+
+
