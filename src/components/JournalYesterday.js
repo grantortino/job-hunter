@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 //components
 import Screen from './Screen';
 import YesterdayEntryComponent from './YesterdayEntryComponent.js';
+import ModalForEntries from './ModalForEntries';
 //store
 import jobstore from '../stores/JobStore';
 
 const JournalYesterday = () => {
 
+    // state
     const [month, setMonth] = useState(new Date().getMonth() + 1);
+    const [modalForEntriesVisible, setModalForEntriesVisible] = useState(false);
+    const [dataForModal, setdataForModal] = useState([]);
+
+    // functions
+    
+    const modalForEntriesHandler = (data) => {
+        setModalForEntriesVisible(true);
+        setdataForModal(data);
+    };
 
     // filter entries but how?
 
@@ -15,7 +26,14 @@ const JournalYesterday = () => {
 
     return (
         <Screen header="YESTERDAY" arrowLink="/journal">
+
             <div className="tracker-main-screen-containter">
+
+                {modalForEntriesVisible && 
+                <ModalForEntries 
+                    dataForModal={dataForModal}
+                />
+                }
 
                 <div className="yesterday-select-wrapper">
 
@@ -77,8 +95,7 @@ const JournalYesterday = () => {
                             <YesterdayEntryComponent entry={entry} key={entry.id} />
                         ))} */}
                         {Object.keys(groupedEntries).map((key) => (
-                            // <div className="font-small" onClick={() => console.log(groupedEntries)}>{DateFormat.displayNameOfDay(groupedEntries[key][0].time)}</div>
-                            <YesterdayEntryComponent entriesForToday={groupedEntries[key]} />
+                            <YesterdayEntryComponent entriesForToday={groupedEntries[key]} modalForEntriesHandler={modalForEntriesHandler} key={groupedEntries[key].id}/>
                         ))}
                     </div>
                 </div>
