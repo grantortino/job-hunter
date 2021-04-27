@@ -35,7 +35,6 @@ const TrackedJobs = () => {
 
     const searchJobs = (e) => {
         setSearchInput(e.target.value);
-        console.log(jobstore.search(searchInput));
     };
 
     return (
@@ -62,9 +61,7 @@ const TrackedJobs = () => {
 
                 <div className="job-tracker-overscroll-container">
                     <div className="job-cards">
-                        {/* <img src={jobHunter} alt="job logo" />
-                        <h1 className="medium">{jobs.companyName}</h1> */}
-                        {jobstore.search(searchInput).map((job) => (
+                        {jobstore.searchJob(searchInput).map((job) => (
                             <Job onRemove={onRemove} key={job.id} job={job} />
                         ))}
                     </div>
