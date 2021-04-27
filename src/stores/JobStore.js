@@ -56,7 +56,7 @@ const jobstore = {
         localStorage.setItem('savedEntries', JSON.stringify(this.entries));
     },
 
-    search: function(searchValue) {
+    searchJob: function(searchValue) {
 
         if (searchValue === "") {
             return this.jobs;
