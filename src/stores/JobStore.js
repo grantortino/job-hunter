@@ -67,7 +67,7 @@ const jobstore = {
     },
 
     findJob: function(id) {
-        return (this.jobs.filter((job) => job.id === id))[0].id;
+        return (this.jobs.filter((job) => job.id === id))[0];
         // const jobElement = this.jobs.filter((job) => job.id === id);
         // return jobElement[0];
     },
