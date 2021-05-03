@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ModalLogIn from './ModalLogIn';
 
 const Screen = ({ children, header, arrowLink, buttonMessage }) => {
 
@@ -11,6 +12,7 @@ const Screen = ({ children, header, arrowLink, buttonMessage }) => {
 
     return (
         <>
+        <ModalLogIn />
         <div className={radiusActive ? "screen-main radius" : "screen-main"}>
             <div className="screen-header" style={header === undefined ? {visibility: "hidden"} : {display: "flex"}}>
                     <h3 className="ultra-huge">{header}</h3>
@@ -18,9 +20,7 @@ const Screen = ({ children, header, arrowLink, buttonMessage }) => {
             {children}
         </div>
             <div className="screen-buttons">
-                {/* <Link to={arrowLink}> */}
                 <Link to={arrowLink === undefined ? 'to="/' : arrowLink}>
-                    {/* <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>&larr;</button> */}
                     <button className="buttons small" style={arrowLink === undefined ? {display: "none"} : {display: "inline-block"}}>{buttonMessage === undefined ? 'BACK' : buttonMessage}</button>
                 </Link>
 

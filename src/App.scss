@@ -832,6 +832,15 @@ p {
 .past-entry-button {
   text-align: center;
   margin: 0.5vh;
-} 
+}
 
+.modal-login-container {
+  position: absolute;
+  left: 60vh;
+  top: 10vh;
+  width: 50vh;
+  height: 70vh;
+  background-color: $bgColor;
+  border: 5px solid $fontColor;
+}
 
