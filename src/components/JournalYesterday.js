@@ -9,6 +9,7 @@ import jobstore from "../stores/JobStore";
 const JournalYesterday = () => {
   // state
   const [month, setMonth] = useState(new Date().getMonth() + 1);
+  //
   const [year, setYear] = useState(new Date().getFullYear());
   const [modalForEntriesVisible, setModalForEntriesVisible] = useState(false);
   const [dataForModal, setdataForModal] = useState([]);
@@ -19,8 +20,6 @@ const JournalYesterday = () => {
     setModalForEntriesVisible(true);
     setdataForModal(data);
   };
-
-
 
   // filter entries but how?
 
@@ -64,6 +63,7 @@ const JournalYesterday = () => {
             <input
               className="yesterday-year-search font-small"
               type="text"
+              value={year}
               onChange={(e) => setYear(parseInt(e.target.value))}></input>
           </div>
         </div>

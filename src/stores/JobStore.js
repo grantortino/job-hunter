@@ -155,4 +155,14 @@ const jobstore = {
 
 jobstore.load();
 
+//  filter verwenden um alle zahlen, die >= 4 sind, und danach reduce verwenden, um eine summe von allen diesen zahlen zu haben (19).
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// impostare sempre un valore predefinito per evitare errori postumi
+console.log(
+  "UND DIE SUMME IST...",
+  numbers.filter((num) => num >= 4).reduce((sum, num) => sum + num, 0)
+);
+
 export default jobstore;
