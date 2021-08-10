@@ -40,7 +40,7 @@ const jobstore = {
 
   save: function () {
     localStorage.setItem("savedJob", JSON.stringify(this.jobs));
-    localStorage.setItem("savedEntries", JSON.stringify(this.entries));
+    localStorage.setItem("savedEntries", JSON.stringify(this.entries)); 
   },
 
   load: function () {
