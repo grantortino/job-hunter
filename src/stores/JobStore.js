@@ -97,50 +97,6 @@ const jobstore = {
     const entriesForThisMonthAndYear = this.entries
       .filter((entry) => entry.time.getMonth() + 1 == month)
       .filter((entry) => entry.time.getFullYear() === year);
-    // const entries = [{time: "2021-07-01", name: "coding with tom"}, {time: "2021-07-01", name: "coding with nicolo"}, {time: "2021-07-02", name: "drinking water"}]
-    // group = {}
-    // 1. interation reduce; entry = {time: "2021-07-01", name: "coding with tom"}
-    //    keyForEntry = "1 July"
-    //    group["1 July"] exists?
-    //       not = group["1 July"] = []
-    //
-    //    group["1 July"].push(entry)
-    //
-    // group = {"1 July": [{time: "2021-07-01", name: "coding with tom"}]}
-    //
-    // 2. interation reduce; entry = {time: "2021-07-01", name: "coding with nicolo"}
-    //    keyForEntry = "1 July"
-    //    group["1 July"] already exists
-    //    group["1 July"].push(entry)
-    //
-    // group = {"1 July": [{time: "2021-07-01", name: "coding with tom"}, {time: "2021-07-01", name: "coding with nicolo"}]}
-    //
-    // 3. interation reduce; entry = {time: "2021-07-02", name: "driking water"}
-    //    keyForEntry = "2 July"
-    //    group["2 July"] doesn't exist
-    //        group["2 July"] = []
-    //    group["2 July"].push(entry)
-    //
-    // group = {"1 July": [{time: "2021-07-01", name: "coding with tom"}, {time: "2021-07-01", name: "coding with nicolo"}],
-    //          "2 July": [{time: "2021-07-02", name: "drinking water"}]}
-    // const entries = [{time: "2021-07-01", name: "coding with tom"}, {time: "2021-07-01", name: "coding with nicolo"}, , {time: "2021-07-02"}, {time: "2021-06-01"}]
-    // return this.entries
-    // .filter((entry) => entry.time.getMonth() + 1 == month)
-    // .filter((entry) => entry.time.getFullYear() === year)
-    // .reduce((group, entry) => {
-    //     const keyForEntry = DateFormat.displayNameOfDay(entry.time);
-
-    //     if (group[keyForEntry] === undefined) {
-    //       group[keyForEntry] = [];
-    //     }
-
-    //     group[keyForEntry].push(entry);
-
-    //     return group;
-    // }, {})
-
-    // copio tutte le entrate che appartengono allo stesso giorno.
-
     return entriesForThisMonthAndYear.reduce((group, entry) => {
       const keyForEntry = DateFormat.displayNameOfDay(entry.time);
 

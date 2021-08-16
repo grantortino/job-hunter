@@ -13,7 +13,7 @@ A simple web-app that helps keeping track of all interesting job offers.
 
 - [ ] integrate API into frontend;
 
-AUGABE #1 10.8.2021
+AUFGABE #1 10.8.2021
 
 - arr[1, 2, 4, 5, 7, 8] creare un oggetto tramite reduce uguale a questo:
 
