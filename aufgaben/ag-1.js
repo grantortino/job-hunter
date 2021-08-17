@@ -34,6 +34,7 @@ const sorter = (arr) => {
 // };
 
 // acc viene sempre comparato con gli altri valori del array e deve essere sempre il valore di ritorno poiché è il risultato finale del metodo "reduce"
+
 const reducedArray = arr.reduce(
   function (acc, curr) {
     if (curr % 2 === 0) {
@@ -44,8 +45,7 @@ const reducedArray = arr.reduce(
       return acc;
     }
   },
-
-  { odd: [], even: [] }
+  { odd: [], even: []}
 );
 
 // console.log("reduced array", sorter(arr));
