@@ -40,7 +40,7 @@ const jobstore = {
 
   save: function () {
     localStorage.setItem("savedJob", JSON.stringify(this.jobs));
-    localStorage.setItem("savedEntries", JSON.stringify(this.entries)); 
+    localStorage.setItem("savedEntries", JSON.stringify(this.entries));
   },
 
   load: function () {
@@ -97,6 +97,8 @@ const jobstore = {
     const entriesForThisMonthAndYear = this.entries
       .filter((entry) => entry.time.getMonth() + 1 == month)
       .filter((entry) => entry.time.getFullYear() === year);
+
+    console.log("filtered entries", entriesForThisMonthAndYear);
     return entriesForThisMonthAndYear.reduce((group, entry) => {
       const keyForEntry = DateFormat.displayNameOfDay(entry.time);
 

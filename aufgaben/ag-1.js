@@ -9,10 +9,6 @@
 
 const arr = [1, 2, 4, 5, 7, 8];
 
-// console.log(arr.filter((num) => num % 2)).reduce((mod, num) => {
-
-// })
-
 const sortedArr = {
   odd: [],
   even: [],
@@ -25,9 +21,32 @@ const sorter = (arr) => {
   return sortedArr;
 };
 
-console.log(sorter(arr));
+// const sorter2 = (arr) => {
+//   arr.reduce((check, num) => {
+//     if (num % check !== 0) {
+//       sortedArr["odd"].push(num);
+//       return check;
+//     }
+//     sortedArr["even"].push(num);
+//     return check;
+//   }, 2);
+//   return sortedArr;
+// };
 
-const result = arr.reduce((acc, curr) =>
-  curr % acc === 0 ? sortedArr.even.push(curr) : sortedArr.odd.push(curr)
-  
+// acc viene sempre comparato con gli altri valori del array e deve essere sempre il valore di ritorno poiché è il risultato finale del metodo "reduce"
+const reducedArray = arr.reduce(
+  function (acc, curr) {
+    if (curr % 2 === 0) {
+      acc.even.push(curr);
+      return acc;
+    } else {
+      acc.odd.push(curr);
+      return acc;
+    }
+  },
+
+  { odd: [], even: [] }
 );
+
+// console.log("reduced array", sorter(arr));
+console.log("reduced array", reducedArray);
