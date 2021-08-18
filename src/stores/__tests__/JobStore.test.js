@@ -22,7 +22,6 @@ import jobstore from '../JobStore';
 
 const fakeJobs = [{id: '666'}, {id: '999'}, {id: '1010'}];
 
-
 test('remove job through id', () => {
     jobstore.jobs = fakeJobs;
     // il parametro di expect e toEqual sono come ===
