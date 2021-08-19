@@ -45,8 +45,10 @@ const reducedArray = arr.reduce(
       return acc;
     }
   },
-  { odd: [], even: []}
+  { odd: [], even: [] }
 );
 
 // console.log("reduced array", sorter(arr));
 console.log("reduced array", reducedArray);
+
+console.log(new Date().getMonth() + 1, new Date().getFullYear());
