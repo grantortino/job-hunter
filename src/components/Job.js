@@ -45,7 +45,7 @@ const Job = ({ job, onRemove }) => {
       case "rejected":
         image = jobPawRejected;
         break;
-      case "pending":
+      default:
         image = jobPawPending;
         break;
     }

@@ -2,9 +2,8 @@ import jobstore from "../JobStore";
 
 const fakeJobs = [{ id: "666" }, { id: "999" }, { id: "1010" }];
 
-test("Should be null", () => {
-  const funcTest = jobstore.groupedEntriesByDay;
-  expect(funcTest()).toBe(undefined);
+test("Should not be undefined", () => {
+  expect(jobstore.groupedEntriesByDay(3, 5)).not.toBe(undefined);
 });
 
 test("remove job through id", () => {

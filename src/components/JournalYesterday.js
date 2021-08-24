@@ -25,6 +25,8 @@ const JournalYesterday = () => {
 
   const groupedEntries = jobstore.groupedEntriesByDay(month, year);
 
+  console.log("grouped entries by day", jobstore.groupedEntriesByDay(3, 5));
+
   return (
     <Screen header="YESTERDAY" arrowLink="/journal">
       <div className="tracker-main-screen-containter">
