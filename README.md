@@ -32,5 +32,12 @@ AUFGABE #2 18.8.2021
     https://www.youtube.com/watch?v=7r4xVDI2vho
 [x] 3. Use a switch statement in this function https://github.com/grantortino/job-hunter/blob/f99ded7410943fd7746b9b40b226bfd0b15a81a7/src/components/Job.js#L21-L36
 
-Kind Regards
-Jannis
+You could test for the following things:
+
+1 call groupedEntriesByDay without entries inside the jobstore. Meaning it
+  should return an empty object.
+2 call groupedEntriesByDay with entries but filter on a year / month that
+  doesn't have any entries. Meaning it should return an empty object.
+3 call groupedEntriesByDay with entries and a filter that returns one entry on one day.
+4 call groupedEntriesByDay with entries and a filter that returns multiple entries on one day.
+5 call groupedEntriesByDay with entries and a filter that returns multiple entries on multiple days.
