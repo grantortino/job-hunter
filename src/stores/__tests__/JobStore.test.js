@@ -31,7 +31,45 @@ test("filter on a year / month that doesn't have any entries should return an em
 
 // 3 call groupedEntriesByDay with entries and a filter that returns one entry on one day.
 
+test("groupedEntriesByDay with entries and a filter should return one entry on one day", () => {
+  jobstore.entries = [
+    {
+      entryTitle: "Killing in the name of...",
+      entryContent: "misinterpretation of ratm",
+      id: "gggg",
+      time: new Date("2021-09-01T10:00:00Z"),
+      checkbox: true,
+    },
+    {
+      entryTitle: "Brooming the garden",
+      entryContent: "misinterpretation of garden",
+      id: "ffff",
+      time: new Date("2021-10-02T10:00:00Z"),
+      checkbox: true,
+    },
+    {
+      entryTitle: "Spreading cheese on my face",
+      entryContent: "misinterpretation of eating cheese",
+      id: "mmm",
+      time: new Date("1998-06-03T10:00:00Z"),
+      checkbox: true,
+    },
+  ];
 
+  const oneDay = jobstore.groupedEntriesByDay(9, 2021);
+
+  expect(oneDay).toEqual({
+    "Wednesday 01 September": [
+      {
+        entryTitle: "Killing in the name of...",
+        entryContent: "misinterpretation of ratm",
+        id: "gggg",
+        time: new Date("2021-09-01T10:00:00Z"),
+        checkbox: true,
+      },
+    ],
+  });
+});
 
 test("groupedEntriesByDay with entries and a filter that returns multiple entries on one day", () => {
   // add some entries to the job store
