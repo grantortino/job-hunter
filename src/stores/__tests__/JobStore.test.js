@@ -1,11 +1,5 @@
 import jobstore from "../JobStore";
 
-const fakeJobs = [{ id: "666" }, { id: "999" }, { id: "1010" }];
-
-test("Should not be undefined", () => {
-  expect(jobstore.groupedEntriesByDay(3, 5)).not.toBe(undefined);
-});
-
 // 1 call groupedEntriesByDay without entries inside the jobstore. Meaning it should return an empty object.
 
 test("should return an empty object", () => {
@@ -35,14 +29,14 @@ test("groupedEntriesByDay with entries and a filter should return one entry on o
   jobstore.entries = [
     {
       entryTitle: "Killing in the name of...",
-      entryContent: "misinterpretation of ratm",
+      entryContent: "misinterpretation of rage against the machine",
       id: "gggg",
       time: new Date("2021-09-01T10:00:00Z"),
       checkbox: true,
     },
     {
       entryTitle: "Brooming the garden",
-      entryContent: "misinterpretation of garden",
+      entryContent: "misinterpretation of gardening",
       id: "ffff",
       time: new Date("2021-10-02T10:00:00Z"),
       checkbox: true,
@@ -62,7 +56,7 @@ test("groupedEntriesByDay with entries and a filter should return one entry on o
     "Wednesday 01 September": [
       {
         entryTitle: "Killing in the name of...",
-        entryContent: "misinterpretation of ratm",
+        entryContent: "misinterpretation of rage against the machine",
         id: "gggg",
         time: new Date("2021-09-01T10:00:00Z"),
         checkbox: true,
@@ -121,6 +115,78 @@ test("groupedEntriesByDay with entries and a filter that returns multiple entrie
       },
     ],
   });
+});
+
+// 5 call groupedEntriesByDay with entries and a filter that returns multiple entries on multiple days.
+
+test("groupedEntriesByDay with entries and a filter should return multiple entries on multiple days", () => {
+  jobstore.entries = [
+    {
+      entryTitle: "Playing guitar",
+      entryContent: "Trying out a new song",
+      id: "aaaa",
+      time: new Date("2021-09-01T10:00:00Z"),
+      checkbox: true,
+    },
+    {
+      entryTitle: "Watching a movie",
+      entryContent: "",
+      id: "bbbb",
+      time: new Date("2021-09-02T11:00:00Z"),
+      checkbox: true,
+    },
+    {
+      entryTitle: "",
+      entryContent:
+        "this is in the future and should not be returned in the filter method",
+      id: "cccc",
+      time: new Date("2021-09-03T11:00:00Z"),
+      checkbox: true,
+    },
+  ];
+  const entriesTest = jobstore.groupedEntriesByDay(9, 2021);
+  expect(entriesTest).toEqual(
+    {
+      "Wednesday 01 September": [
+        {
+          entryTitle: "Killing in the name of...",
+          entryContent: "misinterpretation of rage against the machine",
+          id: "gggg",
+          time: new Date("2021-09-01T10:00:00Z"),
+          checkbox: true,
+        },
+      ],
+    },
+    {
+      "Thursday 02 September": [
+        {
+          entryTitle: "Watching a movie",
+          entryContent: "",
+          id: "bbbb",
+          time: new Date("2021-09-02T11:00:00Z"),
+          checkbox: true,
+        },
+      ],
+    },
+    {
+      "Friday 03 September": [
+        {
+          entryTitle: "",
+          entryContent:
+            "this is in the future and should not be returned in the filter method",
+          id: "cccc",
+          time: new Date("2021-09-03T11:00:00Z"),
+          checkbox: true,
+        },
+      ],
+    }
+  );
+});
+
+const fakeJobs = [{ id: "666" }, { id: "999" }, { id: "1010" }];
+
+test("Should not be undefined", () => {
+  expect(jobstore.groupedEntriesByDay(3, 5)).not.toBe(undefined);
 });
 
 test("remove job through id", () => {
