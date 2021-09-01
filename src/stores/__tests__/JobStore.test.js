@@ -71,6 +71,8 @@ test("groupedEntriesByDay with entries and a filter should return one entry on o
   });
 });
 
+// 4 call groupedEntriesByDay with entries and a filter that returns multiple entries on one day.
+
 test("groupedEntriesByDay with entries and a filter that returns multiple entries on one day", () => {
   // add some entries to the job store
   jobstore.entries = [
